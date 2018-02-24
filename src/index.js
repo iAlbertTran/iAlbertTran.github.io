@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import $ from 'jquery';
+import me from './img/me.png';
 
 let frontCoverStartPos;
 let aboutStartPos;
@@ -17,7 +18,7 @@ class Title extends React.Component{
 		title += "Title";
 
 		return(
-			<div id={title}>{this.props.id}</div>
+			<div id={title}>{this.props.title}</div>
 		);
 	}
 }
@@ -29,7 +30,7 @@ class TitleBox extends React.Component{
 
 		return(
 			<div id={titleBox}>
-				<Title id={this.props.id}/>
+				<Title id={this.props.id} title={this.props.title.toUpperCase()}/>
 			</div>
 		);
 	}
@@ -42,20 +43,247 @@ class TitleContainer extends React.Component{
 
 		return(
 			<div id={title}>
-				<TitleBox id={this.props.id}/>
+				<TitleBox id={this.props.id} title={this.props.title}/>
 			</div>
 		);
 	}
 }
+
+
+class Content extends React.Component{
+	render(){
+		let contentContainer = this.props.id + "ContentContainer";
+
+		let content;
+		switch (this.props.id){
+			case "about":
+				content = (
+					<div id={contentContainer}>
+						<div id="photoContainer">
+		                	<img id="me" src={me} alt="me"/>
+		            	</div>
+		            	<div id="aboutTxtContainer">
+		                	<p id="aboutMeTxt">
+			                    Hello! My name is Albert and I'm a 22 year old web developer based in the Bay Area! I'm a recent college graduate from the University of California, Davis with a Bachelor's of Science in Computer Science.<br/><br/>
+			                    Regardless if its a static web page or a dynamic web application, I love the process of taking a website from an idea all the way up to deployment. Being able to create something that's visually and functionally beautiful is what motivates and excites me most about web development. It is my passion, my profession, and, soon, my employee position!<br/><br/>
+
+			                    My interests include Software Development and UI / UX Design. I enjoy playing video games, watching basketball and movies, as well as just hanging out and socializing!<br/><br/>
+
+			                    I'm always looking to better myself. If you'd like to learn more about what I can offer, continue on!<br/><br/>
+			                    <em id="quote">"Tell me and I forget, teach me and I may remember, involve me and I learn"<br/></em>
+			                    <em id="author">- Benjamin Franklin</em>
+		                	</p>
+	            		</div>
+	            	</div>
+				);
+				break;
+
+			case "portfolio":
+				content = (
+					<div id={contentContainer}>
+						<div className="drop" id="currentContainer">
+			                <a>Learned</a>
+			                <div id="current">
+			                    <i className="devicon-html5-plain-wordmark colored"></i>
+			                    <i className="devicon-css3-plain-wordmark colored"></i>
+			                    <i className="devicon-javascript-plain colored"></i>
+			                    <i className="devicon-postgresql-plain-wordmark colored"></i>
+			                    <i className="devicon-python-plain-wordmark colored"></i>
+			                </div>
+			            </div>
+
+
+
+			            <div className="drop" id="inProgressContainer">
+			                <a>In Progress...</a>
+			                <div id="inProgress">
+			                    <i className="devicon-visualstudio-plain-wordmark colored"></i>
+			                    <i className="devicon-csharp-plain-wordmark colored"></i>
+			                </div>
+			            </div>
+
+
+
+			            <div className="drop" id="nextContainer">
+			                <a>Next</a>
+			                <div id="next">
+			                    <i className="devicon-react-original-wordmark colored"></i>
+			                    <i className="devicon-nodejs-plain-wordmark colored"></i>
+			                    <i className="devicon-mysql-plain-wordmark colored"></i>
+			                </div>
+			            </div>
+
+
+			            <div id="projectContainer">
+			                <a href="https://ialberttran.github.io/weather-app/" target="_blank">
+			                    <div id="weatherApp">
+			                        <div className="colorBox">
+			                            <p>Weather App</p>
+			                        </div>
+			                    </div>
+			                </a>
+			                <a href="https://ialberttran.github.io/quote-machine/" target="_blank">
+			                    <div id="quoteMachine">
+			                        <div className="colorBox">
+			                            <p>Quote Machine</p>
+			                        </div>
+			                    </div>
+			                </a>
+			        	</div>
+			       	</div>
+			    );
+				break;
+			case "contact":
+				content = (
+					<div id={contentContainer}>
+			            <form method="POST" action="https://formspree.io/albtran@ucdavis.edu" target="_blank">
+			                <div id="email">
+			                    <i className="fa fa-envelope"></i>
+			                    <p className="username">AlbTran@ucdavis.edu</p>
+			                </div>
+			                <input type="email" required name="email" placeholder="Email"/>
+			                <textarea name="message" required placeholder="How can I help you?"></textarea>
+			                <button type="submit">Send</button>
+			            </form>
+					</div>
+				);
+				break;
+		}
+
+			return content;
+		}
+}
+
 class Section extends React.Component{
 	
 	render(){
 		return(
 			<div id={this.props.id} className={this.props.className}>
-				<TitleContainer id={this.props.id}/>
+				<div className="sectionContainer">
+					<TitleContainer id={this.props.id} title={this.props.title}/>
+					<Content id={this.props.id}/>
+				</div>
 			</div>
 		);
 	}
+}
+
+class FrontCover extends React.Component{
+	render(){
+		return(
+			<div id={this.props.id} className={this.props.className}>
+		        <div id="frontCoverOverlay">
+		            <div id="textContainer">
+		                <p id="line1">Albert T. Tran</p>
+		                <p id="line2">Web Developer</p>
+		                <p id="line3">Bay Area, California</p>
+		            </div>
+		            <a href="#aboutMe" id="arrowContainer" onClick={() => this.props.onClick('about')} >
+
+		                <i id="arrow" className="fa fa-angle-double-down animated infinite bounce"></i>
+
+		            </a>
+
+		        </div>
+		    </div>
+		);
+	}
+}
+
+class Footer extends React.Component{
+	render(){
+		return(
+
+				<div id="connectionsContainer">
+
+	                <a href="https://www.linkedin.com/in/alberttran17/" target="_blank">
+	                    <div id="linkedIn">
+	                        <i className="fa-fw fab fa-linkedin"></i>
+	                    </div>
+	                </a>
+
+	                <a href="https://github.com/iAlbertTran" target="_blank">
+	                    <div id="github">
+	                        <i className="fa-fw fab fa-github"></i>
+	                    </div>
+	                </a>
+
+	                <a href="https://www.facebook.com/albert.tran.77" target="_blank">
+	                    <div id="facebook">
+	                        <i className="fa-fw fab fa-facebook-square"></i>
+	                    </div>
+	                </a>
+
+	                <a>
+	                    <div id="skype">
+	                        <i className="fa-fw fab fa-skype"></i>
+	                    </div>
+	                </a>
+
+	                <a href="https://www.freecodecamp.org/ialberttran" target="_blank">
+	                    <div id="fcc">
+	                        <i className="fa-fw fab fa-free-code-camp"></i>
+	                    </div>
+	                </a>
+
+			    </div>
+
+		);
+	}
+}
+
+function AnchorIcon(props){
+	let classes = "fa-fw " + props.fontAwesome;
+	return(
+		<i className={classes}></i>
+	);
+}
+
+function NavAnchor(props){
+	let anchorClasses = "anchor " + props.specificAnchor;
+	let href = "#" + props.specificAnchor;
+	return (
+		<a className={anchorClasses} href={href} onClick={props.onClick}>
+			<AnchorIcon fontAwesome={props.fontAwesome} />
+			{props.specificAnchor.toUpperCase()}
+		</a>
+	);
+}
+
+function NavBar(props){
+	let mobile = false;
+	mobile = (window.innerWidth < 767);
+
+	let navBar = (!mobile) ? 
+		<div id="navBar">
+			<NavAnchor 
+            	specificAnchor="home" 
+            	onClick={() => props.onClick('home')} 
+            	fontAwesome = "far fa-arrow-alt-circle-up"
+            />
+
+            <NavAnchor 
+            	specificAnchor="about" 
+            	onClick={() => props.onClick('about')} 
+            	fontAwesome = "far fa-address-card"
+            />
+
+            <NavAnchor 
+            	specificAnchor="portfolio" 
+            	onClick={() => props.onClick('portfolio')} 
+            	fontAwesome = "fas fa-cogs"
+            />
+
+            <NavAnchor 
+            	specificAnchor="contact" 
+            	onClick={() => props.onClick('contact')} 
+            	fontAwesome = "far fa-envelope"
+            />
+		</div>: 
+
+		<i id="hamburgerMenu" className="fa fa-bars"></i>;
+	return navBar;
+
 }
 
 class Navigation extends React.Component{
@@ -65,36 +293,18 @@ class Navigation extends React.Component{
 
 		        <div id="aplusplus">A++</div>
 
-		        <i id="hamburgerMenu" className="fa fa-bars"></i>
-		        <div id="navBar">
+		        <NavBar onClick={this.props.onClick}/>
 
-		            <a className="anchor top" href="#front" onClick={() => this.props.onClick('top')}>
-		            	<i className="fa-fw far fa-arrow-alt-circle-up"></i>
-		            	TOP
-		            </a>
-
-		            <a className="anchor about" href="#about" onClick={() => this.props.onClick('about')}>
-		            	<i className="fa-fw far fa-address-card"></i>
-		            	ABOUT
-		            </a>
-
-		            <a className="anchor portfolio" href="#portfolio" onClick={() => this.props.onClick('portfolio')}>
-		            	<i className="fa-fw fas fa-cogs"></i>
-		            	PORTFOLIO
-		            </a>
-
-		            <a className="anchor contact" href="#contact" onClick={() => this.props.onClick('contact')}>
-		            	<i className="fa-fw far fa-envelope"></i>
-		            	CONTACT
-		            </a>
-
-		        </div>
 	    	</div>
 		);
 	}
 }
 
 class Site extends React.Component{
+	constructor(props){
+		super(props);
+		this.state = {mobile: (window.innerWidth < 767)}
+	}
 
 	handleClick(clickedLink){
 		const splitHref = '#' + clickedLink;
@@ -103,16 +313,22 @@ class Site extends React.Component{
 		var pageSectionPosition = $(splitHref).offset().top;
 
 		//animates the scrolling function by making the scrollTop of the body change over 1000ms
-		$("html, body").animate({scrollTop: pageSectionPosition}, 1000);
+		$("html, body").animate({scrollTop: pageSectionPosition}, 500);
 	}
 
 	render(){
 		return(
 			<div>
-				<Navigation onClick={(clickedLink) => this.handleClick(clickedLink)}/>
-				<Section id="about" className="section"/>
-				<Section id="portfolio" className="section"/>
-				<Section id="contact" className="section"/>
+				<FrontCover id="home" className="section"
+					onClick={(clickedLink) => this.handleClick(clickedLink)}
+				/>
+				<Navigation 
+					onClick={(clickedLink) => this.handleClick(clickedLink)}
+				/>
+				<Section id="about" className="section" title="About Me"/>
+				<Section id="portfolio" className="section" title="Portfolio"/>
+				<Section id="contact" className="section" title="Connect With Me"/>
+				<Footer />
 			</div>
 		);
 	}
@@ -122,13 +338,9 @@ ReactDOM.render(<Site/>, document.getElementById('root'));
 
 
 window.onload = function(){
-	var atTop = false;
+
 	windowPosition = $(window).scrollTop();
 
-	if(windowPosition == 0)
-		atTop = true;
-	navBarHover(atTop);
-	navBarColors(atTop);
 	typingAnimation("portfolio");
 	typingAnimation("about");
 	typingAnimation("contact");
@@ -141,98 +353,64 @@ window.onload = function(){
 	portfolioStartPos = $('#portfolio').offset().top;
 	contactStartPos = $('#contact').offset().top;
 
-    currentSection = highlightButton();
+	let nav = document.getElementById("navBarContainer");
 
-
+	if($(window).scrollTop() >= aboutStartPos){
+			nav.style.position = "fixed";
+	}
+	else
+		nav.style.position = "static";
+	if(window.innerWidth > 767)
+    	currentSection = highlightButton();
 }
 
 window.onscroll = function() {
 	windowPosition = $(window).scrollTop();
 
-	navBarColors(false);
-	navBarHover(false);
-	currentSection = highlightButton();
 	//transparentBG(document.getElementById("aboutContentContainer"));
 	//transparentBG(document.getElementById("aboutTitleContainer"));
 
-	if($(window).scrollTop() === 0){
-		navBarColors(true);
-		navBarHover(true);
+	let nav = document.getElementById("navBarContainer");
+
+	if($(window).scrollTop() >= aboutStartPos){
+			nav.style.position = "fixed";
+			nav.style.padding = 0;
 	}
+	else{
+		nav.style.position = "static";
+		nav.style.padding = "1% 0";
+	}
+
+	navBarColors();
+
+	if(window.innerWidth > 767)
+		currentSection = highlightButton();
 }
-/*
+
 window.onresize = function () {
-	adjustSectionTitle("about", 12);
-	adjustSectionTitle("portfolio", 12);
-	adjustSectionTitle("contact", 12);
 }
 
-//adjusts the size of the text to fit the title container, as well as the position
-//takes in the section title and number of letters in the titlev to properly format it
-function adjustSectionTitle(section, letters) {
-    
-	var sectionTitleContainer = document.getElementById(section + "TitleContainer");
-	var sectionTitle = document.getElementById(section + "Title");
-	sectionTitle.style.fontSize = sectionTitleContainer.clientWidth / letters + "px";
 
-    //if mobile view, stops it from repositioning the container
-    if (window.innerWidth <= 767)
-        return;
-
-	var sectionContentContainer = document.getElementById(section + "ContentContainer");
-    sectionTitleContainer.style.top = sectionContentContainer.clientHeight / 20 + "px";
-}
-*/
 //jquery code used to set the animations when hovering over anchors and logo in the navbar
-function navBarHover(topOfPage){
-	//when scrolled all the way to the top page
-	if(topOfPage){
+function navBarHover(color){
 		//mouseenter for hovering
-		$("#navBar > a, #aplusplus").mouseenter(function(){
-			$(this).css("background", "#FF3b3F").css("color", "#F8F8F8");
+		$("#navBar > a").mouseenter(function(){
+			$(this).css("borderBottom", color + " solid");
 		});
 
 		//mouseleave for when no longer hovering
-		$(".about, .portfolio, .contact, #aplusplus").mouseleave(function(){
-			$(this).css("background", "#F8F8F8").css("color", "#282828");
+		$("#navBar > a").mouseleave(function(){
+			$(this).css("borderBottom", "transparent solid");
 		});
-		$(".top").mouseleave(function(){
-			$(this).css("background", "#FF3b3F").css("color", "#F8F8F8");
-		});
-	}
-	else{
-		var hoverAnimation = $("#navBar > a, #aplusplus").mouseenter(function(){
-			$(this).css("background", "#FF3b3F").css("color", "#282828");
-		});
-
-		hoverAnimation.mouseleave(function(){
-			$(this).css("background", "#282828").css("color", "#F8F8F8");
-		});
-
 		$(currentSection).mouseleave(function(){
-			$(this).css("background", "#FF3b3F").css("color", "#282828");
+			$(this).css("borderBottom", color + " solid");
 		});
-
-
-	}
 }
 
 //changes the appearance of the navBar depending on if user scrolled all the way up or down
 //uses jquery to reduce code to two lines, rather than having to use a for loop on the anchors
-function navBarColors(topOfPage){
-	//when scrolled all the way to the top page
-	if(topOfPage){
-
-		$(".about, .portfolio, .contact, #navBarContainer, #aplusplus").css("backgroundColor", "#F8F8F8").css("color", "#282828");
-		$("#aplusplus").css("borderColor", "#FF3b3F");
-
-	}
-
-	else{
-		$("#navBar > a, #navBarContainer, #aplusplus").css("backgroundColor", "#282828").css("color", "#F8F8F8");
-		$("#aplusplus").css("borderColor", "#FF3b3F");
-	}
-
+function navBarColors(){
+		$("#navBar > a").css("borderBottom", "transparent solid");
 }
 
 
@@ -243,74 +421,77 @@ function highlightButton(){
 	var sectionMidPoint = document.getElementById("about").getBoundingClientRect().height / 2;
 	switch(true){
 		case(windowPosition === 0):
-			let top = document.getElementsByClassName("top")[0];
-			top.style.backgroundColor = "#FF3B3F";
-			top.style.color = "#F8F8F8";
-			return(".top");
+			let home = document.getElementsByClassName("home")[0];
+			home.style.borderBottom = "#FF3b3F solid";
+			$("#navBar a .fa-fw").css("color","#FF3b3F");
+			$("#aplusplus").css("border", "#FF3b3F solid");
+			navBarHover("#FF3b3F");
+			return(".home");
 
 		case (windowPosition > 0 && windowPosition < aboutStartPos - sectionMidPoint):
-			top = document.getElementsByClassName("top")[0];
-			top.style.backgroundColor = "#FF3B3F";
-			top.style.color = "#282828";
-			return(".top");
+			home = document.getElementsByClassName("home")[0];
+			home.style.borderBottom = "#FF3b3F solid";
+			$("#navBar a .fa-fw").css("color","#FF3b3F");
+			$("#aplusplus").css("border", "#FF3b3F solid");
+			navBarHover("#FF3b3F");
+			return(".home");
 
 		case (windowPosition >= aboutStartPos - sectionMidPoint && windowPosition < portfolioStartPos - sectionMidPoint):
 			let about = document.getElementsByClassName("about")[0];
-			about.style.backgroundColor = "#FF3B3F";
-			about.style.color = "#282828";
+			about.style.borderBottom = "#FF3b3F solid";
+			$("#navBar a .fa-fw").css("color","#FF3b3F");
+			$("#aplusplus").css("border", "#FF3b3F solid");
+			navBarHover("#FF3b3F");
 			return(".about");
 
 		case (windowPosition >= portfolioStartPos - sectionMidPoint && windowPosition < contactStartPos - sectionMidPoint):
 			let portfolio = document.getElementsByClassName("portfolio")[0];
-			portfolio.style.backgroundColor = "#FF3B3F";
-			portfolio.style.color = "#282828";
+			portfolio.style.borderBottom = "#65CCB8 solid";
+			$("#navBar a .fa-fw").css("color","#65CCB8");
+			$("#aplusplus").css("border", "#65CCB8 solid");
+			navBarHover("#65CCB8");
 			return(".portfolio");
 
 		case (windowPosition >= contactStartPos - sectionMidPoint):
 			let contact = document.getElementsByClassName("contact")[0];
-			contact.style.backgroundColor = "#FF3b3F";
-			contact.style.color = "#282828";
+			contact.style.borderBottom = "#F76C6C solid";
+			$("#navBar a .fa-fw").css("color","#F76C6C");
+			$("#aplusplus").css("border", "#F76C6C solid");
+			navBarHover("#F76C6C");
 			return(".contact");
 
 	}
 
 }
 
-//makes the about section text box transparent when scrolling, then solid when not, fun little style change
-function transparentBG(element){
-	element.style.background = "rgba(40, 40, 40, 0.25)";
-	setTimeout(function(){
-		element.style.background = "rgba(40, 40, 40, 1)"
-	}, 500);
-}
-
 
 //a animation for section titles to give the look of typing
 function typingAnimation(section){
 	//actual typing animation
-	var sectionTitle = document.getElementById(section + "Title");
+	let sectionTitle = document.getElementById(section + "Title");
+	let sectionTitleContainer = document.getElementById(section + "TitleContainer").style.borderBottom;
 	sectionTitle.style.width = "100%";
 	setInterval(function(){
 
 		if(sectionTitle.style.width == "0px"){
 			sectionTitle.style.width = "100%";
-			sectionTitle.style.transitionDuration = "2.5s";
+			sectionTitle.style.transitionDuration = "2s";
 		}
 		else{
 			sectionTitle.style.width = "0px";
 			sectionTitle.style.transitionDuration = "1s";
 		}
 
-	}, 3500);
+	}, 3000);
 
 
 	//code for the blinking cursor animation using the div border
-	sectionTitle.style.borderRight = "solid rgba(255, 59, 63)";
+	sectionTitle.style.borderRight = sectionTitleContainer;
 	setInterval(function(){
-		if(sectionTitle.style.borderRight === "solid rgb(255, 59, 63)")
+		if(sectionTitle.style.borderRight === sectionTitleContainer)
 			sectionTitle.style.borderRight = "solid transparent";
 		else
-			sectionTitle.style.borderRight = "solid rgb(255, 59, 63)";
+			sectionTitle.style.borderRight = sectionTitleContainer;
 	}, 500);
 }
 
