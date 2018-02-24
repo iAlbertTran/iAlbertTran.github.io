@@ -111,7 +111,7 @@ body, #root, #root .section{
     align-items: center;
 
     height: 100%;
-    background-color: rgba(40,40,40,0.7);
+    background-color: rgba(29,30,33,0.5);
 }
 
 #textContainer{
@@ -271,7 +271,7 @@ body, #root, #root .section{
     justify-content: center;
     align-self: center;
 
-    height: 100%;
+    height: 80%;
 }
 
 #aboutMeTxt #quote, #aboutMeTxt #author{
@@ -296,7 +296,7 @@ body, #root, #root .section{
 /********************************************************************************************/
 #portfolio{
     height: 100%;
-    background-color: #282828;
+    background-color: #2B7A78;
 
     display: flex;
     flex-direction: column;
@@ -312,7 +312,7 @@ body, #root, #root .section{
 	width: 80%;
 	height: 100%;
 
-	background: white;
+	background: #2B7A78;
 
 	display: flex;
     flex-direction: column;
@@ -337,7 +337,7 @@ body, #root, #root .section{
 
 #portfolioTitle{
 	border-right: solid #65CCB8;
-	color: #282828;
+	color: #17252A;
 }
 
 #portfolioContentContainer{
@@ -347,6 +347,7 @@ body, #root, #root .section{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
 
 }
 
@@ -363,6 +364,7 @@ body, #root, #root .section{
     transition-duration: 0.5s;
 
     padding: 1% 0;
+    background-color: #65CCB8;
 
 }
 #portfolioContentContainer .colored{
@@ -383,14 +385,10 @@ body, #root, #root .section{
     font-size: 50px;
     text-align: center;
 
-    margin: 0;
+    margin-top: 2%;
 
-
-    border-radius: 10px;
-    
-
-    background: rgba(40,40,40,1);
-    width: 100%;
+    background: #1d1e21;
+    width: 50%;
 
     display: flex;
 
@@ -407,14 +405,15 @@ body, #root, #root .section{
 
     color: #F8F8F8;
 
-    border-right: #FF3b3F solid;
-    border-left: #FF3b3F solid;
+    border-right: white solid;
+    border-left: white solid;
 
     vertical-align: middle;
+
 }
 .drop a:hover{
-    background-color: #f8f8f8;
-    color: #282828;
+    background-color: #65CCB8;
+    color: #17252A;
 
     transition-property: background-color;
     transition-duration: 0.5s;
@@ -428,8 +427,8 @@ body, #root, #root .section{
     align-items: center;
 
     margin-top: 1%;
-
-    flex-grow: 2;
+    flex-grow: 1;
+    flex-flow: wrap;
 }
 
 #projectContainer div{
@@ -452,8 +451,9 @@ body, #root, #root .section{
 }
 
 #projectContainer a{
-    text-decoration-color: #FF3b3F;
+    text-decoration-color: #65CCB8;
 }
+
 
 .colorBox{
     width: 100%;
@@ -463,25 +463,28 @@ body, #root, #root .section{
     align-items: center;
     justify-content: center;
 
-    background-color: #282828;
+    background-color: #1d1e21;
+    color: #f9f9f9;
 
     transition: background-color, color;
     transition-duration: 0.5s;
+
+    border: white solid;
 
     color: #F8F8F8;
 }
 
 .colorBox:hover{
     background-color: transparent;
+    color: transparent;
 
-    color: #282828;
+
 }
 
 .colorBox p {
     margin: 0;
     font-size: 50px;
     font-family: "Passion One", sans-serif;
-    text-decoration-color: #FF3b3F;
     text-align: center;
     padding: 2.5%;
 }
@@ -493,7 +496,7 @@ body, #root, #root .section{
 /* Contact Section CSS */
 /********************************************************************************************/
 #root #contact{
-    height: 85vh;
+    height: 90vh;
 }
 #contact{
     height: 100%;
@@ -682,13 +685,15 @@ body, #root, #root .section{
         width: 125px;
     }
     #aboutTitle, #portfolioTitle, #contactTitle{ letter-spacing: 1px; font-size: 25px;}
-    #portfolioContentContainer .colored{ font-size: 30px; }
+    #portfolioContentContainer .colored{ font-size: 25px; }
 
     #projectContainer div {
         width: 175px;
         height: 85px;
     }
-    .colorBox p{ font-size: 35px; }
+
+    .drop {font-size: 20px;}
+    .colorBox p{ font-size: 20px; }
 
     #contactContentContainer form div { font-size: 15px; }
 
@@ -708,12 +713,14 @@ body, #root, #root .section{
         width: 135px;
     }
     #aboutTitle, #portfolioTitle, #contactTitle{ letter-spacing: 2px; font-size: 35px;}
-    #portfolioContentContainer .colored{ font-size: 35px;}
+    #portfolioContentContainer .colored{ font-size: 30px;}
     #projectContainer div {
         width: 200px;
         height: 100px;
     }
-    .colorBox p{ font-size: 45px; }
+
+    .drop {font-size: 30px;}
+    .colorBox p{ font-size: 30px; }
 
     #contactContentContainer form div { font-size: 15px; }
 
@@ -738,7 +745,9 @@ body, #root, #root .section{
         width: 225px;
         height: 112px;
     }
-    .colorBox p{ font-size: 55px; }
+
+    .drop {font-size: 40px;}
+    .colorBox p{ font-size: 40px; }
 
     #contactContentContainer form div { font-size: 20px; }
 
@@ -760,14 +769,14 @@ body, #root, #root .section{
     }
 
     #aboutTitle, #portfolioTitle, #contactTitle{ letter-spacing: 4px; font-size: 45px;}
-    #portfolioContentContainer .colored{ font-size: 45px; }
+    #portfolioContentContainer .colored{ font-size: 35px; }
 
     #projectContainer div {
         width: 250px;
         height: 125px;
     }
-
-    .colorBox p{ font-size: 65px; }
+    .drop {font-size: 50px;}
+    .colorBox p{ font-size: 50px; }
 
 
     #contactContentContainer form div { font-size: 20px; }
@@ -810,7 +819,7 @@ body, #root, #root .section{
     }
 
         .drop a {
-            border-bottom: #FF3b3F solid;
+            border-bottom: white solid;
             border-right: none;
             border-left: none;
         }
@@ -829,32 +838,27 @@ body, #root, #root .section{
         flex-direction: column-reverse;
     }
 
-        #contactContentContainer #connectionsContainer {
-            flex-direction: row;
-            width: 80%;
-            height: 25%;
-            justify-content: space-between;
-            align-items: center;
-        }
+    
+    #contactContentContainer form {
+        width: 80%;
+        height: 75%;
+    }
 
-            #contactContentContainer #connectionsContainer a div {
-                justify-content: center;
-                border-bottom: none;
-            }
+    #contactContentContainer form div {
+        justify-content: center;
+        font-size: 40px;
+
+    }
+
+    #contactContentContainer form button {
+        font-size: 20px;
+    }
+
+    #contactContentContainer #email p{
+        display: none;
+    }
 
 
-        #contactContentContainer form {
-            width: 80%;
-            height: 75%;
-        }
-
-            #contactContentContainer form div {
-                justify-content: center;
-            }
-
-            #contactContentContainer form button {
-                font-size: 20px;
-            }
 
     #contactTitleContainer, #portfolioTitleContainer, #aboutTitleContainer {
         position: static;
