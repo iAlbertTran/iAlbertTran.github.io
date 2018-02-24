@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import $ from 'jquery';
 import me from './img/me.png';
-
-let frontCoverStartPos;
 let aboutStartPos;
 let portfolioStartPos;
 let contactStartPos;
@@ -81,7 +79,7 @@ class Content extends React.Component{
 			case "portfolio":
 				content = (
 					<div id={contentContainer}>
-						<div className="drop" id="currentContainer">
+			            <div className="drop" id="currentContainer" onClick={() => this.props.onClick("current")}>
 			                <a>Learned</a>
 			                <div id="current">
 			                    <i className="devicon-html5-plain-wordmark colored"></i>
@@ -94,20 +92,18 @@ class Content extends React.Component{
 
 
 
-			            <div className="drop" id="inProgressContainer">
+			            <div className="drop" id="inProgressContainer" onClick={() => this.props.onClick("inProgress")}>
 			                <a>In Progress...</a>
 			                <div id="inProgress">
-			                    <i className="devicon-visualstudio-plain-wordmark colored"></i>
-			                    <i className="devicon-csharp-plain-wordmark colored"></i>
+			                    <i className="devicon-react-original-wordmark colored"></i>
 			                </div>
 			            </div>
 
 
 
-			            <div className="drop" id="nextContainer">
+			            <div className="drop" id="nextContainer" onClick={() => this.props.onClick("next")}>
 			                <a>Next</a>
 			                <div id="next">
-			                    <i className="devicon-react-original-wordmark colored"></i>
 			                    <i className="devicon-nodejs-plain-wordmark colored"></i>
 			                    <i className="devicon-mysql-plain-wordmark colored"></i>
 			                </div>
@@ -115,21 +111,29 @@ class Content extends React.Component{
 
 
 			            <div id="projectContainer">
-			                <a href="https://ialberttran.github.io/weather-app/" target="_blank">
+			                <a href="https://ialberttran.github.io/weather-app/" target="_blank" rel="noopener noreferrer">
 			                    <div id="weatherApp">
 			                        <div className="colorBox">
 			                            <p>Weather App</p>
 			                        </div>
 			                    </div>
 			                </a>
-			                <a href="https://ialberttran.github.io/quote-machine/" target="_blank">
+			                <a href="https://ialberttran.github.io/quote-machine/" target="_blank" rel="noopener noreferrer">
 			                    <div id="quoteMachine">
 			                        <div className="colorBox">
 			                            <p>Quote Machine</p>
 			                        </div>
 			                    </div>
 			                </a>
-			        	</div>
+
+			                <a href="https://ialberttran.github.io/checkers/" target="_blank" rel="noopener noreferrer">
+			                    <div id="checkers">
+			                        <div className="colorBox">
+			                            <p>Checkers</p>
+			                        </div>
+			                    </div>
+			                </a>
+			            </div>
 			       	</div>
 			    );
 				break;
@@ -148,6 +152,9 @@ class Content extends React.Component{
 					</div>
 				);
 				break;
+
+			default:
+				break;
 		}
 
 			return content;
@@ -161,7 +168,7 @@ class Section extends React.Component{
 			<div id={this.props.id} className={this.props.className}>
 				<div className="sectionContainer">
 					<TitleContainer id={this.props.id} title={this.props.title}/>
-					<Content id={this.props.id}/>
+					<Content id={this.props.id} onClick={this.props.onClick}/>
 				</div>
 			</div>
 		);
@@ -191,24 +198,25 @@ class FrontCover extends React.Component{
 }
 
 class Footer extends React.Component{
+
 	render(){
 		return(
 
 				<div id="connectionsContainer">
 
-	                <a href="https://www.linkedin.com/in/alberttran17/" target="_blank">
+	                <a href="https://www.linkedin.com/in/alberttran17/" target="_blank" rel="noopener noreferrer">
 	                    <div id="linkedIn">
 	                        <i className="fa-fw fab fa-linkedin"></i>
 	                    </div>
 	                </a>
 
-	                <a href="https://github.com/iAlbertTran" target="_blank">
+	                <a href="https://github.com/iAlbertTran" target="_blank" rel="noopener noreferrer">
 	                    <div id="github">
 	                        <i className="fa-fw fab fa-github"></i>
 	                    </div>
 	                </a>
 
-	                <a href="https://www.facebook.com/albert.tran.77" target="_blank">
+	                <a href="https://www.facebook.com/albert.tran.77" target="_blank" rel="noopener noreferrer">
 	                    <div id="facebook">
 	                        <i className="fa-fw fab fa-facebook-square"></i>
 	                    </div>
@@ -220,7 +228,7 @@ class Footer extends React.Component{
 	                    </div>
 	                </a>
 
-	                <a href="https://www.freecodecamp.org/ialberttran" target="_blank">
+	                <a href="https://www.freecodecamp.org/ialberttran" target="_blank" rel="noopener noreferrer">
 	                    <div id="fcc">
 	                        <i className="fa-fw fab fa-free-code-camp"></i>
 	                    </div>
@@ -288,6 +296,7 @@ function NavBar(props){
 
 class Navigation extends React.Component{
 	render(){
+
 		return(
 			<div id="navBarContainer">
 
@@ -303,7 +312,7 @@ class Navigation extends React.Component{
 class Site extends React.Component{
 	constructor(props){
 		super(props);
-		this.state = {mobile: (window.innerWidth < 767)}
+		this.state = {mobile: null}
 	}
 
 	handleClick(clickedLink){
@@ -316,7 +325,43 @@ class Site extends React.Component{
 		$("html, body").animate({scrollTop: pageSectionPosition}, 500);
 	}
 
+	//expands the list of skills on the portoflio section
+	expand(target) {
+	    //gets what was clicked minus "Container" to expand the content;
+	    let content = document.getElementById(target);
+
+	    //switch case for window size (mobile or desktop). 
+	    //If desktop, containers are to the right of anchors
+	    //if mobile, containers are below anchors
+	    switch (true) {
+
+	        case (window.innerWidth > 767):
+	            if (content.style.width === "100%")
+	                content.style.width = "0px";
+	            else
+	                content.style.width = "100%";
+	            break;
+
+	        case (window.innerWidth <= 767):
+	            if (content.style.height === "100%") {
+	                content.style.height = "0px";
+	                content.style.display = "none";
+	            }
+	            else {
+	                content.style.height = "100%";
+	                content.style.display = "flex";
+	            }
+	            break;
+
+	        default:
+	        	break;
+	    }
+
+	}
+
+
 	render(){
+
 		return(
 			<div>
 				<FrontCover id="home" className="section"
@@ -326,7 +371,7 @@ class Site extends React.Component{
 					onClick={(clickedLink) => this.handleClick(clickedLink)}
 				/>
 				<Section id="about" className="section" title="About Me"/>
-				<Section id="portfolio" className="section" title="Portfolio"/>
+				<Section id="portfolio" className="section" title="Portfolio" onClick={(clickedLink) => this.expand(clickedLink)}/>
 				<Section id="contact" className="section" title="Connect With Me"/>
 				<Footer />
 			</div>
@@ -460,6 +505,8 @@ function highlightButton(){
 			navBarHover("#F76C6C");
 			return(".contact");
 
+		default: break;
+
 	}
 
 }
@@ -473,7 +520,7 @@ function typingAnimation(section){
 	sectionTitle.style.width = "100%";
 	setInterval(function(){
 
-		if(sectionTitle.style.width == "0px"){
+		if(sectionTitle.style.width === "0px"){
 			sectionTitle.style.width = "100%";
 			sectionTitle.style.transitionDuration = "2s";
 		}
@@ -494,35 +541,3 @@ function typingAnimation(section){
 			sectionTitle.style.borderRight = sectionTitleContainer;
 	}, 500);
 }
-
-//expands the list of skills on the portoflio section
-/*function expand(target) {
-    //gets what was clicked minus "Container" to expand the content;
-    var clickedBox = target.split("C")[0];
-    var content = document.getElementById(clickedBox);
-
-    //switch case for window size (mobile or desktop). 
-    //If desktop, containers are to the right of anchors
-    //if mobile, containers are below anchors
-    switch (true) {
-
-        case (window.innerWidth > 767):
-            if (content.style.width == "100%")
-                content.style.width = "0px";
-            else
-                content.style.width = "100%";
-            break;
-
-        case (window.innerWidth <= 767):
-            if (content.style.height == "100%") {
-                content.style.height = "0px";
-                content.style.display = "none";
-            }
-            else {
-                content.style.height = "100%";
-                content.style.display = "flex";
-            }
-            break;
-    }
-
-}*/
