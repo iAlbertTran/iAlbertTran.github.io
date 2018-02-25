@@ -320,7 +320,15 @@ class Site extends React.Component{
 		const splitHref = '#' + clickedLink;
 
 		//gets the offset of splitHref to find how far from the top it is
-		var pageSectionPosition = $(splitHref).offset().top;
+		let pageSectionPosition = $(splitHref).offset().top;
+
+
+		//used to consider when the 'about' nav button is clicked while its not fixed to the top of the page
+		//accounts for that space it takes up on the page when the animation scrolls to about section
+		if($(window).scrollTop() < homeEndPos){
+			const navHeight = document.getElementById("navBarContainer").getBoundingClientRect().height;
+			pageSectionPosition -= navHeight;
+		}
 
 		//animates the scrolling function by making the scrollTop of the body change over 1000ms
 		$("html, body").animate({scrollTop: pageSectionPosition}, 500);
@@ -394,11 +402,10 @@ window.onload = function(){
 	//adjustSectionTitle("portfolio", 10);
 	//adjustSectionTitle("contact", 10);
 
-	homeEndPos = $('#home').offset().bottom;
+	homeEndPos = document.getElementById("home").getBoundingClientRect().height;
 	aboutStartPos = $('#about').offset().top;
 	portfolioStartPos = $('#portfolio').offset().top;
 	contactStartPos = $('#contact').offset().top;
-
 	let nav = document.getElementById("navBarContainer");
 
 	if($(window).scrollTop() >= homeEndPos){
@@ -419,7 +426,7 @@ window.onscroll = function() {
 
 	let nav = document.getElementById("navBarContainer");
 
-	if($(window).scrollTop() >= aboutStartPos){
+	if($(window).scrollTop() >= homeEndPos){
 			nav.style.position = "fixed";
 			nav.style.padding = 0;
 	}
@@ -435,6 +442,10 @@ window.onscroll = function() {
 }
 
 window.onresize = function () {
+	homeEndPos = document.getElementById("home").getBoundingClientRect().height;
+	aboutStartPos = $('#about').offset().top;
+	portfolioStartPos = $('#portfolio').offset().top;
+	contactStartPos = $('#contact').offset().top;
 }
 
 
