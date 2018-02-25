@@ -43,7 +43,7 @@ body, #root, #root .section{
     margin-left: 15%;
     padding: 5px;
 
-    border: solid #FF3b3F;
+    border: solid #f76c7c;
     border-radius: 100px;
 
     font-weight: bold;
@@ -129,8 +129,8 @@ body, #root, #root .section{
 
 #textContainer p{
 
-    border-left: 5px solid rgba(255,59,63, 1);
-    border-bottom: 5px solid rgba(255,59,63, 1);
+    border-left: 5px solid #f76c6c;
+    border-bottom: 5px solid #f76c6c;
 
     margin: 2% 0;
     padding: 1% 2%;
@@ -146,7 +146,7 @@ body, #root, #root .section{
 #arrow{
 
     font-size: 50px;
-    color: rgba(255,59,63,1);
+    color: #f76c6c;
     animation-duration: 3s;
 
 }
@@ -167,7 +167,7 @@ body, #root, #root .section{
     justify-content: flex-start;
     align-items: center;
 
-    background-color: #19181A;
+    background-color: #f9f9f9;
 }
 
 #about .sectionContainer{
@@ -191,13 +191,13 @@ body, #root, #root .section{
 
     margin: 5% 0 0 0;
 
-    border-bottom: solid #FF3b3F;
+    border-bottom: solid #f76c6c;
 
 }
 
 #aboutTitle{
-	border-right: solid #FF3b3F;
-	color: #f9f9f9;
+	border-right: solid #f76c6c;
+	color: #1d1e21;
 }
 
 #aboutTitleBox, #portfolioTitleBox, #contactTitleBox{
@@ -259,7 +259,7 @@ body, #root, #root .section{
     font-family: "Noto Sans", sans-serif;
     font-size: 15px;
 
-    color: #f9f9f9;
+    color: #1d1e21;
 
     margin: 0;
     text-align: justify;
@@ -278,7 +278,7 @@ body, #root, #root .section{
 
     padding: 1%;
 
-    border-top: solid #FF3b3F;
+    border-top: solid #f76c6c;
 }
 
 #me{
@@ -297,7 +297,7 @@ body, #root, #root .section{
     grid-template-rows: 10% 10% 80%;
     grid-template-columns: 10% 80% 10%;
 
-    background: #2B7A78;
+    background: #C5C6C7;
 }
 #portfolioTitleContainer{
     width: 40%;
@@ -305,7 +305,7 @@ body, #root, #root .section{
     display: grid;
     grid-column: 2 / 3;
     grid-row: 2 / 3;
-    border-bottom: solid #65CCB8;
+    border-bottom: solid #81CDC9;
 
 
 }
@@ -319,7 +319,7 @@ body, #root, #root .section{
 #portfolioTitle{
     justify-self: center;
 
-    border-right: solid #65CCB8;
+    border-right: solid #81CDC9;
     color: #17252A;
 }
 
@@ -341,7 +341,7 @@ body, #root, #root .section{
     width: 50%;
     height: 80%;
 
-    color: #F9F9F9;
+    color: #81CDC9;
 
     justify-content: center;
     align-items: center;
@@ -350,8 +350,8 @@ body, #root, #root .section{
 .drop a{
     width: 100%;
 
-    border-right: white solid;
-    border-left: white solid;
+    border-right: #81CDC9 solid;
+    border-left: #81CDC9 solid;
     height: 100%;
 
     display: flex;
@@ -363,8 +363,8 @@ body, #root, #root .section{
 }
 
 .drop a:hover{
-    background-color: #65CCB8;
-    color: #17252A;
+    background-color: #81CDC9;
+    color: #1d1e21;
 
     transition-property: background-color;
     transition-duration: 0.5s;
@@ -412,11 +412,11 @@ body, #root, #root .section{
     align-items: center;
     text-align: center;
 
-    background-color: #65CCB8;
+    background-color: #1d1e21;
 }
 
 #current i, #next i, #inProgress i{
-    color: #1d1e21;
+    color: #81CDC9;
 }
 
 #projectContainer{
@@ -456,7 +456,7 @@ body, #root, #root .section{
 }
 
 #projectContainer a{
-    text-decoration-color: #65CCB8;
+    text-decoration-color: #81CDC9;
 }
 
 
@@ -474,7 +474,7 @@ body, #root, #root .section{
     transition: background-color, color;
     transition-duration: 0.5s;
 
-    border: white solid;
+    border: #81CDC9 solid;
 
     color: #F8F8F8;
 }
@@ -512,7 +512,7 @@ body, #root, #root .section{
     justify-content: center;
     align-items: center;
 
-    background-color: #19181A;
+    background-color: #f9f9f9;
 }
 
 #contact .sectionContainer{
@@ -537,12 +537,12 @@ body, #root, #root .section{
     width: 40%;
     margin: 5% 0 0 0;
 
-    border-bottom: solid #F76C6C;
+    border-bottom: solid #86c232;
 }
 
 #contactTitle{
-	border-right: solid #F76C6C;
-	color: #B19F9E;
+	border-right: solid #86c232;
+	color: #1d1e21;
 }
 
 #contactContentContainer{
@@ -576,10 +576,10 @@ body, #root, #root .section{
    margin: 0;
 
    background: transparent;
-   color: #B19F9E;
+   color: #1d1e21;
 
    border-top: none;
-   border-bottom: #F76C6C solid;
+   border-bottom: #86c232 solid;
    border-left: none;
    border-right: none;
 
@@ -598,7 +598,7 @@ body, #root, #root .section{
 
    padding: 1%;
 
-   background: #1d1e21;
+   background: #C5C6C7;
 
    border: none;
 
@@ -613,7 +613,7 @@ body, #root, #root .section{
 
    padding: 1%;
 
-   background: #1d1e21;
+   background: #C5C6C7;
 
    border: none;
 }
@@ -622,9 +622,9 @@ body, #root, #root .section{
    height: 10%;
 
    background: transparent;
-   color: #B19F9E;
-   border-top: #F76C6C solid;
-   border-bottom: #F76C6C solid;
+   color: #1d1e21;
+   border-top: #86c232 solid;
+   border-bottom: #86c232 solid;
    border-left: none;
    border-right: none;
 
@@ -640,8 +640,8 @@ body, #root, #root .section{
 
 #contactContentContainer form button:hover{
     cursor: pointer;
-    color: black;
-    background-color: #B19F9E;
+    color: #1d1e21;
+    background-color: #f9f9f9;
 }
 
 #connectionsContainer{
@@ -662,7 +662,7 @@ body, #root, #root .section{
     flex-grow: 1;
 
     background: transparent;
-    color: #F76C6C;
+    color: #86c232;
 
     transition-property: color, background-color;
     transition-duration: 0.5s;

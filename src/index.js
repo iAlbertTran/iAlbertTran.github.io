@@ -467,42 +467,42 @@ function highlightButton(){
 	switch(true){
 		case(windowPosition === 0):
 			let home = document.getElementsByClassName("home")[0];
-			home.style.borderBottom = "#FF3b3F solid";
-			$("#navBar a .fa-fw").css("color","#FF3b3F");
-			$("#aplusplus").css("border", "#FF3b3F solid");
-			navBarHover("#FF3b3F");
+			home.style.borderBottom = "#f76c6c solid";
+			$("#navBar a .fa-fw").css("color","#f76c6c");
+			$("#aplusplus").css("border", "#f76c6c solid");
+			navBarHover("#f76c6c");
 			return(".home");
 
 		case (windowPosition > 0 && windowPosition < aboutStartPos - sectionMidPoint):
 			home = document.getElementsByClassName("home")[0];
-			home.style.borderBottom = "#FF3b3F solid";
-			$("#navBar a .fa-fw").css("color","#FF3b3F");
-			$("#aplusplus").css("border", "#FF3b3F solid");
-			navBarHover("#FF3b3F");
+			home.style.borderBottom = "#f76c6c solid";
+			$("#navBar a .fa-fw").css("color","#f76c6c");
+			$("#aplusplus").css("border", "#f76c6c solid");
+			navBarHover("#f76c6c");
 			return(".home");
 
 		case (windowPosition >= aboutStartPos - sectionMidPoint && windowPosition < portfolioStartPos - sectionMidPoint):
 			let about = document.getElementsByClassName("about")[0];
-			about.style.borderBottom = "#FF3b3F solid";
-			$("#navBar a .fa-fw").css("color","#FF3b3F");
-			$("#aplusplus").css("border", "#FF3b3F solid");
-			navBarHover("#FF3b3F");
+			about.style.borderBottom = "#f76c6c solid";
+			$("#navBar a .fa-fw").css("color","#f76c6c");
+			$("#aplusplus").css("border", "#f76c6c; solid");
+			navBarHover("#f76c6c");
 			return(".about");
 
 		case (windowPosition >= portfolioStartPos - sectionMidPoint && windowPosition < contactStartPos - sectionMidPoint):
 			let portfolio = document.getElementsByClassName("portfolio")[0];
-			portfolio.style.borderBottom = "#65CCB8 solid";
-			$("#navBar a .fa-fw").css("color","#65CCB8");
-			$("#aplusplus").css("border", "#65CCB8 solid");
-			navBarHover("#65CCB8");
+			portfolio.style.borderBottom = "#81CDC9 solid";
+			$("#navBar a .fa-fw").css("color","#81CDC9");
+			$("#aplusplus").css("border", "#81CDC9 solid");
+			navBarHover("#81CDC9");
 			return(".portfolio");
 
 		case (windowPosition >= contactStartPos - sectionMidPoint):
 			let contact = document.getElementsByClassName("contact")[0];
-			contact.style.borderBottom = "#F76C6C solid";
-			$("#navBar a .fa-fw").css("color","#F76C6C");
-			$("#aplusplus").css("border", "#F76C6C solid");
-			navBarHover("#F76C6C");
+			contact.style.borderBottom = "#86c232 solid";
+			$("#navBar a .fa-fw").css("color","#86c232");
+			$("#aplusplus").css("border", "#86c232 solid");
+			navBarHover("#86c232");
 			return(".contact");
 
 		default: break;
