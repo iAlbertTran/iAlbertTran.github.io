@@ -20,9 +20,13 @@ class Title extends React.Component{
 	render(){
 		let title = this.props.id;
 		title += "Title";
+		let color = {color: this.props.color};
+
+
+		console.log(color);
 
 		return(
-			<div id={title}>{this.props.title}</div>
+			<div id={title}><span style={color}>&lt;</span>{this.props.title}<span style={color}>/&gt;</span></div>
 		);
 	}
 }
@@ -34,7 +38,7 @@ class TitleBox extends React.Component{
 
 		return(
 			<div id={titleBox}>
-				<Title id={this.props.id} title={this.props.title.toUpperCase()}/>
+				<Title id={this.props.id} title={this.props.title.toUpperCase()} color={this.props.color}/>
 			</div>
 		);
 	}
@@ -47,7 +51,7 @@ class TitleContainer extends React.Component{
 
 		return(
 			<div id={title}>
-				<TitleBox id={this.props.id} title={this.props.title}/>
+				<TitleBox id={this.props.id} title={this.props.title} color={this.props.color}/>
 			</div>
 		);
 	}
@@ -173,7 +177,7 @@ class Section extends React.Component{
 		return(
 			<div id={this.props.id} className={this.props.className}>
 
-					<TitleContainer id={this.props.id} title={this.props.title}/>
+					<TitleContainer id={this.props.id} title={this.props.title} color={this.props.color}/>
 					<Content id={this.props.id} onClick={this.props.onClick}/>
 
 			</div>
@@ -430,9 +434,9 @@ class Site extends React.Component{
 				<MobileMenu id="mobile-menu"
 					onClick={(clickedLink) => this.handleClick(clickedLink)}
 				/>
-				<Section id="about" className="section" title="About Me"/>
-				<Section id="portfolio" className="section" title="Portfolio" onClick={(clickedLink) => this.expand(clickedLink)}/>
-				<Section id="contact" className="section" title="Connect With Me"/>
+				<Section id="about" className="section" title="About" color="#f76c6c"/>
+				<Section id="portfolio" className="section" title="Portfolio" onClick={(clickedLink) => this.expand(clickedLink)} color="#81CDC9"/>
+				<Section id="contact" className="section" title="Connect" color="#86c232"/>
 				<Footer />
 			</div>
 		);
