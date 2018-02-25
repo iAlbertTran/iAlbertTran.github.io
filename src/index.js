@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import $ from 'jquery';
 import me from './img/me.png';
+
+//global variables for application-wide use
 let aboutStartPos;
 let portfolioStartPos;
 let contactStartPos;
@@ -201,6 +203,15 @@ class FrontCover extends React.Component{
 	}
 }
 
+function FooterAnchor(props){
+	return(
+		<a href={props.href} target="_blank" rel="noopener noreferrer">
+			<div id={props.id}>
+				<i className={props.className}></i>
+			</div>
+		</a>
+	);
+}
 class Footer extends React.Component{
 
 	render(){
@@ -208,36 +219,35 @@ class Footer extends React.Component{
 
 				<div id="connectionsContainer">
 
-	                <a href="https://www.linkedin.com/in/alberttran17/" target="_blank" rel="noopener noreferrer">
-	                    <div id="linkedIn">
-	                        <i className="fa-fw fab fa-linkedin"></i>
-	                    </div>
-	                </a>
+	                <FooterAnchor 
+	                	href="https://www.linkedin.com/in/alberttran17/"
+	                    id="linkedIn"
+	                    className="fa-fw fab fa-linkedin"
+	                />
 
-	                <a href="https://github.com/iAlbertTran" target="_blank" rel="noopener noreferrer">
-	                    <div id="github">
-	                        <i className="fa-fw fab fa-github"></i>
-	                    </div>
-	                </a>
+	                <FooterAnchor 
+	                	href="https://github.com/iAlbertTran"
+	                    id="github"
+	                    className="fa-fw fab fa-github"
+	                />
 
-	                <a href="https://www.facebook.com/albert.tran.77" target="_blank" rel="noopener noreferrer">
-	                    <div id="facebook">
-	                        <i className="fa-fw fab fa-facebook-square"></i>
-	                    </div>
-	                </a>
+	                <FooterAnchor 
+	                	href="https://www.facebook.com/albert.tran.77"
+	                    id="facebook"
+	                    className="fa-fw fab fa-facebook-square"
+	                />
 
-	                <a>
-	                    <div id="skype">
-	                        <i className="fa-fw fab fa-skype"></i>
-	                    </div>
-	                </a>
+	                <FooterAnchor 
+	                	href="#"
+	                    id="skype"
+	                    className="fa-fw fab fa-skype"
+	                />
 
-	                <a href="https://www.freecodecamp.org/ialberttran" target="_blank" rel="noopener noreferrer">
-	                    <div id="fcc">
-	                        <i className="fa-fw fab fa-free-code-camp"></i>
-	                    </div>
-	                </a>
-
+	                <FooterAnchor 
+	                	href="https://www.freecodecamp.org/ialberttran"
+	                    id="fcc"
+	                    className="fa-fw fab fa-free-code-camp"
+	                />
 			    </div>
 
 		);
