@@ -8,6 +8,7 @@ let portfolioStartPos;
 let contactStartPos;
 let windowPosition;
 let currentSection;
+let homeEndPos;
 
 
 class Title extends React.Component{
@@ -393,18 +394,19 @@ window.onload = function(){
 	//adjustSectionTitle("portfolio", 10);
 	//adjustSectionTitle("contact", 10);
 
-	//frontCoverStartPos = $('#frontCover').offset().top;
+	homeEndPos = $('#home').offset().bottom;
 	aboutStartPos = $('#about').offset().top;
 	portfolioStartPos = $('#portfolio').offset().top;
 	contactStartPos = $('#contact').offset().top;
 
 	let nav = document.getElementById("navBarContainer");
 
-	if($(window).scrollTop() >= aboutStartPos){
+	if($(window).scrollTop() >= homeEndPos){
 			nav.style.position = "fixed";
 	}
 	else
 		nav.style.position = "static";
+
 	if(window.innerWidth > 767)
     	currentSection = highlightButton();
 }

@@ -155,7 +155,7 @@ body, #root, #root .section{
 /* About section css */
 /********************************************************************************************/
 
-
+/*
 #about, #contact{
     height: 100%;
     background-color: #f9f9f9;
@@ -206,7 +206,7 @@ body, #root, #root .section{
  
 
 }
-
+*/
 #aboutTitle, #portfolioTitle, #contactTitle {
     overflow: hidden;
     white-space: nowrap;
@@ -221,7 +221,7 @@ body, #root, #root .section{
     transition-duration: 2.5s;
 
 }
-
+/*
 #aboutContentContainer{
     display: flex;
     justify-content: space-around;
@@ -254,6 +254,97 @@ body, #root, #root .section{
 #photoContainer{
     margin: 2.5%;
     flex-grow: 1;
+}
+#aboutMeTxt{
+    font-family: "Noto Sans", sans-serif;
+    font-size: 15px;
+
+    color: #1d1e21;
+
+    margin: 0;
+    text-align: justify;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+}
+
+#aboutMeTxt #quote, #aboutMeTxt #author{
+    width: 100%;
+
+    font-weight: bold;
+    text-align: center;
+
+    padding: 1%;
+
+    border-top: solid #f76c6c;
+}
+
+#me{
+    border-radius: 200px;
+    height: 300px;
+    width: 300px;
+}*/
+#about{
+    display: grid;
+    grid-template-rows: 10% 90%;
+    grid-template-columns: 10% 80% 10%;
+
+    background: #f9f9f9;
+}
+
+#aboutTitleContainer{
+    width: 40%;
+    justify-self: center;
+    display: grid;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    border-bottom: solid #f76c6c;
+
+
+}
+
+#aboutTitleBox{
+    justify-self: center; 
+
+    display: grid;
+}
+
+#aboutTitle{
+    justify-self: center;
+
+    border-right: solid #f76c6c;
+    color: #17252A;
+}
+
+#aboutTitleBox, #portfolioTitleBox, #contactTitleBox{
+    display: inline-block;
+    padding: 1%;
+}
+
+#aboutContentContainer{
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-columns: 40% 60%;
+
+}
+
+#aboutTxtContainer, #photoContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#aboutTxtContainer{
+    padding: 2.5%;
+
+    grid-column: 2 / 3;
+}
+
+#photoContainer{
+    grid-column: 1 / 2;
 }
 #aboutMeTxt{
     font-family: "Noto Sans", sans-serif;
@@ -802,22 +893,25 @@ body, #root, #root .section{
 
 
 @media screen and (max-width: 767px) {
-	#about .sectionContainer, #portfolio .sectionContainer, #contact .sectionContainer{
-		width: 95%;
-	}
-    #aboutTxtContainer {
-        padding: 2.5% 10%;
+
+    #aboutTxtContainer{
+        padding: 2.5%;
+
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
     }
+
+    #photoContainer{
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
 
     #aboutContentContainer {
-        flex-direction: column;
-        justify-content: space-around;
-        height: 100%;
+        grid-template-rows: 30% 70%;
+        grid-template-columns: 100%;
     }
 
-    #aboutTxtContainer, #photoContainer {
-        margin: 0;
-    }
     .drop{
         flex-direction: column;
     }
