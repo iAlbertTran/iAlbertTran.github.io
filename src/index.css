@@ -186,18 +186,13 @@ body, #root, #root .section{
     grid-row: 2 / 3;
     border-bottom: solid #f76c6c;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-}
-
-#aboutTitleBox{
-    justify-self: center; 
-
-    display: grid;
 }
 
 #aboutTitle{
-    justify-self: center;
-
     border-right: solid #f76c6c;
     color: #17252A;
 }
@@ -282,18 +277,14 @@ body, #root, #root .section{
     grid-row: 2 / 3;
     border-bottom: solid #81CDC9;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-}
 
-#portfolioTitleBox{
-    justify-self: center; 
-
-    display: grid;
 }
 
 #portfolioTitle{
-    justify-self: center;
-
     border-right: solid #81CDC9;
     color: #17252A;
 }
@@ -479,122 +470,117 @@ body, #root, #root .section{
 #root #contact{
     height: 90vh;
 }
+
+
 #contact{
-    height: 100%;
+    display: grid;
+    grid-template-rows: 10% 10% 80%;
+    grid-template-columns: 10% 80% 10%;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    background-color: #f9f9f9;
+    background: #f9f9f9;
 }
-
-#contact .sectionContainer{
-	width: 80%;
-	height: 100%;
-
-
-	display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-}
-
 #contactTitleContainer{
+    width: 40%;
+    justify-self: center;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    border-bottom: solid #86c232;
 
     display: flex;
     justify-content: center;
+    align-items: center;
 
-    transition-property: background;
-    transition-duration: 0.5s;
 
-    width: 40%;
-    margin: 5% 0 0 0;
-
-    border-bottom: solid #86c232;
 }
+
 
 #contactTitle{
-	border-right: solid #86c232;
-	color: #1d1e21;
+
+    border-right: solid #86c232;
+    color: #1d1e21;
 }
 
 #contactContentContainer{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    grid-row: 3 / 4;
+    grid-column: 2 / 3;
 
-    
-    margin: 0 5%;
-
-    width: 100%;
-    height: 75%;
-
-    border-radius: 10px;
-
-}
-
-#contactContentContainer form, #contactContentContainer #connectionsContainer{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    width: 40%;
-    height: 80%;
+    font-size: 50px;
 
     font-family: "Comfortaa", sans-serif;
+
 }
 
-#contactContentContainer form div{
-   height: 15%;
-   margin: 0;
+#contactContentContainer form{
+    width: 100%;
+    display: grid;
+    grid-template-rows: 20% 60% 20%;
+    grid-template-columns: 20% 60% 20%; 
+    height: 100%;
 
-   background: transparent;
+    justify-self: center;
+    align-self: center;
+
+    margin-right: 0px;
+}
+
+#contactContentContainer form #email{
+
    color: #1d1e21;
-
-   border-top: none;
    border-bottom: #86c232 solid;
-   border-left: none;
-   border-right: none;
+   font-size: 25px;
+
+   grid-row: 1 / 2;
+   grid-column: 2 / 3;
+   align-self: center;
+
+   width: 100%;
+   height: 40%;
 
    display: flex;
    justify-content: space-between;
    align-items: center;
 
-   font-size: 25px;
 }
 
 #contactContentContainer form input{
-   height: 10%;
-   font-size: 25px;
+    height: 20%;
+    font-size: 25px;
 
-   color: #B19F9E;
+    color: #86c232;
 
-   padding: 1%;
+    padding: 1%;
 
-   background: #C5C6C7;
+    background: #C5C6C7;
 
-   border: none;
+    border: none;
 
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+
+    align-self: start;
 }
 
 #contactContentContainer form textarea {
-   height: 40%;
+   height: 60%;
    font-size: 25px;
    resize: none;
 
-   color: #B19F9E;
+   color: #86c232;
 
    padding: 1%;
 
    background: #C5C6C7;
 
    border: none;
+
+   grid-row: 2 / 3;
+   grid-column: 2 / 3;
+
+   align-self: end;
 }
 
 #contactContentContainer form button{
-   height: 10%;
+   height: 40%;
 
    background: transparent;
    color: #1d1e21;
@@ -611,13 +597,21 @@ body, #root, #root .section{
 
    transition-property: color, background-color;
    transition-duration: 0.5s;
+
+   grid-row: 3 / 3;
+   grid-column: 2 / 3;
+
+   align-self: center;
 }
 
 #contactContentContainer form button:hover{
     cursor: pointer;
-    color: #1d1e21;
-    background-color: #f9f9f9;
+    color: #86c232;
+    background-color: #1d1e21;
 }
+/********************************************************************************************/
+/* Footer */
+/********************************************************************************************/
 
 #connectionsContainer{
     display: flex;
@@ -816,19 +810,13 @@ body, #root, #root .section{
         grid-template-columns: 100%;
     }
 
-    #contactContentContainer {
-        flex-direction: column-reverse;
+    #contactContentContainer form{
+        grid-template-columns: 0 100% 0;
     }
 
-    
-    #contactContentContainer form {
-        width: 80%;
-        height: 75%;
-    }
-
-    #contactContentContainer form div {
-        justify-content: center;
+    #contactContentContainer form #email {
         font-size: 40px;
+        justify-content: center;
 
     }
 
@@ -846,7 +834,6 @@ body, #root, #root .section{
         position: static;
         transform: none;
         align-self: center;
-        width: 80%;
 
         margin-bottom: 5%;
     }
@@ -857,9 +844,6 @@ body, #root, #root .section{
 }
 
 @media only screen and (max-width: 480px) and (max-height: 480px) {
-    #aboutTxtContainer {
-        padding: 2.5%;
-    }
 
     #aboutMeTxt {
         font-size: 7px;
