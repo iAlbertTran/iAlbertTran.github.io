@@ -9,6 +9,9 @@ let contactStartPos;
 let windowPosition;
 let currentSection;
 let homeEndPos;
+let navHeight;
+let mobile;
+let nav;
 
 
 class Title extends React.Component{
@@ -260,11 +263,41 @@ function NavAnchor(props){
 }
 
 function NavBar(props){
-	let mobile = false;
-	mobile = (window.innerWidth < 767);
 
-	let navBar = (!mobile) ? 
-		<div id="navBar">
+	let navBar =(
+				<div id="navBar">
+				<NavAnchor 
+	            	specificAnchor="home" 
+	            	onClick={() => props.onClick('home')} 
+	            	fontAwesome = "far fa-arrow-alt-circle-up"
+	            />
+
+	            <NavAnchor 
+	            	specificAnchor="about" 
+	            	onClick={() => props.onClick('about')} 
+	            	fontAwesome = "far fa-address-card"
+	            />
+
+	            <NavAnchor 
+	            	specificAnchor="portfolio" 
+	            	onClick={() => props.onClick('portfolio')} 
+	            	fontAwesome = "fas fa-cogs"
+	            />
+
+	            <NavAnchor 
+	            	specificAnchor="contact" 
+	            	onClick={() => props.onClick('contact')} 
+	            	fontAwesome = "far fa-envelope"
+	            />
+			</div>
+		);
+	return navBar;
+
+}
+
+function MobileMenu(props){
+	return(
+		<div id={props.id}>
 			<NavAnchor 
             	specificAnchor="home" 
             	onClick={() => props.onClick('home')} 
@@ -288,11 +321,8 @@ function NavBar(props){
             	onClick={() => props.onClick('contact')} 
             	fontAwesome = "far fa-envelope"
             />
-		</div>: 
-
-		<i id="hamburgerMenu" className="fa fa-bars"></i>;
-	return navBar;
-
+		</div>
+);
 }
 
 class Navigation extends React.Component{
@@ -304,17 +334,15 @@ class Navigation extends React.Component{
 		        <div id="aplusplus">A++</div>
 
 		        <NavBar onClick={this.props.onClick}/>
-
+		        <a id="hamburgerMenu" onClick={this.props.mobileMenu}>
+		        	<i className="fa fa-bars"></i>
+		        </a>
 	    	</div>
 		);
 	}
 }
 
 class Site extends React.Component{
-	constructor(props){
-		super(props);
-		this.state = {mobile: null}
-	}
 
 	handleClick(clickedLink){
 		const splitHref = '#' + clickedLink;
@@ -326,12 +354,21 @@ class Site extends React.Component{
 		//used to consider when the 'about' nav button is clicked while its not fixed to the top of the page
 		//accounts for that space it takes up on the page when the animation scrolls to about section
 		if($(window).scrollTop() < homeEndPos){
-			const navHeight = document.getElementById("navBarContainer").getBoundingClientRect().height;
 			pageSectionPosition -= navHeight;
 		}
 
 		//animates the scrolling function by making the scrollTop of the body change over 1000ms
 		$("html, body").animate({scrollTop: pageSectionPosition}, 500);
+	}
+
+	//expands and collapses mobile menu
+	mobileMenu(){
+		if(mobile.style.height === '' || mobile.style.height === '0px')
+			mobile.style.height = "20%";
+
+		else
+			mobile.style.height = "0px";
+		
 	}
 
 	//expands the list of skills on the portoflio section
@@ -377,6 +414,10 @@ class Site extends React.Component{
 					onClick={(clickedLink) => this.handleClick(clickedLink)}
 				/>
 				<Navigation 
+					onClick={(clickedLink) => this.handleClick(clickedLink)} 
+					mobileMenu={() => this.mobileMenu()}
+				/>
+				<MobileMenu id="mobile-menu"
 					onClick={(clickedLink) => this.handleClick(clickedLink)}
 				/>
 				<Section id="about" className="section" title="About Me"/>
@@ -391,61 +432,52 @@ class Site extends React.Component{
 ReactDOM.render(<Site/>, document.getElementById('root'));
 
 
-window.onload = function(){
+window.onload = (
+	loadScrollResize,
+	typingAnimation("portfolio"),
+	typingAnimation("about"),
+	typingAnimation("contact"));
 
+window.onscroll = loadScrollResize;
+window.onresize = loadScrollResize;
+
+
+//for window.onload onreize and onscroll
+function loadScrollResize() {
 	windowPosition = $(window).scrollTop();
 
-	typingAnimation("portfolio");
-	typingAnimation("about");
-	typingAnimation("contact");
-	//adjustSectionTitle("about", 10);
-	//adjustSectionTitle("portfolio", 10);
-	//adjustSectionTitle("contact", 10);
+	refreshValues()
+	adjustNav();
+	navBarColors();
 
+	currentSection = highlightButton();
+}
+
+//gets new values available for the rest of the page to use
+function refreshValues(){
 	homeEndPos = document.getElementById("home").getBoundingClientRect().height;
 	aboutStartPos = $('#about').offset().top;
 	portfolioStartPos = $('#portfolio').offset().top;
 	contactStartPos = $('#contact').offset().top;
-	let nav = document.getElementById("navBarContainer");
-
-	if($(window).scrollTop() >= homeEndPos){
-			nav.style.position = "fixed";
-	}
-	else
-		nav.style.position = "static";
-
-	if(window.innerWidth > 767)
-    	currentSection = highlightButton();
+	navHeight = $("#navBarContainer").outerHeight();
 }
-
-window.onscroll = function() {
-	windowPosition = $(window).scrollTop();
-
-	//transparentBG(document.getElementById("aboutContentContainer"));
-	//transparentBG(document.getElementById("aboutTitleContainer"));
-
-	let nav = document.getElementById("navBarContainer");
-
+//adjusts which nav-bar is displayed, as well as it's styling depending on what device is being used and what the user is viewing
+function adjustNav(){
+	nav = document.getElementById("navBarContainer");
+	mobile = document.getElementById("mobile-menu");
 	if($(window).scrollTop() >= homeEndPos){
-			nav.style.position = "fixed";
-			nav.style.padding = 0;
+		nav.style.position = "fixed";
+		nav.style.top = 0;
+		nav.style.padding = 0;
+		mobile.style.position = "fixed";
+		mobile.style.top = navHeight + "px";
 	}
 	else{
 		nav.style.position = "static";
 		nav.style.padding = "1% 0";
+		mobile.style.position = "static";
+		mobile.style.top = 0;
 	}
-
-	navBarColors();
-
-	if(window.innerWidth > 767)
-		currentSection = highlightButton();
-}
-
-window.onresize = function () {
-	homeEndPos = document.getElementById("home").getBoundingClientRect().height;
-	aboutStartPos = $('#about').offset().top;
-	portfolioStartPos = $('#portfolio').offset().top;
-	contactStartPos = $('#contact').offset().top;
 }
 
 
@@ -468,7 +500,7 @@ function navBarHover(color){
 //changes the appearance of the navBar depending on if user scrolled all the way up or down
 //uses jquery to reduce code to two lines, rather than having to use a for loop on the anchors
 function navBarColors(){
-		$("#navBar > a").css("borderBottom", "transparent solid");
+		$("#navBar > a, #mobile-menu > a").css("borderBottom", "transparent solid");
 }
 
 
@@ -478,18 +510,10 @@ function highlightButton(){
 	//gets the height of a section / 2, all sections are equal height
 	var sectionMidPoint = document.getElementById("about").getBoundingClientRect().height / 2;
 	switch(true){
-		case(windowPosition === 0):
+		case (windowPosition >= 0 && windowPosition < aboutStartPos - sectionMidPoint):
 			let home = document.getElementsByClassName("home")[0];
 			home.style.borderBottom = "#f76c6c solid";
-			$("#navBar a .fa-fw").css("color","#f76c6c");
-			$("#aplusplus").css("border", "#f76c6c solid");
-			navBarHover("#f76c6c");
-			return(".home");
-
-		case (windowPosition > 0 && windowPosition < aboutStartPos - sectionMidPoint):
-			home = document.getElementsByClassName("home")[0];
-			home.style.borderBottom = "#f76c6c solid";
-			$("#navBar a .fa-fw").css("color","#f76c6c");
+			$("#navBar a .fa-fw, #mobile-menu a .fa-fw").css("color","#f76c6c");
 			$("#aplusplus").css("border", "#f76c6c solid");
 			navBarHover("#f76c6c");
 			return(".home");
@@ -497,15 +521,15 @@ function highlightButton(){
 		case (windowPosition >= aboutStartPos - sectionMidPoint && windowPosition < portfolioStartPos - sectionMidPoint):
 			let about = document.getElementsByClassName("about")[0];
 			about.style.borderBottom = "#f76c6c solid";
-			$("#navBar a .fa-fw").css("color","#f76c6c");
-			$("#aplusplus").css("border", "#f76c6c; solid");
+			$("#navBar a .fa-fw, #mobile-menu a .fa-fw").css("color","#f76c6c");
+			$("#aplusplus").css("border", "#f76c6c solid");
 			navBarHover("#f76c6c");
 			return(".about");
 
 		case (windowPosition >= portfolioStartPos - sectionMidPoint && windowPosition < contactStartPos - sectionMidPoint):
 			let portfolio = document.getElementsByClassName("portfolio")[0];
 			portfolio.style.borderBottom = "#81CDC9 solid";
-			$("#navBar a .fa-fw").css("color","#81CDC9");
+			$("#navBar a .fa-fw, #mobile-menu a .fa-fw").css("color","#81CDC9");
 			$("#aplusplus").css("border", "#81CDC9 solid");
 			navBarHover("#81CDC9");
 			return(".portfolio");
@@ -513,7 +537,7 @@ function highlightButton(){
 		case (windowPosition >= contactStartPos - sectionMidPoint):
 			let contact = document.getElementsByClassName("contact")[0];
 			contact.style.borderBottom = "#86c232 solid";
-			$("#navBar a .fa-fw").css("color","#86c232");
+			$("#navBar a .fa-fw, #mobile-menu a .fa-fw").css("color","#86c232");
 			$("#aplusplus").css("border", "#86c232 solid");
 			navBarHover("#86c232");
 			return(".contact");
