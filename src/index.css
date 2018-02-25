@@ -452,6 +452,10 @@ body, #root, #root .section{
 
 }
 
+#projectContainer a:hover{
+    text-decoration: none;
+}
+
 .colorBox p {
     margin: 0;
     font-size: 50px;
