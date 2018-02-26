@@ -181,7 +181,7 @@ body, #root, #root .section{
     width: 0px;
     height: auto;
     font-size: 50px;
-    font-family: "Comfortaa", sans-serif;
+    font-family: "Baloo Chettan", sans-serif;
     transition-property: width;
     transition-timing-function: steps(25);
     transition-duration: 2.5s;
@@ -322,6 +322,8 @@ body, #root, #root .section{
 
     font-size: 30px;
     text-align: justify;
+
+    font-family: "Passion One", sans-serif;
 }
 
 
@@ -458,9 +460,11 @@ body, #root, #root .section{
     grid-row: 1 / 2;
     justify-self: center;
     align-self: center;
-
-    font-size: 75px;
 }
+
+#current i{ font-size: 65px; }
+
+#inProgress i, #next i{ font-size: 80px; }
 
 #current{
     justify-self: start;
@@ -476,13 +480,13 @@ body, #root, #root .section{
 
 #current p, #inProgress p, #next p{
     grid-row: 2 / 3;
-    font-size: 25px;
+    font-size: 20px;
     padding: 1%;
     text-align: justify;
 
     align-self: center;
 
-    overflow: scroll;
+    overflow: hidden;
 
     font-family: "Mukta Malar", sans-serif;
 }
@@ -840,7 +844,7 @@ body, #root, #root .section{
     .drop a{ font-size: 20px;}
     .colorBox p{ font-size: 20px; }
 
-    #current i, #inProgress i, #next i{ font-size: 45px; }
+    #current i, #inProgress i, #next i{ font-size: 30px; }
     #current p, #inProgress p, #next p{ font-size: 10px; }
 
 
@@ -872,8 +876,8 @@ body, #root, #root .section{
     .drop a{ font-size: 30px;}
     .colorBox p{ font-size: 30px; }
 
-    #current i, #inProgress i, #next i{ font-size: 45px; }
-    #current p, #inProgress p, #next p{ font-size: 10px; }
+    #current i, #inProgress i, #next i{ font-size: 40px; }
+    #current p, #inProgress p, #next p{ font-size: 12px; }
 
     #contactContentContainer form div { font-size: 15px; }
     #contactContentContainer form input { font-size: 15px; }
@@ -903,7 +907,7 @@ body, #root, #root .section{
     .drop a{ font-size: 30px;}
     .colorBox p{ font-size: 40px; }
 
-    #current i, #inProgress i, #next i{ font-size: 55px; }
+    #current i, #inProgress i, #next i{ font-size: 50px; }
     #current p, #inProgress p, #next p{ font-size: 15px; }
 
     #contactContentContainer form div { font-size: 20px; }
@@ -937,8 +941,8 @@ body, #root, #root .section{
     .drop a{ font-size: 40px;}
     .colorBox p{ font-size: 50px; }
 
-    #current i, #inProgress i, #next i{ font-size: 65px; }
-    #current p, #inProgress p, #next p{ font-size: 20px; }
+    #current i, #inProgress i, #next i{ font-size: 60px; }
+    #current p, #inProgress p, #next p{ font-size: 17px; }
 
     #contactContentContainer form div { font-size: 20px; }
     #contactContentContainer form input { font-size: 20px; }
@@ -1047,6 +1051,20 @@ body, #root, #root .section{
     #aboutMeTxt {
         font-size: 11px;
     }
+
+    #knowledgeContentContainer{
+        grid-template-rows: 15% 25% 55%;
+    }
+
+    #current p, #inProgress p, #next p{
+        font-size: 12px;
+    }
+
+    #current i{
+        font-size: 40px;
+    }
+
+     #inProgress i, #next i{ font-size: 60px; }
 }
 
 /* mid-sized smartphones*/
@@ -1054,5 +1072,15 @@ body, #root, #root .section{
     #aboutMeTxt {
         font-size: 10px;
     }
+
+    #current p, #inProgress p, #next p{
+        font-size: 11px;
+    }
+
+    #current i{
+        font-size: 40px;
+    }
+
+     #inProgress i, #next i{ font-size: 60px; }
 }
 
