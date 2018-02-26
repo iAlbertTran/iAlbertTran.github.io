@@ -356,8 +356,9 @@ body, #root, #root .section{
     color: #d344fa;
     font-size: 100px; 
 }
+
 #currentContainer #currentCog{
-    animation: roll 5s linear infinite;
+    animation: roll 2.5s linear infinite;
 }
 
 #nextContainer #nextCog{
