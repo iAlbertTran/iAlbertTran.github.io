@@ -6,6 +6,7 @@ import me from './img/me.png';
 
 //global variables for application-wide use
 let aboutStartPos;
+let knowledgeStartPos;
 let portfolioStartPos;
 let contactStartPos;
 let windowPosition;
@@ -85,41 +86,73 @@ class Content extends React.Component{
 	            	</div>
 				);
 				break;
-
-			case "portfolio":
+			case "knowledge":
 				content = (
 					<div id={contentContainer}>
+						<div id="opentext">
+							<p>In the software engineering world, there are countless programming languages, frameworks, and technologies available for each individual. Therefore, learning never ends! I have personal 
+							satisfaction each time I discover a new technique or skill I can use in my projects. Click a cog below to learn a bit about some of these skills!</p>
+						</div>
 			            <div className="drop" id="currentContainer" onClick={() => this.props.onClick("current")}>
-			                <a>Learned</a>
-			                <div id="current">
-			                    <i className="devicon-html5-plain-wordmark colored"></i>
-			                    <i className="devicon-css3-plain-wordmark colored"></i>
-			                    <i className="devicon-javascript-plain colored"></i>
-			                    <i className="devicon-postgresql-plain-wordmark colored"></i>
-			                    <i className="devicon-python-plain-wordmark colored"></i>
-			                </div>
+			            	<a id="currentCog"><i id="currentCog" className="fas fa-cog"></i></a>
+			                <a className="text">Present Skills</a>
 			            </div>
+			            <div id="current">
+		                    <i className="devicon-html5-plain-wordmark colored"></i>
+		                    <i className="devicon-css3-plain-wordmark colored"></i>
+		                    <i className="devicon-javascript-plain colored"></i>
+		                    <i className="devicon-postgresql-plain-wordmark colored"></i>
+		                    <i className="devicon-python-plain-wordmark colored"></i>
+		                    <p>With a focus on web development, It's only natural that I work with 
+		                    <span style={{color: "#E54D26"}}> HTML</span>, 
+		                    <span style={{color: "#3D8FC6"}}> CSS</span>, and 
+		                    <span style={{color: "#F0DB4F"}}> Javascript</span>. All of my past and current projects run using these three things. 
+		                    Thus, I believe myself to have a deep understanding of them and how they can be used to create a website, or web application. <br/><br/>
+		                    <span style={{color: "#336791"}}> SQL</span>, 
+		                    <span style={{color: "#336791"}}> PostgreSQL</span>, and 
+		                    <span style={{color: "#FFD845"}}> Python</span> is something 
+		                    I've worked with on a school project, where we implemented and 
+		                    queried a mock database of a school containing information about students and classes. I believe to have the skillset and understanding of how database systems and relational 
+		                    database management systems work, and the ways to interact with them. </p>
+		                </div>
 
 
 
 			            <div className="drop" id="inProgressContainer" onClick={() => this.props.onClick("inProgress")}>
-			                <a>In Progress...</a>
-			                <div id="inProgress">
-			                    <i className="devicon-react-original-wordmark colored"></i>
-			                </div>
+			            	<a id="inProgressCog"><i className="fas fa-cog"></i></a>
+			                <a className="text">Working On Now</a>
 			            </div>
+			            <div id="inProgress">
+		                    <i className="devicon-react-original-wordmark colored"></i>
+		                    <p>Most of my experience with javascript has been limited to vanilla javascript. I have not spent much time working with any frameworks that are rising in popularity lately.
+		                    So, I've taken it upon myself to begin learning some, starting with <span style={{color: "#61DAFB"}}> ReactJS</span>, a front-end framework. In fact, this webpage uses React by building components and rendering them to the user, like each section!
+		                    <br/><br/>While confusing at first, my abilities to research, troubleshoot, and go through documentation has been extremely helpful in learning the ins and outs of React. As time goes on, I plan to 
+		                    build more complex applications with it!</p>
+		                </div>
 
 
 
 			            <div className="drop" id="nextContainer" onClick={() => this.props.onClick("next")}>
-			                <a>Next</a>
-			                <div id="next">
-			                    <i className="devicon-nodejs-plain-wordmark colored"></i>
-			                    <i className="devicon-mysql-plain-wordmark colored"></i>
-			                </div>
+			            	<a id="nextCog"><i className="fas fa-cog"></i></a>
+			                <a className="text">Future Plans</a>
 			            </div>
-
-
+			            <div id="next">
+		                    <i className="devicon-nodejs-plain-wordmark colored"></i>
+		                    <i className="devicon-mysql-plain-wordmark colored"></i>
+		                    <p>As I previously mentioned, learning never stops! There's always something new being released, or some technique I haven't had the opportunity to explore just yet. However, it's my intention to 
+		                    eventually get to as many of them as I can! As of now, I intend to fiddle with 
+		                    <span style={{color: "#83CD29"}}> NodeJS</span> and 
+		                    <span style={{color: "#06658D"}}> MySQL</span> so I can build the back-end of projects, leading to a fully functioning application!<br/><br/>
+		                     I do have some 
+		                    experience with NodeJS building a ReST API, using it in an application that allows users to upload images and having it generate labels through Google's Cloud Computing Vison API. While it's been awhile since then, I have 
+		                    confidence that I'll be able to pick up right where I left off seamlessly!</p>
+		                </div>
+			       	</div>
+			    );
+				break;
+			case "portfolio":
+				content = (
+					<div id={contentContainer}>
 			            <div id="projectContainer">
 			                <a href="https://ialberttran.github.io/weather-app/" target="_blank" rel="noopener noreferrer">
 			                    <div id="weatherApp">
@@ -164,6 +197,10 @@ class Content extends React.Component{
 				break;
 
 			default:
+				content = (
+					<div id={contentContainer}>
+					</div>
+				);
 				break;
 		}
 
@@ -293,6 +330,12 @@ function NavBar(props){
 	            />
 
 	            <NavAnchor 
+	            	specificAnchor="knowledge" 
+	            	onClick={() => props.onClick('knowledge')} 
+	            	fontAwesome = "far fa-lightbulb"
+            	/>
+
+	            <NavAnchor 
 	            	specificAnchor="portfolio" 
 	            	onClick={() => props.onClick('portfolio')} 
 	            	fontAwesome = "fas fa-cogs"
@@ -322,6 +365,12 @@ function MobileMenu(props){
             	specificAnchor="about" 
             	onClick={() => props.onClick('about')} 
             	fontAwesome = "far fa-address-card"
+            />
+
+            <NavAnchor 
+            	specificAnchor="knowledge" 
+            	onClick={() => props.onClick('knowledge')} 
+            	fontAwesome = "far fa-lightbulb"
             />
 
             <NavAnchor 
@@ -378,7 +427,7 @@ class Site extends React.Component{
 	//expands and collapses mobile menu
 	mobileMenu(){
 		if(mobile.style.height === '' || mobile.style.height === '0px')
-			mobile.style.height = "20%";
+			mobile.style.height = "25%";
 
 		else
 			mobile.style.height = "0px";
@@ -389,35 +438,89 @@ class Site extends React.Component{
 	expand(target) {
 	    //gets what was clicked minus "Container" to expand the content;
 	    let content = document.getElementById(target);
+	    let current = document.getElementById("current");
+	    let inProgress = document.getElementById("inProgress");
+	    let next = document.getElementById("next");
 
 	    //switch case for window size (mobile or desktop). 
 	    //If desktop, containers are to the right of anchors
 	    //if mobile, containers are below anchors
-	    switch (true) {
+	    switch(content.id){
 
-	        case (window.innerWidth > 767):
-	            if (content.style.width === "100%")
-	                content.style.width = "0px";
-	            else
-	                content.style.width = "100%";
-	            break;
+	    	case "current":
 
-	        case (window.innerWidth <= 767):
-	            if (content.style.height === "100%") {
-	                content.style.height = "0px";
-	                content.style.display = "none";
-	            }
-	            else {
-	                content.style.height = "100%";
-	                content.style.display = "flex";
-	            }
-	            break;
+	    		inProgress.style.borderLeft = "#d344fa transparent";
+	        	inProgress.style.borderRight = "#d344fa transparent";
+	        	inProgress.style.width = "1px";
 
-	        default:
-	        	break;
+        		next.style.borderLeft = "#d344fa transparent";
+	        	next.style.borderRight = "#d344fa transparent";
+	        	next.style.width = "1px";
+
+	        	setTimeout(function(){
+	        		next.style.height = "0px";
+	        		inProgress.style.height = "0px";
+        		}, 500);
+	    		break; 
+
+	    	case "inProgress":
+
+	    		current.style.borderLeft = "#d344fa transparent";
+	        	current.style.borderRight = "#d344fa transparent";
+	        	current.style.width = "1px";
+
+        		next.style.borderLeft = "#d344fa transparent";
+	        	next.style.borderRight = "#d344fa transparent";
+	        	next.style.width = "1px";
+
+	        	setTimeout(function(){
+	        		next.style.height = "0px";
+	        		current.style.height = "0px";
+        		}, 500);
+        		break;
+
+        	case "next":
+
+        		current.style.borderLeft = "#d344fa transparent";
+	        	current.style.borderRight = "#d344fa transparent";
+	        	current.style.width = "1px";
+
+        		inProgress.style.borderLeft = "#d344fa transparent";
+	        	inProgress.style.borderRight = "#d344fa transparent";
+	        	inProgress.style.width = "1px";
+
+	        	setTimeout(function(){
+	        		inProgress.style.height = "0px";
+	        		current.style.height = "0px";
+        		}, 500);
+        		break;
+        	default:
+        		break;
+
 	    }
 
-	}
+        if (content.style.width === "100%"){
+        	content.style.borderLeft = "#d344fa transparent";
+        	content.style.borderRight = "#d344fa transparent";
+        	content.style.width = "1px";
+        	setTimeout(function(){
+        		content.style.height = "0px";
+        	}, 500);
+        }
+        else{
+        	setTimeout(function(){
+        		content.style.borderLeft = "#d344fa solid";
+	        	content.style.borderRight = "#d344fa solid";
+	        	content.style.width = "1px";
+	            content.style.height = "100%";
+	        	setTimeout(function(){
+	        		content.style.width = "100%";
+	        	}, 500);
+        	}, 500);
+    
+        }
+    }
+
 
 
 	render(){
@@ -435,7 +538,8 @@ class Site extends React.Component{
 					onClick={(clickedLink) => this.handleClick(clickedLink)}
 				/>
 				<Section id="about" className="section" title="About" color="#f76c6c"/>
-				<Section id="portfolio" className="section" title="Portfolio" onClick={(clickedLink) => this.expand(clickedLink)} color="#81CDC9"/>
+				<Section id="knowledge" className="section" title="knowledge" color="#d344fa" onClick={(clickedLink) => this.expand(clickedLink)}	/>
+				<Section id="portfolio" className="section" title="Portfolio"/>
 				<Section id="contact" className="section" title="Connect" color="#86c232"/>
 				<Footer />
 			</div>
@@ -450,7 +554,9 @@ window.onload = (
 	loadScrollResize,
 	typingAnimation("portfolio"),
 	typingAnimation("about"),
+	typingAnimation("knowledge"),
 	typingAnimation("contact"));
+
 
 window.onscroll = loadScrollResize;
 window.onresize = loadScrollResize;
@@ -471,6 +577,7 @@ function loadScrollResize() {
 function refreshValues(){
 	homeEndPos = document.getElementById("home").getBoundingClientRect().height;
 	aboutStartPos = $('#about').offset().top;
+	knowledgeStartPos = $('#knowledge').offset().top;
 	portfolioStartPos = $('#portfolio').offset().top;
 	contactStartPos = $('#contact').offset().top;
 	navHeight = $("#navBarContainer").outerHeight();
@@ -532,13 +639,21 @@ function highlightButton(){
 			navBarHover("#f76c6c");
 			return(".home");
 
-		case (windowPosition >= aboutStartPos - sectionMidPoint && windowPosition < portfolioStartPos - sectionMidPoint):
+		case (windowPosition >= aboutStartPos - sectionMidPoint && windowPosition < knowledgeStartPos - sectionMidPoint):
 			let about = document.getElementsByClassName("about")[0];
 			about.style.borderBottom = "#f76c6c solid";
 			$("#navBar a .fa-fw, #mobile-menu a .fa-fw").css("color","#f76c6c");
 			$("#aplusplus").css("border", "#f76c6c solid");
 			navBarHover("#f76c6c");
 			return(".about");
+
+		case (windowPosition >= knowledgeStartPos - sectionMidPoint && windowPosition < portfolioStartPos - sectionMidPoint):
+			let knowledge = document.getElementsByClassName("knowledge")[0];
+			knowledge.style.borderBottom = "#d344fa solid";
+			$("#navBar a .fa-fw, #mobile-menu a .fa-fw").css("color","#d344fa");
+			$("#aplusplus").css("border", "#d344fa solid");
+			navBarHover("#d344fa");
+			return(".knowledge");
 
 		case (windowPosition >= portfolioStartPos - sectionMidPoint && windowPosition < contactStartPos - sectionMidPoint):
 			let portfolio = document.getElementsByClassName("portfolio")[0];
