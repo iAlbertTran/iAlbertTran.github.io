@@ -320,7 +320,7 @@ body, #root, #root .section{
     grid-row: 1 / 2;
     grid-column: 1 / 4;
 
-    font-size: 30px;
+    font-size: 25px;
     text-align: justify;
 
     font-family: "Passion One", sans-serif;
@@ -465,7 +465,7 @@ body, #root, #root .section{
 
 #current i{ font-size: 65px; }
 
-#inProgress i, #next i{ font-size: 80px; }
+#inProgress i, #next i{ font-size: 75px; }
 
 #current{
     justify-self: start;
@@ -481,7 +481,7 @@ body, #root, #root .section{
 
 #current p, #inProgress p, #next p{
     grid-row: 2 / 3;
-    font-size: 20px;
+    font-size: 18px;
     padding: 1%;
     text-align: justify;
 
@@ -890,7 +890,7 @@ body, #root, #root .section{
     #textContainer{ font-size: 50px; }
     #aboutMeTxt{ font-size: 17px; }
     #knowledgeContentContainer #opentext{
-        font-size: 20px;
+        font-size: 18px;
     }
     #me{
         border-radius: 290px;
@@ -908,8 +908,8 @@ body, #root, #root .section{
     .drop a{ font-size: 30px;}
     .colorBox p{ font-size: 40px; }
 
-    #current i, #inProgress i, #next i{ font-size: 50px; }
-    #current p, #inProgress p, #next p{ font-size: 15px; }
+    #current i, #inProgress i, #next i{ font-size: 45px; }
+    #current p, #inProgress p, #next p{ font-size: 14px; }
 
     #contactContentContainer form div { font-size: 20px; }
     #contactContentContainer form input { font-size: 20px; }
@@ -921,7 +921,7 @@ body, #root, #root .section{
     #textContainer{ font-size: 60px; }
     #aboutMeTxt{ font-size: 18px; }
     #knowledgeContentContainer #opentext{
-        font-size: 25px;
+        font-size: 22px;
     }
 
 
@@ -942,8 +942,8 @@ body, #root, #root .section{
     .drop a{ font-size: 40px;}
     .colorBox p{ font-size: 50px; }
 
-    #current i, #inProgress i, #next i{ font-size: 60px; }
-    #current p, #inProgress p, #next p{ font-size: 17px; }
+    #current i, #inProgress i, #next i{ font-size: 55px; }
+    #current p, #inProgress p, #next p{ font-size: 16px; }
 
     #contactContentContainer form div { font-size: 20px; }
     #contactContentContainer form input { font-size: 20px; }
@@ -1065,7 +1065,7 @@ body, #root, #root .section{
         font-size: 40px;
     }
 
-     #inProgress i, #next i{ font-size: 60px; }
+     #inProgress i, #next i{ font-size: 55px; }
 }
 
 /* mid-sized smartphones*/
@@ -1082,6 +1082,6 @@ body, #root, #root .section{
         font-size: 40px;
     }
 
-     #inProgress i, #next i{ font-size: 60px; }
+     #inProgress i, #next i{ font-size: 55px; }
 }
 
