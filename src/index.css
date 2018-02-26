@@ -283,7 +283,7 @@ body, #root, #root .section{
     grid-template-rows: 10% 10% 80%;
     grid-template-columns: 10% 80% 10%;
 
-    background: white;
+    background: #d9dbdd;
 }
 
 #knowledgeTitleContainer{
@@ -449,8 +449,6 @@ body, #root, #root .section{
     transition-property: width, height;
     transition-duration: 0.5s;
 
-    background-color: #f9f9f9;
-
     display: grid;
     grid-template-rows: 30% 70%;
 
@@ -461,6 +459,8 @@ body, #root, #root .section{
     grid-row: 1 / 2;
     justify-self: center;
     align-self: center;
+
+    padding: 1%;
 }
 
 #current i{ font-size: 65px; }
@@ -518,7 +518,7 @@ body, #root, #root .section{
     grid-template-rows: 10% 10% 80%;
     grid-template-columns: 10% 80% 10%;
 
-    background: #C5C6C7;
+    background: #f9f9f9;
 }
 #portfolioTitleContainer{
     width: 40%;
@@ -643,7 +643,7 @@ body, #root, #root .section{
     grid-template-rows: 10% 10% 80%;
     grid-template-columns: 10% 80% 10%;
 
-    background: #f9f9f9;
+    background: #d9dbdd;
 }
 #contactTitleContainer{
     width: 40%;
@@ -716,7 +716,7 @@ body, #root, #root .section{
 
     padding: 1%;
 
-    background: #C5C6C7;
+    background: #f9f9f9;
 
     border: none;
 
@@ -735,7 +735,7 @@ body, #root, #root .section{
 
    padding: 1%;
 
-   background: #C5C6C7;
+   background: #f9f9f9;
 
    border: none;
 

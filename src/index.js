@@ -90,8 +90,9 @@ class Content extends React.Component{
 				content = (
 					<div id={contentContainer}>
 						<div id="opentext">
-							<p>In the software engineering world, there are countless programming languages, frameworks, and technologies available for each individual. Therefore, learning never ends! I have personal 
-							satisfaction each time I discover a new technique or skill I can use in my projects. Click a cog below to learn a bit about some of these skills!</p>
+							<p>There are countless programming languages and technologies available in the tech industry. Each person is unique in respect to what tools they have under their belt. For me, I find it extremely
+							satisfying to discover something new that I can add to my arsenal. Click any
+							<span style={{color: "#d344fa"}}> <i className="fas fa-cog"></i></span> below to learn more about my skillset!</p>
 						</div>
 			            <div className="drop" id="currentContainer" onClick={() => this.props.onClick("current")}>
 			            	<a id="currentCog"><i className="fas fa-cog"></i></a>
