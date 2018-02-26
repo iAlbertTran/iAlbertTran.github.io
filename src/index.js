@@ -94,7 +94,7 @@ class Content extends React.Component{
 							satisfaction each time I discover a new technique or skill I can use in my projects. Click a cog below to learn a bit about some of these skills!</p>
 						</div>
 			            <div className="drop" id="currentContainer" onClick={() => this.props.onClick("current")}>
-			            	<a id="currentCog"><i id="currentCog" className="fas fa-cog"></i></a>
+			            	<a id="currentCog"><i className="fas fa-cog"></i></a>
 			                <a className="text">Present Skills</a>
 			            </div>
 			            <div id="current">
@@ -442,12 +442,19 @@ class Site extends React.Component{
 	    let inProgress = document.getElementById("inProgress");
 	    let next = document.getElementById("next");
 
+	    let currentCog = document.getElementById("currentCog");
+	    let inProgressCog = document.getElementById("inProgressCog");
+	    let nextCog = document.getElementById("nextCog");
 	    //switch case for window size (mobile or desktop). 
 	    //If desktop, containers are to the right of anchors
 	    //if mobile, containers are below anchors
 	    switch(content.id){
 
 	    	case "current":
+
+	    		currentCog.style.animation = "roll 1s linear infinite";
+        		inProgressCog.style.animation = "roll 1s linear";
+        		nextCog.style.animation = "rollback 1s linear";
 
 	    		inProgress.style.borderLeft = "#d344fa transparent";
 	        	inProgress.style.borderRight = "#d344fa transparent";
@@ -465,6 +472,10 @@ class Site extends React.Component{
 
 	    	case "inProgress":
 
+	    		currentCog.style.animation = "rollback 1s linear";
+        		inProgressCog.style.animation = "rollback 1s linear infinite";
+        		nextCog.style.animation = "rollback 1s linear";
+
 	    		current.style.borderLeft = "#d344fa transparent";
 	        	current.style.borderRight = "#d344fa transparent";
 	        	current.style.width = "1px";
@@ -480,6 +491,10 @@ class Site extends React.Component{
         		break;
 
         	case "next":
+
+        		currentCog.style.animation = "rollback 1s linear";
+        		inProgressCog.style.animation = "roll 1s linear";
+        		nextCog.style.animation = "roll 1s linear infinite";
 
         		current.style.borderLeft = "#d344fa transparent";
 	        	current.style.borderRight = "#d344fa transparent";
@@ -506,6 +521,10 @@ class Site extends React.Component{
         	setTimeout(function(){
         		content.style.height = "0px";
         	}, 500);
+
+        	currentCog.style.animation = "roll 2.5s linear infinite";
+        	inProgressCog.style.animation = "rollback 2.5s linear infinite";
+        	nextCog.style.animation = "roll 2.5s linear infinite";
         }
         else{
         	setTimeout(function(){
