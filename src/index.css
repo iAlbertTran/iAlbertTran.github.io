@@ -373,6 +373,10 @@ body, #root, #root .section{
     font-size: 100px; 
 }
 
+.drop .fa-cog:hover{
+    cursor: pointer;
+}
+
 #currentContainer #currentCog{
     animation: roll 2.5s linear infinite;
 }
@@ -383,11 +387,6 @@ body, #root, #root .section{
 
 #inProgressContainer #inProgressCog{
     animation: rollback 2.5s linear infinite;
-}
-
-.drop .fa-cog:hover{
-
-    cursor: pointer;
 }
 
 .drop .text{
@@ -480,6 +479,8 @@ body, #root, #root .section{
     display: none;
 
     grid-template-rows: auto auto;
+
+    align-self: center;
 }
 
 #current i, #inProgress i, #next i{
@@ -497,7 +498,7 @@ body, #root, #root .section{
 
 #current p, #inProgress p, #next p{
     grid-row: 2 / 3;
-    font-size: 18px;
+    font-size: 20px;
     padding: 1%;
     text-align: justify;
 
@@ -506,6 +507,8 @@ body, #root, #root .section{
     overflow: hidden;
 
     font-family: "Mukta Malar", sans-serif;
+
+    line-height: 1.5;
 }
 
 
@@ -907,7 +910,7 @@ body, #root, #root .section{
 
     #aboutMeTxt{ font-size: 9px; }
     #knowledgeContentContainer #opentext{
-        font-size: 12px;
+        font-size: 17px;
     }
 
     #me{
@@ -928,8 +931,11 @@ body, #root, #root .section{
     .drop a{ font-size: 20px;}
     .colorBox p{ font-size: 20px; }
 
-    #current i, #inProgress i, #next i{ font-size: 30px; }
-    #current p, #inProgress p, #next p{ font-size: 10px; }
+    #current i{ font-size: 35px; }
+    #inProgress i{ font-size: 65px; }
+    #next i{ font-size: 50px; }
+
+    #current p, #inProgress p, #next p{ font-size: 12px; }
 
     #weatherTitle, #checkersTitle{ font-size: 15px; }
     #weatherText, #checkersText{ font-size: 12px; }
@@ -945,7 +951,7 @@ body, #root, #root .section{
 
 @media screen and (min-width: 481px) and (max-width: 600px){
     #textContainer{ font-size: 40px; }
-    #aboutMeTxt{ font-size: 16px; }
+    #aboutMeTxt{ font-size: 19px; }
     #knowledgeContentContainer #opentext{
         font-size: 15px;
     }
@@ -965,8 +971,11 @@ body, #root, #root .section{
     .drop a{ font-size: 30px;}
     .colorBox p{ font-size: 30px; }
 
-    #current i, #inProgress i, #next i{ font-size: 40px; }
-    #current p, #inProgress p, #next p{ font-size: 12px; }
+    #current i{ font-size: 40px; }
+    #inProgress i{ font-size: 70px; }
+    #next i{ font-size: 55px; }
+
+    #current p, #inProgress p, #next p{ font-size: 14px; }
 
     #weatherTitle, #checkersTitle{ font-size: 20px; }
     #weatherText, #checkersText{ font-size: 14px; }
@@ -984,7 +993,7 @@ body, #root, #root .section{
     #textContainer{ font-size: 50px; }
     #aboutMeTxt{ font-size: 17px; }
     #knowledgeContentContainer #opentext{
-        font-size: 18px;
+        font-size: 21px;
     }
     #me{
         border-radius: 290px;
@@ -1002,8 +1011,11 @@ body, #root, #root .section{
     .drop a{ font-size: 30px;}
     .colorBox p{ font-size: 40px; }
 
-    #current i, #inProgress i, #next i{ font-size: 45px; }
-    #current p, #inProgress p, #next p{ font-size: 14px; }
+    #current i{ font-size: 45px; }
+    #inProgress i{ font-size: 75px; }
+    #next i{ font-size: 60px; }
+
+    #current p, #inProgress p, #next p{ font-size: 16px; }
 
     #weatherTitle, #checkersTitle{ font-size: 25px; }
     #weatherText, #checkersText{ font-size: 16px; }
@@ -1021,7 +1033,7 @@ body, #root, #root .section{
     #textContainer{ font-size: 60px; }
     #aboutMeTxt{ font-size: 18px; }
     #knowledgeContentContainer #opentext{
-        font-size: 22px;
+        font-size: 23px;
     }
 
 
@@ -1042,8 +1054,11 @@ body, #root, #root .section{
     .drop a{ font-size: 40px;}
     .colorBox p{ font-size: 50px; }
 
-    #current i, #inProgress i, #next i{ font-size: 55px; }
-    #current p, #inProgress p, #next p{ font-size: 16px; }
+    #current i{ font-size: 50px; }
+    #inProgress i{ font-size: 80px; }
+    #next i{ font-size: 65px; }
+
+    #current p, #inProgress p, #next p{ font-size: 18px; }
 
     #weatherTitle, #checkersTitle{ font-size: 30px; }
     #weatherText, #checkersText{ font-size: 18px; }
@@ -1192,13 +1207,6 @@ body, #root, #root .section{
         font-size: 8px;
     }
 
-    #current p, #inProgress p, #next p{
-        font-size: 9px;
-    }
-
-    #opentext p{
-        font-size: 10px;
-    }
 }
 
 /* iPhone 6 - iPhone X*/
@@ -1207,20 +1215,6 @@ body, #root, #root .section{
         font-size: 11px;
     }
 
-    #current p, #inProgress p, #next p{
-        font-size: 12px;
-    }
-
-    #current i{
-        font-size: 40px;
-    }
-
-    #inProgress i, #next i{ font-size: 55px; }
-
-    #weatherTitle, #checkersTitle{ font-size: 30px; }
-    #weatherText, #checkersText{ font-size: 18px; }
-    #weatherInfo a, #checkersInfo a{ font-size: 24px; }
-
 }
 
 /* mid-sized smartphones*/
@@ -1228,15 +1222,5 @@ body, #root, #root .section{
     #aboutMeTxt {
         font-size: 10px;
     }
-
-    #current p, #inProgress p, #next p{
-        font-size: 11px;
-    }
-
-    #current i{
-        font-size: 40px;
-    }
-
-     #inProgress i, #next i{ font-size: 55px; }
 }
 
