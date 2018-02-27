@@ -171,7 +171,7 @@ class Content extends React.Component{
 							mental war! As each move is made, the move history list grows to keep track of each move incase you want to go back in time
 							and take back an ill-made move. Uses HTML / CSS and JavaScript. In addition, uses the ReactJS framework for rendering the board and move history, and keeping track of the board state at a given point in time!
 							</p>
-							<a id="checkersButton" href="https://ialberttran.github.io/weather-app/" target="_blank" rel="noopener noreferrer">View<i className="fa-fw fas fa-arrow-circle-right"></i></a>
+							<a id="checkersButton" href="https://ialberttran.github.io/checkers/" target="_blank" rel="noopener noreferrer">View<i className="fa-fw fas fa-arrow-circle-right"></i></a>
 						</div>
 			       	</div>
 			    );
