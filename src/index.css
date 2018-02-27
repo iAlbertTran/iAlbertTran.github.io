@@ -513,13 +513,13 @@ body, #root, #root .section{
 /********************************************************************************************/
 
 #root #portfolio{
-    height: 200vh;
+    height: auto;
+    min-height: 100vh;
 }
 #portfolio{
     display: grid;
-    grid-template-rows: 5% 5% 80%;
+    grid-template-rows: 5% 5% max-content 10%;
     grid-template-columns: 10% 80% 10%;
-
     background: #f9f9f9;
 }
 #portfolioTitleContainer{
@@ -534,6 +534,8 @@ body, #root, #root .section{
     justify-content: center;
     align-items: center;
 
+    margin: 10vh 0;
+
 
 }
 
@@ -546,9 +548,8 @@ body, #root, #root .section{
     grid-row: 3 / 4;
     grid-column: 2 / 3;
     display: grid;
-    grid-template-rows: 5% 45% 45% 5%;
+    grid-template-rows: 5% max-content max-content;
     grid-template-columns: 50% 50%;
-    grid-row-gap: 2.5%;
     grid-column-gap: 5%;
     font-size: 50px;
 
@@ -561,14 +562,8 @@ body, #root, #root .section{
     width: 100%;
 
     align-self: start;
-}
 
-#checkers{
-    grid-column: 1 / 2;
-    grid-row: 3 / 4;
-
-    width: 100%;
-
+    margin-bottom: 10vh;
 }
 
 #weatherInfo{
@@ -583,6 +578,8 @@ body, #root, #root .section{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    margin-bottom: 10vh;
 }
 
 #weatherInfo .fa-sun{
@@ -628,6 +625,16 @@ body, #root, #root .section{
     color: #f9f9f9;
 }
 
+#checkers{
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+
+    width: 100%;
+
+    margin-bottom: 10vh;
+
+}
+
 #checkersInfo{
     grid-column: 2 / 3;
     grid-row: 3 / 4;
@@ -640,6 +647,8 @@ body, #root, #root .section{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    margin-bottom: 10vh;
 }
 
 #checkersInfo .fa-chess-queen{
