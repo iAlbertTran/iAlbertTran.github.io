@@ -18,7 +18,6 @@ let navHeight;
 let mobile;
 let nav;
 
-
 class Title extends React.Component{
 	render(){
 		let title = this.props.id;
@@ -72,7 +71,8 @@ class Content extends React.Component{
 		            	<div id="aboutTxtContainer">
 		                	<p id="aboutMeTxt">
 			                    Hello World! My name is Albert and I'm a 22 year old web developer based in the Bay Area! I'm a recent college graduate from the University of California, Davis with a Bachelor's of Science in Computer Science.<br/><br/>
-			                    Regardless if its a static web page or a dynamic web application, I love the process of taking a website from an idea all the way up to deployment. Being able to create something that's visually and functionally beautiful is what motivates and excites me most about web development. It is my passion, my profession, and, soon, my employee position!<br/><br/>
+			                    Regardless if its a static web page or a dynamic web application, I love the process of taking a website from an idea all the way up to deployment. Being able to create something that's visually and functionally 
+			                    beautiful is what motivates and excites me most about web development. It is my passion more so than my profession!<br/><br/>
 
 			                    My interests include Software Development and UI / UX Design. I enjoy playing video games, watching basketball and movies, as well as just hanging out and socializing!<br/><br/>
 
@@ -92,60 +92,62 @@ class Content extends React.Component{
 							satisfying to discover something new that I can add to my arsenal. Click any
 							<span style={{color: "#b19cd9"}}> <i className="fas fa-cog"></i></span> below to learn more about my skillset!</p>
 						</div>
+
 			            <div className="drop" id="currentContainer" onClick={() => this.props.onClick("current")}>
 			            	<a id="currentCog"><i className="fas fa-cog"></i></a>
 			                <a className="text">Present Skills</a>
 			            </div>
-			            <div id="current">
-		                    <i className="devicon-html5-plain-wordmark colored"></i>
-		                    <i className="devicon-css3-plain-wordmark colored"></i>
-		                    <i className="devicon-javascript-plain colored"></i>
-		                    <i className="devicon-postgresql-plain-wordmark colored"></i>
-		                    <i className="devicon-python-plain-wordmark colored"></i>
-		                    <p>With a focus on web development, It's only natural that I work with 
-		                    <span style={{color: "#E54D26"}}> HTML</span>, 
-		                    <span style={{color: "#3D8FC6"}}> CSS</span>, and 
-		                    <span style={{color: "#cccc00"}}> Javascript</span>. All of my past and current projects run using these three things. 
-		                    Thus, I believe myself to have a deep understanding of them and how they can be used to create a website, or web application. <br/><br/>
-		                    <span style={{color: "#336791"}}> SQL</span>, 
-		                    <span style={{color: "#336791"}}> PostgreSQL</span>, and 
-		                    <span style={{color: "#cccc00"}}> Python</span> is something 
-		                    I've worked with on a school project, where we implemented and 
-		                    queried a mock database of a school containing information about students and classes. I believe to have the skillset and understanding of how database systems and relational 
-		                    database management systems work, and the ways to interact with them. </p>
-		                </div>
-
-
 
 			            <div className="drop" id="inProgressContainer" onClick={() => this.props.onClick("inProgress")}>
 			            	<a id="inProgressCog"><i className="fas fa-cog"></i></a>
 			                <a className="text">Working On Now</a>
 			            </div>
-			            <div id="inProgress">
-		                    <i className="devicon-react-original-wordmark colored"></i>
-		                    <p>Most of my experience with javascript has been limited to vanilla javascript. I have not spent much time working with any frameworks that are rising in popularity lately.
-		                    So, I've taken it upon myself to begin learning some, starting with <span style={{color: "#61DAFB"}}> ReactJS</span>, a front-end framework. In fact, this webpage uses React by building components and rendering them to the user, like each section!
-		                    <br/><br/>While confusing at first, my abilities to research, troubleshoot, and go through documentation has been extremely helpful in learning the ins and outs of React. As time goes on, I plan to 
-		                    build more complex applications with it!</p>
-		                </div>
-
-
 
 			            <div className="drop" id="nextContainer" onClick={() => this.props.onClick("next")}>
 			            	<a id="nextCog"><i className="fas fa-cog"></i></a>
 			                <a className="text">Future Plans</a>
 			            </div>
-			            <div id="next">
-		                    <i className="devicon-nodejs-plain-wordmark colored"></i>
-		                    <i className="devicon-mysql-plain-wordmark colored"></i>
-		                    <p>As I previously mentioned, learning never stops! There's always something new being released, or some technique I haven't had the opportunity to explore just yet. However, it's my intention to 
-		                    eventually get to as many of them as I can! As of now, I intend to fiddle with 
-		                    <span style={{color: "#83CD29"}}> NodeJS</span> and 
-		                    <span style={{color: "#06658D"}}> MySQL</span> so I can build the back-end of projects, leading to a fully functioning application!<br/><br/>
-		                     I do have some 
-		                    experience with NodeJS building a ReST API, using it in an application that allows users to upload images and having it generate labels through Google's Cloud Computing Vison API. While it's been awhile since then, I have 
-		                    confidence that I'll be able to pick up right where I left off seamlessly!</p>
-		                </div>
+
+			            <div id="dropdown">
+				            <div id="current">
+			                    <i className="devicon-html5-plain-wordmark colored"></i>
+			                    <i className="devicon-css3-plain-wordmark colored"></i>
+			                    <i className="devicon-javascript-plain colored"></i>
+			                    <i className="devicon-postgresql-plain-wordmark colored"></i>
+			                    <i className="devicon-python-plain-wordmark colored"></i>
+			                    <p>As a web developer, It's only natural that I work with 
+			                    <span style={{color: "#E54D26"}}> HTML</span>, 
+			                    <span style={{color: "#3D8FC6"}}> CSS</span>, and 
+			                    <span style={{color: "#cccc00"}}> Javascript</span>. All of my past and current projects run using these three things. 
+			                    Thus, I believe myself to have a deep understanding of them and how they can be used to create a website, or web application. <br/><br/>
+			                    <span style={{color: "#336791"}}> SQL</span>, 
+			                    <span style={{color: "#336791"}}> PostgreSQL</span>, and 
+			                    <span style={{color: "#cccc00"}}> Python</span> is something 
+			                    I've worked with on a school project, where we implemented and 
+			                    queried a mock database of a school containing information about students and classes. I believe to have the skillset and understanding of how database systems and relational 
+			                    database management systems work, and the ways to interact with them. </p>
+			                </div>
+
+				            <div id="inProgress">
+			                    <i className="devicon-react-original-wordmark colored"></i>
+			                    <p>Most of my experience with javascript has been limited to vanilla javascript. I have not spent much time working with any frameworks that are rising in popularity lately.
+			                    So, I've taken it upon myself to begin learning some, starting with <span style={{color: "#61DAFB"}}> ReactJS</span>, a front-end framework. In fact, this webpage uses React by building components and rendering them to the user, like each section!
+			                    <br/><br/>While confusing at first, my abilities to research, troubleshoot, and go through documentation has been extremely helpful in learning the ins and outs of React. As time goes on, I plan to 
+			                    build more complex applications with it!</p>
+			                </div>
+
+				            <div id="next">
+			                    <i className="devicon-nodejs-plain-wordmark colored"></i>
+			                    <i className="devicon-mysql-plain-wordmark colored"></i>
+			                    <p>As a software developer, the learning never stops! There's always something new being released, or some technique I haven't had the opportunity to explore just yet. However, it's my intention to 
+			                    eventually get to as many of them as I can! As of now, I intend to fiddle with 
+			                    <span style={{color: "#83CD29"}}> NodeJS</span> and 
+			                    <span style={{color: "#06658D"}}> MySQL</span> so I can build the back-end of projects, leading to a fully functioning application!<br/><br/>
+			                     I do have some 
+			                    experience with NodeJS building a ReST API, using it in an application that allows users to upload images and having it generate labels through Google's Cloud Computing Vison API. While it's been awhile since then, I have 
+			                    confidence that I'll be able to pick up right where I left off seamlessly!</p>
+			                </div>
+			            </div>
 			       	</div>
 			    );
 				break;
@@ -432,13 +434,25 @@ class Site extends React.Component{
 	expand(target) {
 	    //gets what was clicked minus "Container" to expand the content;
 	    let content = document.getElementById(target);
-	    let current = document.getElementById("current");
-	    let inProgress = document.getElementById("inProgress");
-	    let next = document.getElementById("next");
 
 	    let currentCog = document.getElementById("currentCog");
 	    let inProgressCog = document.getElementById("inProgressCog");
 	    let nextCog = document.getElementById("nextCog");
+
+	    let otherContent;
+
+	    let contentIcons;
+	    let otherContentIcons
+	    ;
+	    let contentP;
+	    let otherContentP;
+
+	    $("#current > i, #inProgress > i, #next > i").removeClass("animated fadeInDown");
+        $("#current > p, #inProgress > p, #next > p").removeClass("animated fadeInUp");
+        $("#current > i, #inProgress > i, #next > i").removeClass("animated fadeOutUp");
+        $("#current > p, #inProgress > p, #next > p").removeClass("animated fadeOutDown");
+
+
 	    //switch case for window size (mobile or desktop). 
 	    //If desktop, containers are to the right of anchors
 	    //if mobile, containers are below anchors
@@ -450,18 +464,14 @@ class Site extends React.Component{
         		inProgressCog.style.animation = "roll 1s linear";
         		nextCog.style.animation = "rollback 1s linear";
 
-	    		inProgress.style.borderLeft = "#b19cd9 transparent";
-	        	inProgress.style.borderRight = "#b19cd9 transparent";
-	        	inProgress.style.width = "1px";
 
-        		next.style.borderLeft = "#b19cd9 transparent";
-	        	next.style.borderRight = "#b19cd9 transparent";
-	        	next.style.width = "1px";
+       			contentIcons = "#current > i" 
+       			contentP = "#current > p";
 
-	        	setTimeout(function(){
-	        		next.style.height = "0px";
-	        		inProgress.style.height = "0px";
-        		}, 500);
+       			otherContentIcons = "#next > i, #inProgress i";
+       			otherContentP = "#next > p, #inProgress p";
+
+       			otherContent = "#inProgress, #next";
 	    		break; 
 
 	    	case "inProgress":
@@ -470,18 +480,13 @@ class Site extends React.Component{
         		inProgressCog.style.animation = "rollback 1s linear infinite";
         		nextCog.style.animation = "rollback 1s linear";
 
-	    		current.style.borderLeft = "#b19cd9 transparent";
-	        	current.style.borderRight = "#b19cd9 transparent";
-	        	current.style.width = "1px";
+        		contentIcons = "#inProgress > i";
+        		contentP = "#inProgress > p";
 
-        		next.style.borderLeft = "#b19cd9 transparent";
-	        	next.style.borderRight = "#b19cd9 transparent";
-	        	next.style.width = "1px";
+        		otherContentIcons = "#next > i, #current i";
+       			otherContentP = "#next > p, #current p";
 
-	        	setTimeout(function(){
-	        		next.style.height = "0px";
-	        		current.style.height = "0px";
-        		}, 500);
+       			otherContent = "#current, #next";
         		break;
 
         	case "next":
@@ -490,47 +495,63 @@ class Site extends React.Component{
         		inProgressCog.style.animation = "roll 1s linear";
         		nextCog.style.animation = "roll 1s linear infinite";
 
-        		current.style.borderLeft = "#b19cd9 transparent";
-	        	current.style.borderRight = "#b19cd9 transparent";
-	        	current.style.width = "1px";
+        		contentIcons = "#next > i";
+        		contentP = "#next > p";
 
-        		inProgress.style.borderLeft = "#b19cd9 transparent";
-	        	inProgress.style.borderRight = "#b19cd9 transparent";
-	        	inProgress.style.width = "1px";
+        		otherContentIcons = "#current > i, #inProgress i";
+       			otherContentP = "#current > p, #inProgress p";
 
-	        	setTimeout(function(){
-	        		inProgress.style.height = "0px";
-	        		current.style.height = "0px";
-        		}, 500);
+       			otherContent = "#inProgress, #current";
         		break;
+
         	default:
         		break;
 
 	    }
 
-        if (content.style.width === "100%"){
-        	content.style.borderLeft = "#b19cd9 transparent";
-        	content.style.borderRight = "#b19cd9 transparent";
-        	content.style.width = "1px";
+        if (content.style.display === "grid"){
+
+        	$(contentIcons).addClass("animated fadeOutUp");
+        	$(contentP).addClass("animated fadeOutDown");
+
         	setTimeout(function(){
-        		content.style.height = "0px";
+        		$(content).css("display", "none");
+        		$("#dropdown").css("width", "0px");
         	}, 500);
+
+        	setTimeout(function(){
+        		$("#dropdown").css("width", "100%");
+        	}, 1000);
 
         	currentCog.style.animation = "roll 2.5s linear infinite";
         	inProgressCog.style.animation = "rollback 2.5s linear infinite";
         	nextCog.style.animation = "roll 2.5s linear infinite";
+
         }
         else{
+
+        	$(otherContentIcons).addClass("animated fadeOutUp");
+        	$(otherContentP).addClass("animated fadeOutDown");
+
         	setTimeout(function(){
-        		content.style.borderLeft = "#b19cd9 solid";
-	        	content.style.borderRight = "#b19cd9 solid";
-	        	content.style.width = "1px";
-	            content.style.height = "100%";
-	        	setTimeout(function(){
-	        		content.style.width = "100%";
-	        	}, 500);
+        		$(otherContent).css("display", "none");
+        		$("#dropdown").css("width", "0px");
         	}, 500);
-    
+
+        	setTimeout(function(){
+        		$("#dropdown").css("width", "100%");
+        	}, 1000);
+
+        	setTimeout(function(){
+        		$(content).css("display", "grid");
+        		$(contentIcons).addClass("animated fadeInDown");
+        		$(contentP).addClass("animated fadeInUp");
+        	}, 1500);
+
+        
+
+      
+ 			
         }
     }
 
