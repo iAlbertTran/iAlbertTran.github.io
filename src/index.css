@@ -292,7 +292,7 @@ body, #root, #root .section{
     display: grid;
     grid-column: 2 / 3;
     grid-row: 2 / 3;
-    border-bottom: solid #d344fa;
+    border-bottom: solid #b19cd9;
 
     display: flex;
     justify-content: center;
@@ -301,7 +301,7 @@ body, #root, #root .section{
 }
 
 #knowledgeTitle{
-    border-right: solid #d344fa;
+    border-right: solid #b19cd9;
     color: #17252A;
 }
 
@@ -353,7 +353,7 @@ body, #root, #root .section{
 }
 
 .drop .fa-cog{
-    color: #d344fa;
+    color: #b19cd9;
     font-size: 100px; 
 }
 

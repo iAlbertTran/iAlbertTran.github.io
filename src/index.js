@@ -92,7 +92,7 @@ class Content extends React.Component{
 						<div id="opentext">
 							<p>There are countless programming languages and technologies available in the tech industry. Each person is unique in respect to what tools they have under their belt. For me, I find it extremely
 							satisfying to discover something new that I can add to my arsenal. Click any
-							<span style={{color: "#d344fa"}}> <i className="fas fa-cog"></i></span> below to learn more about my skillset!</p>
+							<span style={{color: "#b19cd9"}}> <i className="fas fa-cog"></i></span> below to learn more about my skillset!</p>
 						</div>
 			            <div className="drop" id="currentContainer" onClick={() => this.props.onClick("current")}>
 			            	<a id="currentCog"><i className="fas fa-cog"></i></a>
@@ -457,12 +457,12 @@ class Site extends React.Component{
         		inProgressCog.style.animation = "roll 1s linear";
         		nextCog.style.animation = "rollback 1s linear";
 
-	    		inProgress.style.borderLeft = "#d344fa transparent";
-	        	inProgress.style.borderRight = "#d344fa transparent";
+	    		inProgress.style.borderLeft = "#b19cd9 transparent";
+	        	inProgress.style.borderRight = "#b19cd9 transparent";
 	        	inProgress.style.width = "1px";
 
-        		next.style.borderLeft = "#d344fa transparent";
-	        	next.style.borderRight = "#d344fa transparent";
+        		next.style.borderLeft = "#b19cd9 transparent";
+	        	next.style.borderRight = "#b19cd9 transparent";
 	        	next.style.width = "1px";
 
 	        	setTimeout(function(){
@@ -477,12 +477,12 @@ class Site extends React.Component{
         		inProgressCog.style.animation = "rollback 1s linear infinite";
         		nextCog.style.animation = "rollback 1s linear";
 
-	    		current.style.borderLeft = "#d344fa transparent";
-	        	current.style.borderRight = "#d344fa transparent";
+	    		current.style.borderLeft = "#b19cd9 transparent";
+	        	current.style.borderRight = "#b19cd9 transparent";
 	        	current.style.width = "1px";
 
-        		next.style.borderLeft = "#d344fa transparent";
-	        	next.style.borderRight = "#d344fa transparent";
+        		next.style.borderLeft = "#b19cd9 transparent";
+	        	next.style.borderRight = "#b19cd9 transparent";
 	        	next.style.width = "1px";
 
 	        	setTimeout(function(){
@@ -497,12 +497,12 @@ class Site extends React.Component{
         		inProgressCog.style.animation = "roll 1s linear";
         		nextCog.style.animation = "roll 1s linear infinite";
 
-        		current.style.borderLeft = "#d344fa transparent";
-	        	current.style.borderRight = "#d344fa transparent";
+        		current.style.borderLeft = "#b19cd9 transparent";
+	        	current.style.borderRight = "#b19cd9 transparent";
 	        	current.style.width = "1px";
 
-        		inProgress.style.borderLeft = "#d344fa transparent";
-	        	inProgress.style.borderRight = "#d344fa transparent";
+        		inProgress.style.borderLeft = "#b19cd9 transparent";
+	        	inProgress.style.borderRight = "#b19cd9 transparent";
 	        	inProgress.style.width = "1px";
 
 	        	setTimeout(function(){
@@ -516,8 +516,8 @@ class Site extends React.Component{
 	    }
 
         if (content.style.width === "100%"){
-        	content.style.borderLeft = "#d344fa transparent";
-        	content.style.borderRight = "#d344fa transparent";
+        	content.style.borderLeft = "#b19cd9 transparent";
+        	content.style.borderRight = "#b19cd9 transparent";
         	content.style.width = "1px";
         	setTimeout(function(){
         		content.style.height = "0px";
@@ -529,8 +529,8 @@ class Site extends React.Component{
         }
         else{
         	setTimeout(function(){
-        		content.style.borderLeft = "#d344fa solid";
-	        	content.style.borderRight = "#d344fa solid";
+        		content.style.borderLeft = "#b19cd9 solid";
+	        	content.style.borderRight = "#b19cd9 solid";
 	        	content.style.width = "1px";
 	            content.style.height = "100%";
 	        	setTimeout(function(){
@@ -558,7 +558,7 @@ class Site extends React.Component{
 					onClick={(clickedLink) => this.handleClick(clickedLink)}
 				/>
 				<Section id="about" className="section" title="About" color="#f76c6c"/>
-				<Section id="knowledge" className="section" title="knowledge" color="#d344fa" onClick={(clickedLink) => this.expand(clickedLink)}	/>
+				<Section id="knowledge" className="section" title="knowledge" color="#b19cd9" onClick={(clickedLink) => this.expand(clickedLink)}	/>
 				<Section id="portfolio" className="section" title="Portfolio"/>
 				<Section id="contact" className="section" title="Connect" color="#86c232"/>
 				<Footer />
@@ -669,10 +669,10 @@ function highlightButton(){
 
 		case (windowPosition >= knowledgeStartPos - sectionMidPoint && windowPosition < portfolioStartPos - sectionMidPoint):
 			let knowledge = document.getElementsByClassName("knowledge")[0];
-			knowledge.style.borderBottom = "#d344fa solid";
-			$("#navBar a .fa-fw, #mobile-menu a .fa-fw").css("color","#d344fa");
-			$("#aplusplus").css("border", "#d344fa solid");
-			navBarHover("#d344fa");
+			knowledge.style.borderBottom = "#b19cd9 solid";
+			$("#navBar a .fa-fw, #mobile-menu a .fa-fw").css("color","#b19cd9");
+			$("#aplusplus").css("border", "#b19cd9 solid");
+			navBarHover("#b19cd9");
 			return(".knowledge");
 
 		case (windowPosition >= portfolioStartPos - sectionMidPoint && windowPosition < contactStartPos - sectionMidPoint):
