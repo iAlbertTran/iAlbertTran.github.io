@@ -512,10 +512,12 @@ body, #root, #root .section{
 /* Portfolio Section CSS */
 /********************************************************************************************/
 
-
+#root #portfolio{
+    height: 200vh;
+}
 #portfolio{
     display: grid;
-    grid-template-rows: 10% 10% 80%;
+    grid-template-rows: 5% 5% 80%;
     grid-template-columns: 10% 80% 10%;
 
     background: #f9f9f9;
@@ -544,86 +546,143 @@ body, #root, #root .section{
     grid-row: 3 / 4;
     grid-column: 2 / 3;
     display: grid;
-    grid-template-rows: 15% 15% 15% 55%;
-
+    grid-template-rows: 5% 45% 45% 5%;
+    grid-template-columns: 50% 50%;
+    grid-row-gap: 2.5%;
+    grid-column-gap: 5%;
     font-size: 50px;
 
 }
-#projectContainer{
-    grid-row-start: 4;
-    grid-row-end: 5;
-    grid-column-start: 1;
-    grid-column-end: 2;
-
-    display: grid;
-    grid-template-columns: 33.33% 33.33% 33.33%;
-}
-
-#projectContainer a{
-    justify-self: center;
-    align-self: center;
-}
-
-#projectContainer #weatherApp {
-    background: url("img/weatherApp.png") no-repeat;
-    background-size: contain;
-}
-
-#projectContainer #quoteMachine {
-    background: url("img/quoteMachine.png") no-repeat;
-    background-size: contain;
-}
-
-#projectContainer #checkers {
-    background: url("img/checkers.png") no-repeat;
-    background-size: contain;
-}
 
 
-#projectContainer div{
-    width: 300px;
-    height: 150px;
-}
-
-#projectContainer a{
-    text-decoration-color: #81CDC9;
-}
-
-
-.colorBox{
+ #weatherApp{
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
     width: 100%;
-    height: 100%;
+
+    align-self: start;
+}
+
+#checkers{
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+
+    width: 100%;
+
+}
+
+#weatherInfo{
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+
+    width: 100%;
+
+    align-self: start;
 
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-
-    background-color: #1d1e21;
-    color: #f9f9f9;
-
-    transition: background-color, color;
-    transition-duration: 0.5s;
-
-    color: #F8F8F8;
+    align-items: center;
 }
 
-.colorBox:hover{
-    background-color: transparent;
-    color: transparent;
-
-
-}
-
-#projectContainer a:hover{
-    text-decoration: none;
-}
-
-.colorBox p {
-    margin: 0;
+#weatherInfo .fa-sun{
     font-size: 50px;
-    font-family: "Passion One", sans-serif;
+    color: #e5e500;
+}
+
+#weatherTitle{
+    font-size: 35px;
     text-align: center;
-    padding: 2.5%;
+
+    text-decoration: #81CDC9 underline;
+
+    margin: 0;
+
+    font-family: "Carter One", sans-serif;
+    letter-spacing: 1px;
+}
+
+#weatherText{
+    font-size: 20px;
+    text-align: justify;
+
+    font-family: "Open Sans", sans-serif;
+}
+
+#weatherInfo a{
+    font-size: 25px;
+    font-family: "Hammersmith One", sans-serif;
+
+    text-decoration: none;
+    border: #81CDC9 solid;
+    text-align: center;
+    padding: 1% 2.5%;
+    color: #1d1e21;
+
+    transition-property: background-color, color;
+    transition-duration: 0.5s;
+}
+
+#weatherInfo a:hover{
+    background-color: #81CDC9;
+    color: #f9f9f9;
+}
+
+#checkersInfo{
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+
+    width: 100%;
+
+    align-self: start;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#checkersInfo .fa-chess-queen{
+    font-size: 50px;
+    color: #f76c6c;
+}
+
+#checkersTitle{
+    font-size: 35px;
+    text-align: center;
+
+    text-decoration: #81CDC9 underline;
+
+    margin: 0;
+
+    font-family: "Carter One", sans-serif;
+    letter-spacing: 1px;
+}
+
+#checkersText{
+    font-size: 20px;
+    text-align: justify;
+
+    font-family: "Open Sans", sans-serif;
+}
+
+#checkersInfo a{
+    font-size: 25px;
+    font-family: "Hammersmith One", sans-serif;
+
+    text-decoration: none;
+    border: #81CDC9 solid;
+    text-align: center;
+    padding: 1% 2.5%;
+    color: #1d1e21;
+
+    transition-property: background-color, color;
+    transition-duration: 0.5s;
+}
+
+#checkersInfo a:hover{
+    background-color: #81CDC9;
+    color: #f9f9f9;
 }
 
 
@@ -833,7 +892,6 @@ body, #root, #root .section{
     }
 
     #aboutTitle, #portfolioTitle, #contactTitle, #knowledgeTitle{ letter-spacing: 1px; font-size: 25px;}
-
     #portfolioContentContainer .colored{ font-size: 25px; }
 
     #projectContainer div {
@@ -848,6 +906,11 @@ body, #root, #root .section{
     #current i, #inProgress i, #next i{ font-size: 30px; }
     #current p, #inProgress p, #next p{ font-size: 10px; }
 
+    #weatherTitle, #checkersTitle{ font-size: 15px; }
+    #weatherText, #checkersText{ font-size: 12px; }
+    #checkersInfo .fa-chess-queen, #weatherInfo .fa-sun{ font-size: 30px; }
+
+    #weatherInfo a, #checkersInfo a{ font-size: 13px;}
 
     #contactContentContainer form div { font-size: 15px; }
     #contactContentContainer form input { font-size: 15px; }
@@ -880,6 +943,12 @@ body, #root, #root .section{
     #current i, #inProgress i, #next i{ font-size: 40px; }
     #current p, #inProgress p, #next p{ font-size: 12px; }
 
+    #weatherTitle, #checkersTitle{ font-size: 20px; }
+    #weatherText, #checkersText{ font-size: 14px; }
+    #checkersInfo .fa-chess-queen, #weatherInfo .fa-sun{ font-size: 35px; }
+
+    #weatherInfo a, #checkersInfo a{ font-size: 16px;}
+
     #contactContentContainer form div { font-size: 15px; }
     #contactContentContainer form input { font-size: 15px; }
     #contactContentContainer form textarea { font-size: 15px; }
@@ -910,6 +979,12 @@ body, #root, #root .section{
 
     #current i, #inProgress i, #next i{ font-size: 45px; }
     #current p, #inProgress p, #next p{ font-size: 14px; }
+
+    #weatherTitle, #checkersTitle{ font-size: 25px; }
+    #weatherText, #checkersText{ font-size: 16px; }
+    #checkersInfo .fa-chess-queen, #weatherInfo .fa-sun{ font-size: 40px; }
+
+    #weatherInfo a, #checkersInfo a{ font-size: 19px;}
 
     #contactContentContainer form div { font-size: 20px; }
     #contactContentContainer form input { font-size: 20px; }
@@ -944,6 +1019,13 @@ body, #root, #root .section{
 
     #current i, #inProgress i, #next i{ font-size: 55px; }
     #current p, #inProgress p, #next p{ font-size: 16px; }
+
+    #weatherTitle, #checkersTitle{ font-size: 30px; }
+    #weatherText, #checkersText{ font-size: 18px; }
+    #checkersInfo .fa-chess-queen, #weatherInfo .fa-sun{ font-size: 45px; }
+
+    #weatherInfo a, #checkersInfo a{ font-size: 22px; }
+
 
     #contactContentContainer form div { font-size: 20px; }
     #contactContentContainer form input { font-size: 20px; }
@@ -988,9 +1070,48 @@ body, #root, #root .section{
         grid-template-columns: 100%;
     }
 
-    #projectContainer {
-        grid-template-rows: 33.33% 33.33% 33.33%;
+    #portfolioContentContainer{
+        grid-template-rows: 15% 35% 15% 35%;
         grid-template-columns: 100%;
+        grid-row-gap: 1%;
+    }
+
+    #weatherApp{
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+
+        width: 70%;
+
+        align-self: center;
+        justify-self: center;
+
+    }
+
+    #weatherInfo{
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+
+        align-self: stretch;
+        justify-self: center;
+    }
+
+    #checkers{
+        grid-row: 3 / 4;
+        grid-column: 1 / 2;
+
+        width: 70%;
+
+        align-self: center;
+        justify-self: center;
+
+    }
+
+    #checkersInfo{
+        grid-row: 4 / 5;
+        grid-column: 1 / 2;
+
+        align-self: stretch;
+        justify-self: center;
     }
 
     #contactContentContainer form{
@@ -1065,7 +1186,12 @@ body, #root, #root .section{
         font-size: 40px;
     }
 
-     #inProgress i, #next i{ font-size: 55px; }
+    #inProgress i, #next i{ font-size: 55px; }
+
+    #weatherTitle, #checkersTitle{ font-size: 30px; }
+    #weatherText, #checkersText{ font-size: 18px; }
+    #weatherInfo a, #checkersInfo a{ font-size: 24px; }
+
 }
 
 /* mid-sized smartphones*/

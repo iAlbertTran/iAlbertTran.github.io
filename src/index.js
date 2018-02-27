@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import $ from 'jquery';
 import me from './img/me.png';
+import weatherApp from './img/weatherApp.png';
+import checkers from './img/checkers.png';
 
 //global variables for application-wide use
 let aboutStartPos;
@@ -22,10 +24,6 @@ class Title extends React.Component{
 		let title = this.props.id;
 		title += "Title";
 		let color = {color: this.props.color};
-
-
-		console.log(color);
-
 		return(
 			<div id={title}><span style={color}>&lt;</span>{this.props.title}<span style={color}>/&gt;</span></div>
 		);
@@ -73,7 +71,7 @@ class Content extends React.Component{
 		            	</div>
 		            	<div id="aboutTxtContainer">
 		                	<p id="aboutMeTxt">
-			                    Hello! My name is Albert and I'm a 22 year old web developer based in the Bay Area! I'm a recent college graduate from the University of California, Davis with a Bachelor's of Science in Computer Science.<br/><br/>
+			                    Hello World! My name is Albert and I'm a 22 year old web developer based in the Bay Area! I'm a recent college graduate from the University of California, Davis with a Bachelor's of Science in Computer Science.<br/><br/>
 			                    Regardless if its a static web page or a dynamic web application, I love the process of taking a website from an idea all the way up to deployment. Being able to create something that's visually and functionally beautiful is what motivates and excites me most about web development. It is my passion, my profession, and, soon, my employee position!<br/><br/>
 
 			                    My interests include Software Development and UI / UX Design. I enjoy playing video games, watching basketball and movies, as well as just hanging out and socializing!<br/><br/>
@@ -107,11 +105,11 @@ class Content extends React.Component{
 		                    <p>With a focus on web development, It's only natural that I work with 
 		                    <span style={{color: "#E54D26"}}> HTML</span>, 
 		                    <span style={{color: "#3D8FC6"}}> CSS</span>, and 
-		                    <span style={{color: "#F0DB4F"}}> Javascript</span>. All of my past and current projects run using these three things. 
+		                    <span style={{color: "#cccc00"}}> Javascript</span>. All of my past and current projects run using these three things. 
 		                    Thus, I believe myself to have a deep understanding of them and how they can be used to create a website, or web application. <br/><br/>
 		                    <span style={{color: "#336791"}}> SQL</span>, 
 		                    <span style={{color: "#336791"}}> PostgreSQL</span>, and 
-		                    <span style={{color: "#FFD845"}}> Python</span> is something 
+		                    <span style={{color: "#cccc00"}}> Python</span> is something 
 		                    I've worked with on a school project, where we implemented and 
 		                    queried a mock database of a school containing information about students and classes. I believe to have the skillset and understanding of how database systems and relational 
 		                    database management systems work, and the ways to interact with them. </p>
@@ -154,30 +152,25 @@ class Content extends React.Component{
 			case "portfolio":
 				content = (
 					<div id={contentContainer}>
-			            <div id="projectContainer">
-			                <a href="https://ialberttran.github.io/weather-app/" target="_blank" rel="noopener noreferrer">
-			                    <div id="weatherApp">
-			                        <div className="colorBox">
-			                            <p>Weather App</p>
-			                        </div>
-			                    </div>
-			                </a>
-			                <a href="https://ialberttran.github.io/quote-machine/" target="_blank" rel="noopener noreferrer">
-			                    <div id="quoteMachine">
-			                        <div className="colorBox">
-			                            <p>Quote Machine</p>
-			                        </div>
-			                    </div>
-			                </a>
-
-			                <a href="https://ialberttran.github.io/checkers/" target="_blank" rel="noopener noreferrer">
-			                    <div id="checkers">
-			                        <div className="colorBox">
-			                            <p>Checkers</p>
-			                        </div>
-			                    </div>
-			                </a>
-			            </div>
+						<div id="weatherInfo">
+							<p id="weatherTitle">Weather App</p>
+							<i className="fas fa-sun"></i>
+							<p id="weatherText">A web application that presents the user a 10-day forecast, along with additional information of the current day. The days are presented through a
+							carousel where users can cycle through using the available buttons. The number of days that is shown at any single time depends on how large the user view is (1 up to 10). 
+							Uses Yahoo's weather API for weather information. Coded in HTML/CSS and Vanilla JavaScript</p>
+							<a id="weatherButton" href="https://ialberttran.github.io/weather-app/" target="_blank" rel="noopener noreferrer">View <i className="fa-fw fas fa-arrow-right"></i></a>
+						</div>
+		                <img id="weatherApp" alt="weatherApp" src={weatherApp}/>
+		                <img id="checkers" alt="checkers" src ={checkers}/>
+		                <div id="checkersInfo">
+							<p id="checkersTitle">Classic Checkers</p>
+							<i className="fas fa-chess-queen"></i>
+							<p id="checkersText">A simple game of checkers for the bored and the distracted! Presents the user a standard 8 x 8 board two human players can use to duel one another in a game of
+							mental war! As each move is made, the move history list grows to keep track of each move incase you want to go back in time
+							and take back an ill-made move. Uses HTML / CSS and JavaScript. In addition, uses the ReactJS framework for rendering the board and move history, and keeping track of the board state at a given point in time!
+							</p>
+							<a id="checkersButton" href="https://ialberttran.github.io/weather-app/" target="_blank" rel="noopener noreferrer">View<i className="fa-fw fas fa-arrow-circle-right"></i></a>
+						</div>
 			       	</div>
 			    );
 				break;
@@ -559,7 +552,7 @@ class Site extends React.Component{
 				/>
 				<Section id="about" className="section" title="About" color="#f76c6c"/>
 				<Section id="knowledge" className="section" title="knowledge" color="#b19cd9" onClick={(clickedLink) => this.expand(clickedLink)}	/>
-				<Section id="portfolio" className="section" title="Portfolio"/>
+				<Section id="portfolio" className="section" title="Portfolio" color="#81CDC9"/>
 				<Section id="contact" className="section" title="Connect" color="#86c232"/>
 				<Footer />
 			</div>
