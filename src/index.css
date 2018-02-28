@@ -179,12 +179,12 @@ body, #root, #root .section{
 }
 
 #root #about{
-    min-height: 100vh;
+    height: auto;
 }
 
 #about{
     display: grid;
-    grid-template-rows: 10% 10% 80%;
+    grid-template-rows: 10% auto;
     grid-template-columns: 10% 80% 10%;
 
     background: #f9f9f9;
@@ -195,13 +195,14 @@ body, #root, #root .section{
     justify-self: center;
     display: grid;
     grid-column: 2 / 3;
-    grid-row: 2 / 3;
+    grid-row: 1 / 2;
     border-bottom: solid #f76c6c;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
+    margin-top: 10vh;
 }
 
 
@@ -216,11 +217,11 @@ body, #root, #root .section{
 }
 
 #aboutContentContainer{
-    grid-row: 3 / 4;
+    grid-row: 2 / 3;
     grid-column: 2 / 3;
     display: grid;
     grid-template-columns: 40% 60%;
-
+    margin: 5vh 0;
 }
 
 #aboutTxtContainer, #photoContainer{
@@ -523,7 +524,6 @@ body, #root, #root .section{
 
 #root #portfolio{
     height: auto;
-    min-height: 100vh;
 }
 #portfolio{
     display: grid;
@@ -711,29 +711,29 @@ body, #root, #root .section{
 /* Contact Section CSS */
 /********************************************************************************************/
 #root #contact{
-    height: 90vh;
+    height: auto;
 }
 
 
 #contact{
     display: grid;
-    grid-template-rows: 10% 10% 80%;
-    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 10% auto;
+    grid-template-columns: 100%;
 
     background: #d9dbdd;
 }
 #contactTitleContainer{
     width: 40%;
     justify-self: center;
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
     border-bottom: solid #86c232;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-
+    margin: 5vh 10vw;
 }
 
 
@@ -744,21 +744,23 @@ body, #root, #root .section{
 }
 
 #contactContentContainer{
-    grid-row: 3 / 4;
-    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
 
     font-size: 50px;
 
     font-family: "Comfortaa", sans-serif;
 
+    margin: 0 10vw;
 }
 
 #contactContentContainer form{
     width: 100%;
+    height: auto;
     display: grid;
-    grid-template-rows: 20% 60% 20%;
+    grid-template-rows: auto auto auto auto;
     grid-template-columns: 20% 60% 20%; 
-    height: 100%;
+
 
     justify-self: center;
     align-self: center;
@@ -768,8 +770,7 @@ body, #root, #root .section{
 
 #contactContentContainer form #email{
 
-   color: #1d1e21;
-   border-bottom: #86c232 solid;
+   color: #86c232;
    font-size: 25px;
 
    grid-row: 1 / 2;
@@ -777,16 +778,18 @@ body, #root, #root .section{
    align-self: center;
 
    width: 100%;
-   height: 40%;
+   height: auto;
 
    display: flex;
-   justify-content: space-between;
+   justify-content: center;
    align-items: center;
 
+
+    font-family: "Passion One", sans-serif;
 }
 
 #contactContentContainer form input{
-    height: 20%;
+    height: 5vh;
     font-size: 25px;
 
     color: #86c232;
@@ -801,10 +804,12 @@ body, #root, #root .section{
     grid-column: 2 / 3;
 
     align-self: start;
+
+    margin: 2.5vh 0;
 }
 
 #contactContentContainer form textarea {
-   height: 60%;
+   height: 15vh;
    font-size: 25px;
    resize: none;
 
@@ -816,14 +821,16 @@ body, #root, #root .section{
 
    border: none;
 
-   grid-row: 2 / 3;
+   grid-row: 3 / 4;
    grid-column: 2 / 3;
 
    align-self: end;
+
+   margin-bottom: 2.5vh;
 }
 
 #contactContentContainer form button{
-   height: 40%;
+   height: auto;
    width: 50%;
 
    padding: 1%;
@@ -833,7 +840,7 @@ body, #root, #root .section{
 
    border: #86c232 solid;
 
-   font-family: "Comfortaa", sans-serif;
+   font-family: "Passion One", sans-serif;
    font-weight: bold;
    font-size: 25px;
 
@@ -842,16 +849,17 @@ body, #root, #root .section{
    transition-property: color, background-color;
    transition-duration: 0.5s;
 
-   grid-row: 3 / 3;
+   grid-row: 4 / 5;
    grid-column: 2 / 3;
    align-self: center;
    justify-self: end;
+
+   margin-bottom: 5vh;
 }
 
 #contactContentContainer form button:hover{
     cursor: pointer;
-    color: #86c232;
-    background-color: #1d1e21;
+    background-color: #86c232;
 }
 /********************************************************************************************/
 /* Footer */
@@ -864,7 +872,7 @@ body, #root, #root .section{
     height: 20%;
     background-color: #1d1e21;
 
-    padding: 1%;
+    padding: 10px;
 }
 
 #connectionsContainer div{
@@ -882,13 +890,18 @@ body, #root, #root .section{
 }
 
 
-#contactContentContainer a{
+#connectionsContainer a{
     text-decoration: none;
+    margin: 0 1px;
 }
 
 
 #connectionsContainer a:visited{
     color: inherit;
+}
+
+#connectionsContainer a:hover{
+    color: #f9f9f9;
 }
 
 
@@ -912,11 +925,6 @@ body, #root, #root .section{
     #aboutTitle, #portfolioTitle, #contactTitle, #knowledgeTitle{ letter-spacing: 1px; font-size: 25px;}
     #portfolioContentContainer .colored{ font-size: 25px; }
 
-    #projectContainer div {
-        width: 175px;
-        height: 85px;
-    }
-
     .drop .fa-cog{font-size: 40px;}
     .drop a{ font-size: 20px;}
     .colorBox p{ font-size: 20px; }
@@ -927,7 +935,7 @@ body, #root, #root .section{
 
     #current p, #inProgress p, #next p{ font-size: 12px; }
 
-    #weatherTitle, #checkersTitle{ font-size: 15px; }
+    #weatherTitle, #checkersTitle{ font-size: 20px; }
     #weatherText, #checkersText{ font-size: 12px; }
     #checkersInfo .fa-chess-queen, #weatherInfo .fa-sun{ font-size: 30px; }
 
@@ -967,7 +975,7 @@ body, #root, #root .section{
 
     #current p, #inProgress p, #next p{ font-size: 14px; }
 
-    #weatherTitle, #checkersTitle{ font-size: 20px; }
+    #weatherTitle, #checkersTitle{ font-size: 25px; }
     #weatherText, #checkersText{ font-size: 14px; }
     #checkersInfo .fa-chess-queen, #weatherInfo .fa-sun{ font-size: 35px; }
 
@@ -992,10 +1000,6 @@ body, #root, #root .section{
     }
     #aboutTitle, #portfolioTitle, #contactTitle, #knowledgeTitle{ letter-spacing: 3px; font-size: 40px;}
     #portfolioContentContainer .colored{ font-size: 40px; }
-    #projectContainer div {
-        width: 225px;
-        height: 112px;
-    }
 
     .drop .fa-cog{font-size: 70px;}
     .drop a{ font-size: 30px;}
@@ -1007,7 +1011,7 @@ body, #root, #root .section{
 
     #current p, #inProgress p, #next p{ font-size: 16px; }
 
-    #weatherTitle, #checkersTitle{ font-size: 25px; }
+    #weatherTitle, #checkersTitle{ font-size: 30px; }
     #weatherText, #checkersText{ font-size: 16px; }
     #checkersInfo .fa-chess-queen, #weatherInfo .fa-sun{ font-size: 40px; }
 
@@ -1050,7 +1054,7 @@ body, #root, #root .section{
 
     #current p, #inProgress p, #next p{ font-size: 18px; }
 
-    #weatherTitle, #checkersTitle{ font-size: 30px; }
+    #weatherTitle, #checkersTitle{ font-size: 35px; }
     #weatherText, #checkersText{ font-size: 18px; }
     #checkersInfo .fa-chess-queen, #weatherInfo .fa-sun{ font-size: 45px; }
 
@@ -1063,12 +1067,6 @@ body, #root, #root .section{
     #contactContentContainer #connectionsContainer div{ font-size: 20px;}
 
 }
-
-
-@media screen and (min-width: 1025px) and (max-width: 1350px) {
-    #contactContentContainer #connectionsContainer div{ font-size: 25px;}
-}
-
 
 @media screen and (max-width: 767px) {
     #navBarContainer{
@@ -1100,7 +1098,6 @@ body, #root, #root .section{
     }
 
     #aboutTxtContainer{
-        padding: 2.5%;
 
         grid-column: 1 / 2;
         grid-row: 2 / 3;
@@ -1186,48 +1183,4 @@ body, #root, #root .section{
     #contactContentContainer #email p{
         display: none;
     }
-
-
-
-    #contactTitleContainer, #portfolioTitleContainer, #aboutTitleContainer {
-        position: static;
-        transform: none;
-        align-self: center;
-
-        margin-bottom: 5%;
-    }
-
-    #aboutMe, #portfolio, #contact {
-        justify-content: center;
-    }
 }
-
-@media screen and (min-width: 768px) {
-    #mobile-menu{
-        display: none;
-    }
-}
-
-@media only screen and (max-width: 480px) and (max-height: 480px) {
-
-    #aboutMeTxt {
-        font-size: 8px;
-    }
-
-}
-
-/* iPhone 6 - iPhone X*/
-@media only screen and (max-width: 480px) and (min-height: 730px) and (max-height: 830px) {
-    #aboutMeTxt {
-        font-size: 11px;
-    }
-
-}
-
-/* mid-sized smartphones*/
-@media only screen and (max-width: 480px) and (min-height: 630px) and (max-height: 729px) {
-    #aboutMeTxt {
-        font-size: 10px;
-    }
-}
-
