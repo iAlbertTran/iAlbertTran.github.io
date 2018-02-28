@@ -605,14 +605,14 @@ function refreshValues(){
 	contactStartPos = $('#contact').offset().top;
 	navHeight = $("#navBarContainer").outerHeight();
 }
-//adjusts which nav-bar is displayed, as well as it's styling depending on what device is being used and what the user is viewing
+//adjusts if navbar is fixed top or not, depending on what device is being used and what the user is viewing
 function adjustNav(){
 	nav = document.getElementById("navBarContainer");
 	let about = document.getElementById("about");
 	if($(window).scrollTop() >= homeEndPos){
+		about.style.marginTop = navHeight + "px";
 		nav.style.position = "fixed";
 		nav.style.top = 0;
-		about.style.marginTop = navHeight + "px";
 		$("#aboutTitleContainer, #knowledgeTitleContainer, #portfolioTitleContainer, #contactTitleContainer").css("marginTop", navHeight + 10 + "px");
 	}
 	else{
