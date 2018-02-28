@@ -625,14 +625,12 @@ function adjustNav(){
 	if($(window).scrollTop() >= homeEndPos){
 		nav.style.position = "fixed";
 		nav.style.top = 0;
-		nav.style.padding = 0;
 		mobile.style.position = "fixed";
 		mobile.style.top = navHeight + "px";
 		about.style.marginTop = navHeight + "px";
 	}
 	else{
 		nav.style.position = "static";
-		nav.style.padding = "1% 0";
 		mobile.style.position = "static";
 		mobile.style.top = 0;
 		about.style.marginTop = 0;

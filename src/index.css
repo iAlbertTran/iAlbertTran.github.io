@@ -14,7 +14,7 @@ body, #root, #root .section{
     align-items: center;
 
     width: 100%;
-    height: 7.5%;
+    height: 50px;
 
     box-shadow: 0 4px 4px rgba(0,0,0,.4);
 
@@ -26,7 +26,7 @@ body, #root, #root .section{
 
     border: none;
 
-    padding: 1% 0;
+    padding: 10px 0;
 }
 
 #aplusplus{
@@ -70,7 +70,7 @@ body, #root, #root .section{
     letter-spacing: 1px;
     font-weight: bold;
     border-bottom: transparent solid;
-    margin: 0 5%;
+    margin: 0 0 0 5%;
 
     transition-property: background-color, color, border-color;
     transition-duration: 0.5s;
