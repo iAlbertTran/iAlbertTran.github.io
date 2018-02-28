@@ -15,7 +15,6 @@ let windowPosition;
 let currentSection;
 let homeEndPos;
 let navHeight;
-let mobile;
 let nav;
 
 class Title extends React.Component{
@@ -348,42 +347,6 @@ function NavBar(props){
 
 }
 
-function MobileMenu(props){
-	return(
-		<div id={props.id}>
-			<NavAnchor 
-            	specificAnchor="home" 
-            	onClick={() => props.onClick('home')} 
-            	fontAwesome = "far fa-arrow-alt-circle-up"
-            />
-
-            <NavAnchor 
-            	specificAnchor="about" 
-            	onClick={() => props.onClick('about')} 
-            	fontAwesome = "far fa-address-card"
-            />
-
-            <NavAnchor 
-            	specificAnchor="knowledge" 
-            	onClick={() => props.onClick('knowledge')} 
-            	fontAwesome = "far fa-lightbulb"
-            />
-
-            <NavAnchor 
-            	specificAnchor="portfolio" 
-            	onClick={() => props.onClick('portfolio')} 
-            	fontAwesome = "fas fa-cogs"
-            />
-
-            <NavAnchor 
-            	specificAnchor="contact" 
-            	onClick={() => props.onClick('contact')} 
-            	fontAwesome = "far fa-envelope"
-            />
-		</div>
-);
-}
-
 class Navigation extends React.Component{
 	render(){
 
@@ -422,12 +385,11 @@ class Site extends React.Component{
 
 	//expands and collapses mobile menu
 	mobileMenu(){
-		if(mobile.style.height === '' || mobile.style.height === '0px')
-			mobile.style.height = "25%";
-
+		let nav = document.getElementById("navBar");
+		if(nav.style.height === '0px')
+			nav.style.height = "100%";
 		else
-			mobile.style.height = "0px";
-		
+			nav.style.height = "0px";
 	}
 
 	//expands the list of skills on the portoflio section
@@ -568,9 +530,6 @@ class Site extends React.Component{
 					onClick={(clickedLink) => this.handleClick(clickedLink)} 
 					mobileMenu={() => this.mobileMenu()}
 				/>
-				<MobileMenu id="mobile-menu"
-					onClick={(clickedLink) => this.handleClick(clickedLink)}
-				/>
 				<Section id="about" className="section" title="About" color="#f76c6c"/>
 				<Section id="knowledge" className="section" title="knowledge" color="#b19cd9" onClick={(clickedLink) => this.expand(clickedLink)}	/>
 				<Section id="portfolio" className="section" title="Portfolio" color="#81CDC9"/>
@@ -619,20 +578,14 @@ function refreshValues(){
 //adjusts which nav-bar is displayed, as well as it's styling depending on what device is being used and what the user is viewing
 function adjustNav(){
 	nav = document.getElementById("navBarContainer");
-	mobile = document.getElementById("mobile-menu");
-
 	let about = document.getElementById("about");
 	if($(window).scrollTop() >= homeEndPos){
 		nav.style.position = "fixed";
 		nav.style.top = 0;
-		mobile.style.position = "fixed";
-		mobile.style.top = navHeight + "px";
 		about.style.marginTop = navHeight + "px";
 	}
 	else{
 		nav.style.position = "static";
-		mobile.style.position = "static";
-		mobile.style.top = 0;
 		about.style.marginTop = 0;
 	}
 }

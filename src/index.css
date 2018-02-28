@@ -1,3 +1,5 @@
+
+
 body, #root, #root .section{
     height: 100vh;
     width: 100%;
@@ -8,18 +10,17 @@ body, #root, #root .section{
 /********************************************************************************************/
 /* navbar css */
 /********************************************************************************************/
-#navBarContainer, #mobile-menu{
-    display: flex;
+#navBarContainer{
+    display: grid;
+    grid-template-columns: auto auto;
     justify-content: space-between;
-    align-items: center;
 
-    width: 100%;
     height: 50px;
+    width: 100%;
 
     box-shadow: 0 4px 4px rgba(0,0,0,.4);
 
     font-family: "Poppins", sans-serif;
-    z-index: 100;
 
     color: #F8F8F8;
     background-color: #1d1e21;
@@ -27,14 +28,14 @@ body, #root, #root .section{
     border: none;
 
     padding: 10px 0;
+
+    z-index: 100;
 }
 
 #aplusplus{
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-    margin-left: 10%;
     padding: 5px;
 
     border: solid #f76c7c;
@@ -42,76 +43,65 @@ body, #root, #root .section{
 
     font-weight: bold;
 
+    width: 30px;
     height: 30px;
     transition-property: background-color, color, border;
     transition-duration: 0.5s;
 
-}
+    grid-row: 1 / 2;
+    margin-left: 10vw;
 
-#hamburgerMenu{
-    font-size: 225%;
-    margin-right: 10%;
-    display: none;
 }
 
 #navBar{
-    display: flex;
-    justify-content: flex-end;
-    align-self: center;
-    margin-right: 10%;
-}
-
-#navBar a, #mobile-menu a{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     text-align: center;
-    text-decoration: none;
     letter-spacing: 1px;
     font-weight: bold;
     border-bottom: transparent solid;
-    margin: 0 0 0 5%;
 
-    transition-property: background-color, color, border-color;
+    transition-property: background-color, color, border-color, height;
     transition-duration: 0.5s;
 
     color: #F8F8F8;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    grid-column-gap: 2vw;
+
+    align-content: center;
+    margin-right: 10vw;
+
+    background: #1d1e21;
+    z-index: 100;
 }
 
-#navBar a:visited, #mobile-menu:visited{
+
+
+#navBar a{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-decoration: none;
+}
+
+#navBarContainer a:visited{
     color: #F8F8F8;
 }
 
-#navBar a .fa-fw, #mobile-menu a .fa-fw{
+#navBarContainer a .fa-fw{
 	margin-right: 1%;
 
 	transition-property: color;
 	transition-duration: 0.5s;
 }
 
-#mobile-menu{
-    margin: 0;
+#hamburgerMenu{
+    font-size: 225%;
+    display: none;
+    margin-right: 10vw;
 
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
-
-    height: 0px;
-    overflow: hidden;
-
-    transition-property: height;
-    transition-duration: 0.5s;
-
-    padding: 0;
-}
-
-
-#mobile-menu a{
-    color: #f9f9f9;
-    border: none;
-    margin: 0 0 2.5% 10%;
-
+    z-index: 101;
 }
 /********************************************************************************************/
 /* frontcover css */
@@ -1082,14 +1072,31 @@ body, #root, #root .section{
 
 @media screen and (max-width: 767px) {
     #navBarContainer{
-        padding: 2.5% 0 !important;
+        grid-template-rows: auto 30vh;
     }
     #navBar{
-        display: none;
+        grid-row: 2 / 3;
+        grid-template-columns: 100%;
+
+        justify-content: end;
+
+        overflow: hidden;
+        height: 0px;
+
+        margin-right: 0;
+        align-content: space-around;
+    }
+
+    #navBar a{
+        flex-direction: row-reverse;
+        justify-self: end;
+        margin-left: 10vw;
+        margin-right: 10vw;
     }
 
     #hamburgerMenu{
         display: block;
+        justify-self: end;
     }
 
     #aboutTxtContainer{
