@@ -70,10 +70,12 @@ class Content extends React.Component{
 		            	<div id="aboutTxtContainer">
 		                	<p id="aboutMeTxt">
 			                    Hello World! My name is Albert and I'm a 22 year old web developer based in the Bay Area! I'm a recent college graduate from the University of California, Davis with a Bachelor's of Science in Computer Science.<br/><br/>
-			                    Regardless if its a static web page or a dynamic web application, I love the process of taking a website from an idea all the way up to deployment. Being able to create something that's visually and functionally 
-			                    beautiful is what motivates and excites me most about web development. It is my passion more so than my profession!<br/><br/>
+			                    Regardless if its a static web page or a dynamic web application, I enjoy taking an idea and making it a reality! Being able to create something that's visually and functionally 
+			                    beautiful is what motivates and excites me most about web development. It is my passion more so than my profession. As soon as I begin working on something, I become addicted and work almost non-stop. Each accomplishment 
+			                    or milestone gives me great satisfaction. Each roadblock or obstacle gets more more motivated to overcome them! And when all is said and done, I have created something I am fully proud of.<br/><br/>
 
-			                    My interests include Software Development and UI / UX Design. I enjoy playing video games, watching basketball and movies, as well as just hanging out and socializing!<br/><br/>
+			                    My interests include Software Development and UI / UX Design. I am first and foremost a Software Developer, becoming a better and more creative designer over time. I enjoy playing 
+			                    video games, watching basketball and movies, as well as just hanging out and socializing!<br/><br/>
 
 			                    I'm always looking to better myself. If you'd like to learn more about what I can offer, continue on!<br/><br/>
 			                    <em id="quote">"Tell me and I forget, teach me and I may remember, involve me and I learn"<br/></em>
@@ -170,7 +172,7 @@ class Content extends React.Component{
 							mental war! As each move is made, the move history list grows to keep track of each move incase you want to go back in time
 							and take back an ill-made move. Uses HTML / CSS and JavaScript. In addition, uses the ReactJS framework for rendering the board and move history, and keeping track of the board state at a given point in time!
 							</p>
-							<a id="checkersButton" href="https://ialberttran.github.io/checkers/" target="_blank" rel="noopener noreferrer">View<i className="fa-fw fas fa-arrow-circle-right"></i></a>
+							<a id="checkersButton" href="https://ialberttran.github.io/checkers/" target="_blank" rel="noopener noreferrer">View<i className="fa-fw fas fa-arrow-right"></i></a>
 						</div>
 			       	</div>
 			    );
@@ -180,8 +182,7 @@ class Content extends React.Component{
 					<div id={contentContainer}>
 			            <form method="POST" action="https://formspree.io/albtran@ucdavis.edu" target="_blank">
 			                <div id="email">
-			                    <i className="fa fa-envelope"></i>
-			                    <p className="username">AlbTran@ucdavis.edu</p>
+			                    <p className="username">Got questions? Want to have a conversation?</p>
 			                </div>
 			                <input type="email" required name="email" placeholder="Email"/>
 			                <textarea name="message" required placeholder="How can I help you?"></textarea>
@@ -554,6 +555,8 @@ window.onload = (
 window.onscroll = loadScrollResize;
 window.onresize = loadScrollResize;
 
+window.onresize = navResize;
+
 
 //for window.onload onreize and onscroll
 function loadScrollResize() {
@@ -563,7 +566,34 @@ function loadScrollResize() {
 	adjustNav();
 	navBarColors();
 
-	currentSection = highlightButton();
+
+	//gets the height of a section / 2, all sections are equal height
+	let sectionMidPoint = document.getElementById("about").getBoundingClientRect().height / 2;
+	switch(true){
+		case (windowPosition >= 0 && windowPosition < aboutStartPos - sectionMidPoint):
+			currentSection = styleChanges("home", "#f76c6c");
+			break;
+
+		case (windowPosition >= aboutStartPos - sectionMidPoint && windowPosition < knowledgeStartPos - sectionMidPoint):
+			currentSection = styleChanges("about", "#f76c6c");
+			break;
+
+		case (windowPosition >= knowledgeStartPos - sectionMidPoint && windowPosition < portfolioStartPos - sectionMidPoint):
+			currentSection = styleChanges("knowledge", "#b19cd9");
+			break;
+
+		case (windowPosition >= portfolioStartPos - sectionMidPoint && windowPosition < contactStartPos - sectionMidPoint):
+			currentSection = styleChanges("portfolio", "#81CDC9");
+			break;
+
+		case (windowPosition >= contactStartPos - sectionMidPoint):
+			currentSection = styleChanges("contact", "#86c232 ");
+			break;
+
+		default: break;
+
+	}
+
 }
 
 //gets new values available for the rest of the page to use
@@ -583,11 +613,22 @@ function adjustNav(){
 		nav.style.position = "fixed";
 		nav.style.top = 0;
 		about.style.marginTop = navHeight + "px";
+		$("#aboutTitleContainer, #knowledgeTitleContainer, #portfolioTitleContainer, #contactTitleContainer").css("marginTop", navHeight + 10 + "px");
 	}
 	else{
 		nav.style.position = "static";
 		about.style.marginTop = 0;
+		$("#aboutTitleContainer, #knowledgeTitleContainer, #portfolioTitleContainer, #contactTitleContainer").css("marginTop", "10vh");
 	}
+}
+
+function navResize(){
+	let nav = document.getElementById("navBar");
+
+	if (window.innerWidth >= 767)
+		nav.style.height = "100%";
+	else
+		nav.style.height = "0px";
 }
 
 
@@ -616,54 +657,14 @@ function navBarColors(){
 
 //highlights the button in the navbar that corresponds to the current section being viewed
 //subtracts by sectionMidPoint so transition of highlights begin when atleast half of the next section is visible.
-function highlightButton(){
-	//gets the height of a section / 2, all sections are equal height
-	var sectionMidPoint = document.getElementById("about").getBoundingClientRect().height / 2;
-	switch(true){
-		case (windowPosition >= 0 && windowPosition < aboutStartPos - sectionMidPoint):
-			let home = document.getElementsByClassName("home")[0];
-			home.style.borderBottom = "#f76c6c solid";
-			$("#navBar a .fa-fw, #mobile-menu a .fa-fw").css("color","#f76c6c");
-			$("#aplusplus").css("border", "#f76c6c solid");
-			navBarHover("#f76c6c");
-			return(".home");
+function styleChanges(currSection, color){
+	let section = document.getElementsByClassName(currSection)[0];
+	section.style.borderBottom = color + " solid";
+	$("#navBar a .fa-fw").css("color", color);
+	$("#aplusplus").css("border", color + " solid");
+	navBarHover(color);
 
-		case (windowPosition >= aboutStartPos - sectionMidPoint && windowPosition < knowledgeStartPos - sectionMidPoint):
-			let about = document.getElementsByClassName("about")[0];
-			about.style.borderBottom = "#f76c6c solid";
-			$("#navBar a .fa-fw, #mobile-menu a .fa-fw").css("color","#f76c6c");
-			$("#aplusplus").css("border", "#f76c6c solid");
-			navBarHover("#f76c6c");
-			return(".about");
-
-		case (windowPosition >= knowledgeStartPos - sectionMidPoint && windowPosition < portfolioStartPos - sectionMidPoint):
-			let knowledge = document.getElementsByClassName("knowledge")[0];
-			knowledge.style.borderBottom = "#b19cd9 solid";
-			$("#navBar a .fa-fw, #mobile-menu a .fa-fw").css("color","#b19cd9");
-			$("#aplusplus").css("border", "#b19cd9 solid");
-			navBarHover("#b19cd9");
-			return(".knowledge");
-
-		case (windowPosition >= portfolioStartPos - sectionMidPoint && windowPosition < contactStartPos - sectionMidPoint):
-			let portfolio = document.getElementsByClassName("portfolio")[0];
-			portfolio.style.borderBottom = "#81CDC9 solid";
-			$("#navBar a .fa-fw, #mobile-menu a .fa-fw").css("color","#81CDC9");
-			$("#aplusplus").css("border", "#81CDC9 solid");
-			navBarHover("#81CDC9");
-			return(".portfolio");
-
-		case (windowPosition >= contactStartPos - sectionMidPoint):
-			let contact = document.getElementsByClassName("contact")[0];
-			contact.style.borderBottom = "#86c232 solid";
-			$("#navBar a .fa-fw, #mobile-menu a .fa-fw").css("color","#86c232");
-			$("#aplusplus").css("border", "#86c232 solid");
-			navBarHover("#86c232");
-			return(".contact");
-
-		default: break;
-
-	}
-
+	return ("." + currSection);
 }
 
 
