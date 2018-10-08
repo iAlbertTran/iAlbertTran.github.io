@@ -69,7 +69,7 @@ class Content extends React.Component{
 		            	</div>
 		            	<div id="aboutTxtContainer">
 		                	<p id="aboutMeTxt">
-			                    Hello World! My name is Albert and I'm a 22 year old web developer based in the Bay Area! I'm a recent college graduate from the University of California, Davis with a Bachelor's of Science in Computer Science.<br/><br/>
+			                    Hello World! My name is Albert and I'm a 23 year old web developer based in the Bay Area! I'm a recent college graduate from the University of California, Davis with a Bachelor's of Science in Computer Science.<br/><br/>
 			                    Regardless if its a static web page or a dynamic web application, I enjoy taking an idea and making it a reality! Being able to create something that's visually and functionally 
 			                    beautiful is what motivates and excites me most about web development. It is my passion more so than my profession. As soon as I begin working on something, I become addicted and work almost non-stop. Each accomplishment 
 			                    or milestone gives me great satisfaction. Each roadblock or obstacle gets more more motivated to overcome them! And when all is said and done, I have created something I am fully proud of.<br/><br/>
@@ -91,7 +91,7 @@ class Content extends React.Component{
 						<div id="opentext">
 							<p>There are countless programming languages and technologies available in the tech industry. Each person is unique in respect to what tools they have under their belt. For me, I find it extremely
 							satisfying to discover something new that I can add to my arsenal. Click any
-							<span style={{color: "#b19cd9"}}> <i className="fas fa-cog"></i></span> below to learn more about my skillset!</p>
+							<span style={{color: "#f76c6c"}}> <i className="fas fa-cog"></i></span> below to learn more about my skillset!</p>
 						</div>
 
 			            <div className="drop" id="currentContainer" onClick={() => this.props.onClick("current")}>
@@ -532,9 +532,9 @@ class Site extends React.Component{
 					mobileMenu={() => this.mobileMenu()}
 				/>
 				<Section id="about" className="section" title="About" color="#f76c6c"/>
-				<Section id="knowledge" className="section" title="knowledge" color="#b19cd9" onClick={(clickedLink) => this.expand(clickedLink)}	/>
-				<Section id="portfolio" className="section" title="Portfolio" color="#81CDC9"/>
-				<Section id="contact" className="section" title="Connect" color="#86c232"/>
+				<Section id="knowledge" className="section" title="knowledge" color="#f76c6c" onClick={(clickedLink) => this.expand(clickedLink)}	/>
+				<Section id="portfolio" className="section" title="Portfolio" color="#f76c6c"/>
+				<Section id="contact" className="section" title="Connect" color="#f76c6c"/>
 				<Footer />
 			</div>
 		);
@@ -579,15 +579,15 @@ function loadScrollResize() {
 			break;
 
 		case (windowPosition >= knowledgeStartPos - sectionMidPoint && windowPosition < portfolioStartPos - sectionMidPoint):
-			currentSection = styleChanges("knowledge", "#b19cd9");
+			currentSection = styleChanges("knowledge", "#f76c6c");
 			break;
 
 		case (windowPosition >= portfolioStartPos - sectionMidPoint && windowPosition < contactStartPos - sectionMidPoint):
-			currentSection = styleChanges("portfolio", "#81CDC9");
+			currentSection = styleChanges("portfolio", "#f76c6c");
 			break;
 
 		case (windowPosition >= contactStartPos - sectionMidPoint):
-			currentSection = styleChanges("contact", "#86c232 ");
+			currentSection = styleChanges("contact", "#f76c6c");
 			break;
 
 		default: break;
@@ -660,9 +660,9 @@ function navBarColors(){
 function styleChanges(currSection, color){
 	let section = document.getElementsByClassName(currSection)[0];
 	section.style.borderBottom = color + " solid";
-	$("#navBar a .fa-fw").css("color", color);
+	/*$("#navBar a .fa-fw").css("color", color);
 	$("#aplusplus").css("border", color + " solid");
-	navBarHover(color);
+	navBarHover(color);*/
 
 	return ("." + currSection);
 }
