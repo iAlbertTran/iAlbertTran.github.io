@@ -69,7 +69,7 @@ class Content extends React.Component{
 		            	</div>
 		            	<div id="aboutTxtContainer">
 		                	<p id="aboutMeTxt">
-			                    Hello World! My name is Albert and I'm a 23 year old web developer based in the Bay Area! I'm a recent college graduate from the University of California, Davis with a Bachelor's of Science in Computer Science.<br/><br/>
+			                    Hello World! My name is Albert and I'm a 24 year old web developer based in the Bay Area! I'm a recent college graduate from the University of California, Davis with a Bachelor's of Science in Computer Science.<br/><br/>
 			                    Regardless if its a static web page or a dynamic web application, I enjoy taking an idea and making it a reality! Being able to create something that's visually and functionally 
 			                    beautiful is what motivates and excites me most about web development. It is my passion more so than my profession. As soon as I begin working on something, I become addicted and work almost non-stop. Each accomplishment 
 			                    or milestone gives me great satisfaction. Each roadblock or obstacle gets more more motivated to overcome them! And when all is said and done, I have created something I am fully proud of.<br/><br/>
