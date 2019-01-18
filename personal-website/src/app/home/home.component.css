@@ -37,7 +37,7 @@
 }
 
 .content .border-element{
-    border-bottom: 2.5px solid #ECEBE4;
+    border-bottom: 2.5px solid #EAC435;
     width: 100%;
     height: calc(100% - 40px);
 
@@ -93,9 +93,46 @@
     animation-delay: 1s;
 }
 
+
+
+
 .content .about{ animation-delay: 5s;}
 .content .portfolio{ animation-delay: 5.5s;}
 .content .contact{ animation-delay: 6s; }
+
+.nav-buttons .nav-button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.nav-buttons .nav-button-container h2{
+    margin-bottom: 5px;
+}
+
+.nav-buttons .bottom-border-element{
+    width: 0;
+    border-bottom: 3px solid #EAC435;
+
+    transition-property: width;
+    transition-duration: 0.5s;
+}
+
+.nav-button-container:hover{
+    cursor: pointer;
+}
+
+.nav-button-container:hover .bottom-border-element{
+    width: 50%;
+}
+
+
+
+
+
+
+
 
 .rotate-neg90{
     transform: rotate(-90deg);

@@ -9,8 +9,19 @@
     <div class='border-element' [class.increase-width]='increaseWidth'></div>
   </div>
   <div class='nav-buttons'>
-    <h2 class='about animated fadeIn'>About</h2>
-    <h2 class='portfolio animated fadeIn'>Portfolio</h2>
-    <h2 class='contact animated fadeIn'>Contact</h2>
+    <div class='nav-button-container' routerLink='About'>
+      <h2 class='about animated fadeIn'>About</h2>
+      <div class='bottom-border-element'></div>
+    </div>
+
+    <div class='nav-button-container' routerLink='Portfolio'>
+      <h2 class='portfolio animated fadeIn'>Portfolio</h2>
+      <div class='bottom-border-element'></div>
+    </div>
+
+    <div class='nav-button-container' routerLink='Contact'>
+      <h2 class='contact animated fadeIn'>Contact</h2>
+      <div class='bottom-border-element'></div>
+    </div>
   </div>
 </div>
