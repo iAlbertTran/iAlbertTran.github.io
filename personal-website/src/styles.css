@@ -4,4 +4,10 @@ html, body, .content{
     margin: 0;
 
     font-family: Arial, sans-serif;
+
+    background: #2c3d55;
+}
+
+.content{
+    padding-top: 50px;
 }

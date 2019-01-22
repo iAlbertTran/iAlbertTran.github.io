@@ -9,20 +9,17 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
+import { HelperService } from './service/helper.service';
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'About', component: AboutComponent },
-  {
-    path: 'Contact',
-    component: ContactComponent,
-    data: { title: 'Heroes List' }
-  },
   { path: 'Home',
     redirectTo: '',
     pathMatch: 'full'
   },
-  { path: 'Projects', component: ProjectsComponent}
+  { path: '', component: HomeComponent },
+  { path: 'About', component: AboutComponent },
+  { path: 'Contact', component: ContactComponent},
+  { path: 'Portfolio', component: ProjectsComponent}
   //{ path: '**', component: PageNotFoundComponent }
 ];
 
@@ -37,12 +34,11 @@ const appRoutes: Routes = [
   imports: [
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
     ),
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [HelperService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
