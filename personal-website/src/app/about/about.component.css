@@ -1,0 +1,98 @@
+.content .top-info{
+    display: flex;
+
+}
+
+.headshot{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.headshot .info-bit{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #ecebe4;
+    margin-top: 10px;
+}
+
+.headshot .info-bit p{
+    margin: 0;
+    color: #ecebe4;
+    margin-left: 10px;
+}
+
+.headshot .info-bit i{
+    color: #eac435;
+}
+
+.headshot img{
+    -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+
+    width: 300px;
+}
+
+.content .information{
+    width: calc(100% - 300px);
+
+    padding: 0 20px;
+
+    color: #ecebe4;
+
+    text-align: justify;
+}
+
+.content .information p{
+    margin: 0;
+}
+
+
+
+.skills .individual-skill{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    background: #456990;
+}
+
+.skills .individual-skill .skill-icon{
+    font-size: 50px;
+
+    padding: 5px 10px;
+}
+
+.individual-skill .skill-proficiency{
+    display: flex;
+}
+
+.individual-skill .proficiency-bar{
+    width: 100px;
+    height: 10px;
+
+    background: #2c3d55;
+}
+
+.individual-skill .proficiency-bar .inner-proficiency-bar{
+    height: 100%;
+    background: #eac435;
+}
+
+.basic{
+    width: 20%
+}
+
+.familiar{
+    width: 40%
+}
+
+.moderate{
+    width: 60%;
+}
+
+.expert{
+    width: 80%;
+}
