@@ -1,3 +1,25 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
+<div class='nav-bar' [class.displayNav]='_helperService.currentComponent != "home"'>
+    <div class='nav-link'>
+        <p [class.underline]="_helperService.currentComponent == 'home'" class='underline-box'></p>
+        <p routerLink='' class='nav-link-text'>Home</p>
+        <p [class.underline]="_helperService.currentComponent == 'home'" class='underline-box'></p>
+    </div>
+    <div class='nav-link'>
+        <p [class.underline]="_helperService.currentComponent == 'about'" class='underline-box'></p>
+        <p routerLink='About' class='nav-link-text'>About</p>
+        <p [class.underline]="_helperService.currentComponent == 'about'" class='underline-box'></p>
+    </div>
+    <div class='nav-link'>
+        <p [class.underline]="_helperService.currentComponent == 'portfolio'" class='underline-box'></p>
+        <p routerLink='Portfolio' class='nav-link-text'>Portfolio</p>
+        <p [class.underline]="_helperService.currentComponent == 'portfolio'" class='underline-box'></p>
+    </div>
+    <div class='nav-link'>
+        <p [class.underline]="_helperService.currentComponent == 'contact'" class='underline-box'></p>
+        <p routerLink='Contact' class='nav-link-text'>Contact</p>
+        <p [class.underline]="_helperService.currentComponent == 'contact'" class='underline-box'></p>
+    </div>
+</div>
 <router-outlet></router-outlet>
