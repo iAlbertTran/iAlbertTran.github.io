@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HelperService } from '../service/helper.service';
 
 @Component({
   selector: 'app-home',
@@ -11,9 +12,11 @@ export class HomeComponent implements OnInit {
   increaseHeight = false;
   increaseWidth = false;
 
-  constructor() { }
+  constructor(private _helperService: HelperService) { }
 
   ngOnInit() {
+
+    this._helperService.setCurrentComponent('home');
 
     setTimeout(() => { 
       this.increaseWidth = true;
