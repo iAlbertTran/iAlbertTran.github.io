@@ -2,14 +2,6 @@
   <div class='top-info'>
     <div class='headshot animated slideInLeft'>
       <img src='../../assets/me.png'/>
-      <div class='info-bit'>
-          <i class="fas fa-user-graduate"></i>
-          <p>UC Davis (Dec 2017)</p>
-      </div>
-      <div class='info-bit'>
-          <i class="fas fa-book"></i>
-          <p>B.S. Computer Science</p>
-      </div>
     </div>
     <div class='information animated slideInRight'>
         <p>Hello, thank you for taking the time to visit. 
@@ -28,15 +20,15 @@
     </div>
   </div>
   <div class='skills'>
-    <div class='individual-skill'>
-      <div class='skill-icon'><i class="fab fa-html5"></i></div>
+    <div class='individual-skill' *ngFor='let skill of skills'>
+      <div class='skill-icon'><i class='{{ skill.fontAwesomeIcon }}'></i></div>
       <div class='skill-info'>
-        <div class='skill-name'>HTML</div>
+        <div class='skill-name'>{{ skill.name }}</div>
         <div class='skill-proficiency'>
           <div class='proficiency-bar'>
-            <div class='inner-proficiency-bar expert'></div>
+            <div class='inner-proficiency-bar {{ skill.proficiency }}'></div>
           </div>
-          <div class='proficiency-text'>Expert</div>
+          <div class='proficiency-text'> {{ skill.proficiency }} </div>
         </div>
       </div>
     </div>

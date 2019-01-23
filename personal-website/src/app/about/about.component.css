@@ -1,3 +1,7 @@
+.content{
+    padding-top: 150px;
+}
+
 .content .top-info{
     display: flex;
 
@@ -6,26 +10,8 @@
 .headshot{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-}
-
-.headshot .info-bit{
-    display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    color: #ecebe4;
-    margin-top: 10px;
-}
-
-.headshot .info-bit p{
-    margin: 0;
-    color: #ecebe4;
-    margin-left: 10px;
-}
-
-.headshot .info-bit i{
-    color: #eac435;
 }
 
 .headshot img{
@@ -51,22 +37,61 @@
 
 
 
+.skills{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    width: 100%;
+
+    margin-top: 20px;
+}
+
 .skills .individual-skill{
     display: flex;
     justify-content: flex-start;
     align-items: center;
 
-    background: #456990;
+    background: #3A5070;
+    padding: 15px 10px;
+
+    margin: 5px 10px 5px 0;
+    width: 310px;
 }
 
 .skills .individual-skill .skill-icon{
-    font-size: 50px;
 
-    padding: 5px 10px;
+    width: 40px;
+    font-size: 35px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-right: 10px;
+
+    color: #eac435;
+
+    border-right: 1px solid #456990;
 }
+
+.individual-skill .skill-info{
+    color: #ecebe4;
+    padding-left: 10px;
+}
+
+.individual-skill .skill-info .skill-name{
+    font-size: 14px;
+}
+
 
 .individual-skill .skill-proficiency{
     display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    font-size: 12px;
 }
 
 .individual-skill .proficiency-bar{
@@ -74,25 +99,56 @@
     height: 10px;
 
     background: #2c3d55;
+
+    border-radius: 5px;
+
+    margin-right: 10px;
 }
 
 .individual-skill .proficiency-bar .inner-proficiency-bar{
     height: 100%;
     background: #eac435;
+
+    border-radius: 5px;
 }
 
-.basic{
-    width: 20%
+.Basic{
+    width: 50%;
 }
 
-.familiar{
-    width: 40%
+.Intermediate{
+    width: 65%;
 }
 
-.moderate{
-    width: 60%;
+.Proficient{
+    width: 75%;
 }
 
-.expert{
-    width: 80%;
+.Advanced{
+    width: 85%;
+}
+
+.Expert{
+    width: 95%;
+}
+
+@media only screen and (max-width: 767px) {
+    .content{
+        padding: 150px 20px 10px 20px;
+    }
+    .content .top-info{
+        flex-direction: column;
+    }
+
+    .content .information{
+        width: 100%;
+        padding: 20px 0;
+
+        font-size: 12px;
+    }
+
+    .skills .individual-skill{
+        width: 100%;
+        margin: 0 0 10px 0;
+    }
 }
