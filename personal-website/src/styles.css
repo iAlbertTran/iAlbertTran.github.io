@@ -8,6 +8,10 @@ html, body{
     padding: 0;
     height: 100vh;
     width: 100vw;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 
 .content{
@@ -15,15 +19,36 @@ html, body{
 
     line-height: 1.5;
     letter-spacing: 1px;
-    width: 80%;
-
+    width: 100%;
+    min-height: 100%;
     overflow-x: hidden;
     overflow-y: scroll;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+}
+
+.content::-webkit-scrollbar { 
+    display: none; 
+}
+
+.content .component-header{
+    font-size: 48px;
+    color: #eac435;
 }
 
 @media only screen and (max-width: 767px){
     .content{
-        width: calc(100% - 20px);
-        padding: 80px 10px 10px 10px;
+        padding: 5px;
+    }
+
+    body .nav-bar{
+        display: none;
+    }
+
+    .hamburger{
+        display: flex;
     }
 }
