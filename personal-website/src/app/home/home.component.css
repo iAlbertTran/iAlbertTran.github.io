@@ -71,7 +71,7 @@
     text-align: end;
     
 
-    height: 80px;
+    height: 100px;
 }
 
 .content .nav-buttons{
@@ -148,10 +148,78 @@
 
 }
 
-.increase-height{
-    height: 400px !important;
+.inner-container .increase-height{
+    height: 400px;
 }
 
-.increase-width{
-    width: 400px !important;
+.inner-container .increase-width{
+    width: 400px;
+}
+
+@media only screen and (max-width: 767px){
+    .content{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        padding-top: 40%;
+    }
+
+    .content .inner-container{
+        margin: 0;
+        width: 100%
+    }
+
+    .content .inner-container .basic-info{
+        padding: 40px 0;
+        text-align: center;
+    }
+
+    .inner-container .increase-height{
+        height: 100px;
+    }
+
+    .inner-container .increase-width{
+        width: 300px;
+    }
+
+
+    .rotate-neg90{
+        transform: none;
+    }
+    
+    .rotate-90{
+        transform: none;
+    
+    }
+
+    .content .nav-buttons{
+        flex-direction: row;
+        height: auto;
+
+        margin: 0;
+        padding: 10px;
+
+        width: 100%;
+
+    }
+
+    .content .nav-buttons h2{
+        margin: 0 20px;
+    }
+
+    .content .about{ animation-delay: 3s;}
+    .content .portfolio{ animation-delay: 3.5s;}
+    .content .contact{ animation-delay: 4s; }
+}
+
+@media only screen and (max-width: 480px){
+    .content .inner-container .basic-info h4{
+        font-size: 12px;
+
+    }
+
+    .content .nav-buttons h2{
+        font-size: 16px;
+    }
 }

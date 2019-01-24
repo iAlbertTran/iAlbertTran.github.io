@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit {
     setTimeout(() => { 
       this.increaseHeight = true; 
     }, 3000);
+    
     setTimeout(() => { this.startRotateAnimation = true; }, 4000);
 
   }
