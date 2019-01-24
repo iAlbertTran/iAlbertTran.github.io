@@ -7,5 +7,12 @@ import { HelperService } from './service/helper.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+
+  openHamburgerMenu = false;
+
   constructor(private _helperService: HelperService){}
+
+  openMenu(){
+    this.openHamburgerMenu = this.openHamburgerMenu ? false : true;
+  }
 }
