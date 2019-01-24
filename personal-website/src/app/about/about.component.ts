@@ -7,8 +7,8 @@ import { HelperService } from '../service/helper.service';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
-
-  skills = [
+  skills = [];
+  tempSkills = [
     {name: 'HTML', proficiency: 'Expert', fontAwesomeIcon: 'fab fa-html5'},
     {name: 'CSS', proficiency: 'Expert', fontAwesomeIcon: 'fab fa-css3-alt'},
     {name: 'JavaScript', proficiency: 'Expert', fontAwesomeIcon: 'fab fa-js-square'},
@@ -25,11 +25,24 @@ export class AboutComponent implements OnInit {
     {name: 'React', proficiency: 'Basic', fontAwesomeIcon: 'devicon-react-original'}
 
   ];
+
+  loadProficiencyBar = false;
+
   constructor(private _helperService: HelperService) { }
 
   ngOnInit() {
     this._helperService.setCurrentComponent('about');
 
+    //add in the skils one by one to have a stagger naimation effect
+    setInterval(() =>{
+      if(this.tempSkills.length > 0)
+        this.skills.push(this.tempSkills.shift());
+    }, 100);
+
+    setTimeout(() => {
+      this.loadProficiencyBar = true;
+      console.log(this.loadProficiencyBar);
+    }, 1750);
 
 
   }

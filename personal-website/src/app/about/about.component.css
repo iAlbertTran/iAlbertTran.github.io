@@ -1,28 +1,10 @@
-.content{
-    padding-top: 150px;
-}
-
 .content .top-info{
     display: flex;
 
 }
 
-.headshot{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.headshot img{
-    -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-
-    width: 300px;
-}
-
 .content .information{
-    width: calc(100% - 300px);
+    width: 100%;
 
     padding: 0 20px;
 
@@ -35,11 +17,20 @@
     margin: 0;
 }
 
+.content .information img{
+
+    float: left;
+
+    padding-right: 15px;
+
+    width: 250px;
+}
+
 
 
 .skills{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
 
@@ -56,8 +47,8 @@
     background: #3A5070;
     padding: 15px 10px;
 
-    margin: 5px 10px 5px 0;
-    width: 310px;
+    margin: 5px;
+    width: calc(25% - 30px);
 }
 
 .skills .individual-skill .skill-icon{
@@ -109,33 +100,49 @@
     height: 100%;
     background: #eac435;
 
+    width: 0;
+
+    transition-property: width;
+    transition-duration: 1s;
+
     border-radius: 5px;
 }
 
-.Basic{
+.individual-skill .proficiency-bar .Basic{
     width: 50%;
 }
 
-.Intermediate{
+.individual-skill .proficiency-bar .Intermediate{
     width: 65%;
 }
 
-.Proficient{
+.individual-skill .proficiency-bar .Proficient{
     width: 75%;
 }
 
-.Advanced{
+.individual-skill .proficiency-bar .Advanced{
     width: 85%;
 }
 
-.Expert{
+.individual-skill .proficiency-bar .Expert{
     width: 95%;
 }
 
-@media only screen and (max-width: 767px) {
-    .content{
-        padding: 150px 20px 10px 20px;
+
+
+@media only screen and (max-width: 1350px){
+    .skills .individual-skill{
+        width: calc(33.33%  - 30px);
     }
+}
+
+@media only screen and (max-width: 1024px){
+    .skills .individual-skill{
+        width: calc(50%  - 30px);
+    }
+}
+
+@media only screen and (max-width: 767px) {
     .content .top-info{
         flex-direction: column;
     }
@@ -147,8 +154,22 @@
         font-size: 12px;
     }
 
+    .content .information img{
+        padding-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 560px){
     .skills .individual-skill{
         width: 100%;
         margin: 0 0 10px 0;
+    }
+}
+
+
+
+@media only screen and (max-width: 480px) {
+    .content .information img{
+        width: 100%;
     }
 }
