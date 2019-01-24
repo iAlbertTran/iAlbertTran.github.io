@@ -1,3 +1,9 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
 .content .top-info{
     display: flex;
 
@@ -156,6 +162,10 @@
 
     .content .information img{
         padding-bottom: 10px;
+    }
+
+    .skills{
+        margin-top: 0;
     }
 }
 
