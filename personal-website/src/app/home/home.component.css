@@ -14,10 +14,11 @@
     background-size: cover;
 
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: flex-start;
 
-    padding-top: 0;
+    padding-top: 7.5%;
 }
 
 .content *{
@@ -36,7 +37,7 @@
     justify-content: center;
     align-items: center;
 
-    margin-top: 10%;
+    margin-top: 5%;
 
     position: relative;
 }
@@ -44,7 +45,7 @@
 .content .border-element{
     border-bottom: 2.5px solid #EAC435;
     width: 100%;
-    height: calc(100% - 40px);
+    height: calc(100% - 20px);
 
     position: absolute;
 
@@ -62,23 +63,21 @@
     justify-content: center;
     align-items: flex-end;
 
-
-    padding: 40px;
-
     transition-property: transform, height;
     transition-duration: 1s;
     
     text-align: end;
     
 
-    height: 100px;
+    height: 150px;
+
+    margin: 0 60px;
 }
 
 .content .nav-buttons{
-    padding: 40px;
-    height: 400px;
+    height: 500px;
 
-    margin-top: 10%;
+    margin-top: 5%;
 
 
     display: flex;
@@ -92,10 +91,16 @@
 
 .content .name{
     animation-delay: 0.5s;
+
+    font-size: 28px;
+
+    margin: 20px 0;
 }
 
 .content .description{
     animation-delay: 1s;
+
+    font-size: 16px;
 }
 
 
@@ -113,7 +118,9 @@
 }
 
 .nav-buttons .nav-button-container h2{
-    margin-bottom: 5px;
+    margin-bottom: 20px;
+
+    font-size: 24px;
 }
 
 .nav-buttons .bottom-border-element{
@@ -149,11 +156,11 @@
 }
 
 .inner-container .increase-height{
-    height: 400px;
+    height: 500px;
 }
 
 .inner-container .increase-width{
-    width: 400px;
+    width: 250px;
 }
 
 @media only screen and (max-width: 767px){
@@ -176,7 +183,7 @@
     }
 
     .inner-container .increase-height{
-        height: 100px;
+        height: 150px;
     }
 
     .inner-container .increase-width{
