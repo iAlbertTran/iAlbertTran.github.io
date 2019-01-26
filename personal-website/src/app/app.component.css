@@ -83,6 +83,17 @@
 
     position: fixed;
     z-index: 3;
+
+    border-radius: 50%;
+
+    right: 0;
+
+    background: #2c3d55;
+
+    width: 70px;
+    height: 70px;
+
+    margin: 10px 10px 0 0px;
 }
 
 .hamburger.is-active:hover{

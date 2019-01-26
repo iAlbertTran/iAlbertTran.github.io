@@ -31,16 +31,16 @@
 </button>
 
 <div class='mobile-nav' [class.expand-mobile-nav]='openHamburgerMenu'>
-    <div class='nav-link' routerLink=''>
+    <div class='nav-link' routerLink=''  (click)='closeNavDrawer()'>
         <p class='nav-link-text'>Home</p>
     </div>
-    <div class='nav-link' routerLink='About'>
+    <div class='nav-link' routerLink='About' (click)='closeNavDrawer()'>
         <p class='nav-link-text'>About</p>
     </div>
-    <div class='nav-link' routerLink='Portfolio'>
+    <div class='nav-link' routerLink='Portfolio' (click)='closeNavDrawer()'>
         <p class='nav-link-text'>Portfolio</p>
     </div>
-    <div class='nav-link' routerLink='Contact'>
+    <div class='nav-link' routerLink='Contact' (click)='closeNavDrawer()'>
         <p class='nav-link-text'>Contact</p>
     </div>
 </div>
