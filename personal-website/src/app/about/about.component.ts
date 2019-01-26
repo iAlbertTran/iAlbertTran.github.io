@@ -9,19 +9,19 @@ import { HelperService } from '../service/helper.service';
 export class AboutComponent implements OnInit {
   skills = [];
   tempSkills = [
-    {name: 'HTML', proficiency: 'Expert', fontAwesomeIcon: 'fab fa-html5'},
-    {name: 'CSS', proficiency: 'Expert', fontAwesomeIcon: 'fab fa-css3-alt'},
-    {name: 'JavaScript', proficiency: 'Expert', fontAwesomeIcon: 'fab fa-js-square'},
-    {name: 'Angular', proficiency: 'Advanced', fontAwesomeIcon: 'fab fa-angular'},
-    {name: 'Node.js', proficiency: 'Advanced', fontAwesomeIcon: 'fab fa-node'},
+    {name: 'HTML', proficiency: 'Expert', fontAwesomeIcon: 'devicon-html5-plain'},
+    {name: 'CSS', proficiency: 'Expert', fontAwesomeIcon: 'devicon-css3-plain'},
+    {name: 'JavaScript', proficiency: 'Expert', fontAwesomeIcon: 'devicon-javascript-plain'},
+    {name: 'Angular', proficiency: 'Advanced', fontAwesomeIcon: 'devicon-angularjs-plain'},
+    {name: 'Node.js', proficiency: 'Advanced', fontAwesomeIcon: 'devicon-nodejs-plain'},
     {name: 'C#', proficiency: 'Intermediate', fontAwesomeIcon: 'devicon-csharp-plain'},
-    {name: 'SQL', proficiency: 'Intermediate', fontAwesomeIcon: 'fas fa-code'},
+    {name: 'SQL', proficiency: 'Intermediate', fontAwesomeIcon: 'devicon-devicon-plain'},
     {name: 'Bootstrap', proficiency: 'Proficient', fontAwesomeIcon: 'devicon-bootstrap-plain'},
     {name: 'jQuery', proficiency: 'Proficient', fontAwesomeIcon: 'devicon-jquery-plain'},
-    {name: 'Java', proficiency: 'Proficient', fontAwesomeIcon: 'fab fa-java'},
+    {name: 'Java', proficiency: 'Proficient', fontAwesomeIcon: 'devicon-java-plain'},
     {name: 'Swift', proficiency: 'Basic', fontAwesomeIcon: 'devicon-swift-plain'},
     {name: 'Linux / Unix CL', proficiency: 'Proficient', fontAwesomeIcon: 'devicon-linux-plain'},
-    {name: 'Git / Github', proficiency: 'Proficient', fontAwesomeIcon: 'fab fa-github'},
+    {name: 'Git / Github', proficiency: 'Proficient', fontAwesomeIcon: 'devicon-github-plain'},
     {name: 'React', proficiency: 'Basic', fontAwesomeIcon: 'devicon-react-original'}
 
   ];

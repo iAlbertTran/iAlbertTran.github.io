@@ -20,17 +20,17 @@
     </div>
   </div>
   <div class='skills'>
-    <div class='individual-skill animated fadeInUp faster' *ngFor='let skill of skills'>
-      <div class='skill-icon'><i class='{{ skill.fontAwesomeIcon }}'></i></div>
-      <div class='skill-info'>
-        <div class='skill-name'>{{ skill.name }}</div>
-        <div class='skill-proficiency'>
-          <div class='proficiency-bar'>
-            <div class="inner-proficiency-bar" [ngClass]='loadProficiencyBar ? skill.proficiency : null '></div>
+    <button mdbBtn class='individual-skill animated fadeInUp faster' type="button" mdbWavesEffect *ngFor='let skill of skills'>
+        <div class='skill-icon'><i class='{{ skill.fontAwesomeIcon }}'></i></div>
+        <div class='skill-info'>
+          <div class='skill-name'>{{ skill.name }}</div>
+          <div class='skill-proficiency'>
+            <div class='proficiency-bar'>
+              <div class="inner-proficiency-bar" [ngClass]='loadProficiencyBar ? skill.proficiency : null '></div>
+            </div>
+            <div class='proficiency-text'> {{ skill.proficiency }} </div>
           </div>
-          <div class='proficiency-text'> {{ skill.proficiency }} </div>
         </div>
-      </div>
-    </div>
+    </button>
   </div>
 </div>
