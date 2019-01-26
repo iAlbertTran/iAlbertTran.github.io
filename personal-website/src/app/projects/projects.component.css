@@ -1,0 +1,7 @@
+.carousel{
+    height: calc(100% - 40px);
+}
+
+.carousel .carousel-indicators{
+    bottom: -100px !important;
+}

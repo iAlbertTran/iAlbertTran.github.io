@@ -45,7 +45,7 @@ html, body{
 
 @media only screen and (max-width: 767px){
     .content{
-        padding: 5px;
+        padding: 60px 5px 5px 5px;
     }
 
     body .nav-bar{
@@ -55,4 +55,10 @@ html, body{
     .hamburger{
         display: flex;
     }
+}
+
+
+// for md boostrap custom css
+.carousel .carousel-indicators{
+    bottom: -100px !important;
 }

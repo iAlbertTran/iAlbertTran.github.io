@@ -7,7 +7,7 @@ import { HelperService } from '../service/helper.service';
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent implements OnInit {
-
+  
   constructor(private _helperService: HelperService) { }
 
   ngOnInit() {
