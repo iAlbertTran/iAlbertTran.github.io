@@ -115,10 +115,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+
+    margin-bottom: 20px;
+    
 }
 
 .nav-buttons .nav-button-container h2{
-    margin-bottom: 20px;
 
     font-size: 24px;
 }
@@ -160,7 +162,7 @@
 }
 
 .inner-container .increase-width{
-    width: 250px;
+    width: 50%;
 }
 
 @media only screen and (max-width: 767px){
@@ -174,7 +176,6 @@
 
     .content .inner-container{
         margin: 0;
-        width: 100%
     }
 
     .content .inner-container .basic-info{
@@ -184,10 +185,6 @@
 
     .inner-container .increase-height{
         height: 150px;
-    }
-
-    .inner-container .increase-width{
-        width: 300px;
     }
 
 
