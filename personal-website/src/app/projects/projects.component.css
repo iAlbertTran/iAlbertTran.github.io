@@ -5,3 +5,7 @@
 .carousel .carousel-indicators{
     bottom: -100px !important;
 }
+
+.carousel-container{
+    width: 1200px;
+}
