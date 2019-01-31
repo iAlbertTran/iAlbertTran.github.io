@@ -48,7 +48,7 @@
     padding: 15px 10px;
 
     margin: 5px;
-    width: calc(25% - 30px);
+    width: calc(25% - 10px);
 }
 
 .skills .individual-skill .skill-icon{
@@ -138,13 +138,13 @@
 
 @media only screen and (max-width: 1350px){
     .skills .individual-skill{
-        width: calc(33.33%  - 30px);
+        width: calc(33.33%  - 10px);
     }
 }
 
 @media only screen and (max-width: 1024px){
     .skills .individual-skill{
-        width: calc(50%  - 30px);
+        width: calc(50%  - 10px);
     }
 }
 
