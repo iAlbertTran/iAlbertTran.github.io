@@ -105,4 +105,8 @@ html, body{
 .carousel .carousel-indicators li{
     width: 200px;
     height: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
