@@ -1,20 +1,29 @@
 .nav-bar{
     position: fixed;
-    color: #ECEBE4;
+    color: #28292f;
     z-index: 2;
 
-    width: 100%;
+    width: 200px;
+    height: 100%;
 
     display: none;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
 
     padding: 20px 0;
 
-    background: #2c3d55;
+    transition-property: background;
+    transition-duration: 0.5s;
+
+    -webkit-box-shadow: 6px 0px 26px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 0px 26px 0px rgba(0,0,0,0.75);
+    box-shadow: 6px 0px 26px 0px rgba(0,0,0,0.75);
 }
 
 .nav-bar .nav-link{
+
+    margin: 20px 0;
     padding: 0 15px;
 
     display: flex;
@@ -24,8 +33,13 @@
 
 }
 
+.nav-bar .nav-link i{
+    font-size: 25px;
+}
+
 .nav-bar .nav-link p{
     margin: 0;
+    font-weight: 900;
 }
 
 .nav-bar .nav-link .nav-link-text{
@@ -35,38 +49,9 @@
     line-height: 1;
 }
 
-.nav-bar .underline-box{
-
-    display: flex;
-    justify-content: center;
-    width: 0;
-    height: 2px;
-    margin: auto;
-
-    transition-property: width;
-    transition-duration: 0.5s;
-
-    border-top: 2px solid #eac435;
-
-}
-
-.nav-bar:hover .nav-link .underline{
-    width: 0;
-}
-
-.nav-bar .nav-link:hover .underline-box{
-    width: 45px;
-}
 
 .nav-bar .nav-link:hover{
     cursor: pointer;
-}   
-
-.nav-bar .nav-link .underline{
-    border-top: 2px solid #eac435;  
-
-    height: 2px;
-    width: 45px;
 }
 
 
@@ -79,7 +64,7 @@
     justify-content: center;
     align-items: center;
 
-    color: #eac435;
+    color: #28292f;
 
     position: fixed;
     z-index: 3;
@@ -87,8 +72,6 @@
     border-radius: 50%;
 
     right: 0;
-
-    background: #2c3d55;
 
     width: 70px;
     height: 70px;
@@ -102,7 +85,7 @@
 
 
 .hamburger .hamburger-inner, .hamburger .hamburger-inner::before, .hamburger .hamburger-inner::after{
-    background-color: #eac435;
+    background-color: #28292f;
 }
 
 .hamburger .hamburger-box{
@@ -127,11 +110,9 @@
 
     overflow: hidden;
 
-    background: rgba(44, 61, 85, 0.95);
-
     font-size: 24px;
 
-    color: #eac435;
+    color: #28292f;
     text-transform: uppercase;
     font-weight: bold;
 
