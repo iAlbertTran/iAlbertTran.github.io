@@ -15,23 +15,20 @@
 
     transition-property: background;
     transition-duration: 0.5s;
-
-    -webkit-box-shadow: 6px 0px 26px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 6px 0px 26px 0px rgba(0,0,0,0.75);
-    box-shadow: 6px 0px 26px 0px rgba(0,0,0,0.75);
 }
 
 .nav-bar .nav-link{
 
-    margin: 20px 0;
-    padding: 0 15px;
+    padding: 20px 0;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
+    width: 100%;
 }
+
 
 .nav-bar .nav-link i{
     font-size: 25px;
@@ -55,7 +52,52 @@
 }
 
 
+.nav-bar .indicator-carat{
+    -webkit-clip-path: polygon(100% 0, 0 57%, 100% 100%);
+    clip-path: polygon(100% 0, 0 57%, 100% 100%);
 
+    width: 25px;
+    height: 56px;
+
+    background: #28292f;
+
+    position: absolute;
+    right: -2px;
+
+    top: -56px;
+
+    transition-property: top;
+    transition-duration: 0.25s;
+}
+
+.nav-bar .stay-on-about{
+    top: 136px;
+}
+
+.nav-bar .stay-on-portfolio{
+    top: 232px;
+}
+
+.nav-bar .stay-on-contact{
+    top: 328px;
+}
+
+
+.nav-bar .move-to-home{
+    top: 40px;
+}
+
+.nav-bar .move-to-about{
+    top: 136px;
+}
+
+.nav-bar .move-to-portfolio{
+    top: 232px;
+}
+
+.nav-bar .move-to-contact{
+    top: 328px;
+}
 
 
 

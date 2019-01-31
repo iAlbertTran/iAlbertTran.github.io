@@ -6,22 +6,32 @@
 [class.pastel-blue-bg]='_helperService.currentComponent == "portfolio"'
 [class.pastel-green-bg]='_helperService.currentComponent == "contact"'
 >
-    <div class='nav-link' routerLink=''>
+    <div class='nav-link' routerLink='' (mouseenter)='moveCaratTo("home")' (mouseleave)='clearCarat()'>
         <div><i class="fas fa-home"></i></div>
         <p class='nav-link-text'>Home</p>
     </div>
-    <div class='nav-link' routerLink='About'>
+    <div class='nav-link' routerLink='About' (mouseenter)='moveCaratTo("about")' (mouseleave)='clearCarat()'>
         <div><i class="fas fa-address-card"></i></div>
         <p class='nav-link-text'>About</p>
     </div>
-    <div class='nav-link' routerLink='Portfolio'>
+    <div class='nav-link' routerLink='Portfolio' (mouseenter)='moveCaratTo("portfolio")' (mouseleave)='clearCarat()'>
         <div><i class="fas fa-folder-open"></i></div>
         <p class='nav-link-text'>Portfolio</p>
     </div>
-    <div class='nav-link' routerLink='Contact'>
+    <div class='nav-link' routerLink='Contact' (mouseenter)='moveCaratTo("contact")' (mouseleave)='clearCarat()'>
         <div><i class="fas fa-handshake"></i></div>
         <p class='nav-link-text'>Connect</p>
     </div>
+
+    <div class='indicator-carat' 
+        [class.move-to-home]='moveToHome' 
+        [class.move-to-about]='moveToAbout' 
+        [class.move-to-portfolio]='moveToPortfolio' 
+        [class.move-to-contact]='moveToContact'
+        [class.stay-on-about]='_helperService.currentComponent == "about"'
+        [class.stay-on-portfolio]='_helperService.currentComponent == "portfolio"'
+        [class.stay-on-contact]='_helperService.currentComponent == "contact"'
+    ></div>
 </div>
 
 <button class="hamburger hamburger--slider" [class.is-active] ='openHamburgerMenu' (click)='openMenu()' type="button" [class.displayMobileNav]='_helperService.currentComponent != "home"'
