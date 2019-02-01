@@ -1,11 +1,25 @@
-.carousel{
-    height: calc(100% - 40px);
+.unselected{
+    background: #383943;
 }
 
-.carousel .carousel-indicators{
-    bottom: -100px !important;
+.project-information{
+    width: 100%;
 }
 
 .carousel-container{
-    width: 1200px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+@media only screen and (max-width: 550px){
+    .project-buttons{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .project-buttons button{
+        width: 100%;
+    }
 }

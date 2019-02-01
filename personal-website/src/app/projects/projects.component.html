@@ -1,17 +1,50 @@
 <div class='content'>
   <h1 class='component-header animated fadeIn pastel-blue'>Projects</h1>
-  <div class=carousel-container>
-    <mdb-carousel class="carousel slide carousel-fade" [type]="'carousel-thumbnails'" [animation]="'slide'">
-      <mdb-carousel-item>
-        <img class="d-block w-100" src="../../assets/weather-app.png" alt="Weather-App">
-      </mdb-carousel-item>
-      <mdb-carousel-item>
-        <img class="d-block w-100" src="../../assets/checkers-app.png" alt="Checkers">
-      </mdb-carousel-item>
-      <mdb-carousel-item>
-        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(31).jpg" alt="Third slide">
-      </mdb-carousel-item>
-    </mdb-carousel>
+  <div class='project-buttons'>
+      <button mdbBtn type="button" class='funkollection-btn animated bounceInLeft' [class.unselected]='!showFunkollection' [class.pastel-blue-bg]='showFunkollection' (click)='showProject("funkollection")' mdbWavesEffect>Funkollection</button>
+      <button mdbBtn type="button" class='weather-btn animated bounceInUp' [class.unselected]='!showWeather' [class.pastel-blue-bg]='showWeather' (click)='showProject("weather")' mdbWavesEffect>Weather App</button>
+      <button mdbBtn type="button" class='checkers-btn animated bounceInRight' [class.unselected]='!showCheckers' [class.pastel-blue-bg]='showCheckers' (click)='showProject("checkers")' mdbWavesEffect>Checkers</button>
   </div>
 
+  <div class='project-information'>
+    <div class='carousel-container'>
+
+
+        <mdb-carousel class='animated fadeIn' [animation]="'slide'" *ngIf='showFunkollection'>
+          <mdb-carousel-item>
+            <img class="d-block w-100" src="assets/funkollection-slide-1.png" alt="First slide">
+          </mdb-carousel-item>
+          <mdb-carousel-item>
+            <img class="d-block w-100" src="assets/funkollection-slide-2.png" alt="Second slide">
+          </mdb-carousel-item>
+          <mdb-carousel-item>
+            <img class="d-block w-100" src="assets/funkollection-slide-3.png" alt="Third slide">
+          </mdb-carousel-item>
+        </mdb-carousel>
+
+        <mdb-carousel class='animated fadeIn' [animation]="'slide'" *ngIf='showWeather'>
+          <mdb-carousel-item>
+            <img class="d-block w-100" src="assets/weather-slide-1.png" alt="First slide">
+          </mdb-carousel-item>
+          <mdb-carousel-item>
+            <img class="d-block w-100" src="assets/weather-slide-2.png" alt="Second slide">
+          </mdb-carousel-item>
+        </mdb-carousel>
+
+        <mdb-carousel class='animated fadeIn' [animation]="'slide'" *ngIf='showCheckers'>
+          <mdb-carousel-item>
+            <img class="d-block w-100" src="assets/checkers-slide-1.png" alt="First slide">
+          </mdb-carousel-item>
+          <mdb-carousel-item>
+            <img class="d-block" style='height: 100%;' src="assets/checkers-slide-2.png" alt="Second slide">
+          </mdb-carousel-item>
+        </mdb-carousel>
+
+
+
+    </div>
+    <div class='information'>
+
+    </div>
+  </div>
 </div>
