@@ -98,15 +98,7 @@ html, body{
 
 
 // for md boostrap custom css
-
 .carousel{
-    position: static;
-}
-.carousel .carousel-indicators li{
-    width: 200px;
-    height: auto;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    max-width: 1200px;
 }
