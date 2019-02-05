@@ -1,0 +1,158 @@
+<div class='content'>
+  <h1 class='component-header animated fadeIn pastel-blue'>Projects</h1>
+  <div class='project-buttons'>
+      <button mdbBtn type="button" class='funkollection-btn animated bounceInLeft' [class.unselected]='!showFunkollection' [class.pastel-blue-bg]='showFunkollection' (click)='showProject("funkollection")' mdbWavesEffect>Funkollection</button>
+      <button mdbBtn type="button" class='weather-btn animated bounceInUp' [class.unselected]='!showWeather' [class.pastel-blue-bg]='showWeather' (click)='showProject("weather")' mdbWavesEffect>Weather App</button>
+      <button mdbBtn type="button" class='checkers-btn animated bounceInRight' [class.unselected]='!showCheckers' [class.pastel-blue-bg]='showCheckers' (click)='showProject("checkers")' mdbWavesEffect>Checkers</button>
+  </div>
+
+  <div class='project-information'>
+    <div class='carousel-container'>
+
+
+        <mdb-carousel class='animated fadeIn' [animation]="'slide'" *ngIf='showFunkollection'>
+          <mdb-carousel-item>
+            <img class="d-block w-100" src="assets/funkollection-slide-1.png" alt="First slide">
+          </mdb-carousel-item>
+          <mdb-carousel-item>
+            <img class="d-block w-100" src="assets/funkollection-slide-2.png" alt="Second slide">
+          </mdb-carousel-item>
+          <mdb-carousel-item>
+            <img class="d-block w-100" src="assets/funkollection-slide-3.png" alt="Third slide">
+          </mdb-carousel-item>
+        </mdb-carousel>
+
+        <mdb-carousel class='animated fadeIn' [animation]="'slide'" *ngIf='showWeather'>
+          <mdb-carousel-item>
+            <img class="d-block w-100" src="assets/weather-slide-1.png" alt="First slide">
+          </mdb-carousel-item>
+          <mdb-carousel-item>
+            <img class="d-block w-100" src="assets/weather-slide-2.png" alt="Second slide">
+          </mdb-carousel-item>
+        </mdb-carousel>
+
+        <mdb-carousel class='animated fadeIn' [animation]="'slide'" *ngIf='showCheckers'>
+          <mdb-carousel-item>
+            <img class="d-block w-100" src="assets/checkers-slide-1.png" alt="First slide">
+          </mdb-carousel-item>
+          <mdb-carousel-item>
+            <img class="d-block" style='height: 100%;' src="assets/checkers-slide-2.png" alt="Second slide">
+          </mdb-carousel-item>
+        </mdb-carousel>
+
+
+
+    </div>
+    <div class='information'>
+      <div class='individual-project funkollection' *ngIf='showFunkollection'>
+        <div class='section app-intro animated fadeIn'>
+          <i class="fas fa-smile-beam section-icon funkollection-icon"></i>
+          <div class='section-text'>
+            <h4 class='section-title'> Funkollection</h4>
+            <p>
+              Funkollection allows users to track Funko's Pop! Vinyls by providing access to a wide range of Pop! Vinyls for them to add to their own collection or wishlist, 
+              and even explore similar figures they may be interested in! This allows users to view their collection easily and from anywhere! In addition, users can check out the current trending value on certain figures on the 
+              secondary market by viewing both current and completed eBay listings.
+            </p>
+          </div>
+          
+        </div>
+        <div class='section app-tech animated fadeIn'>
+          <i class="fas fa-code section-icon" style='color: #e91e63'></i>
+          <div class='section-text'>
+              <h4 class='section-title'>Technology</h4>
+              <p>
+                As a single page application, Funkollection's front-end is implemented using the Angular 7 framework, allowing for structured development, as well as seamless routing.
+                The back-end API of Funkollection is ran using Node.js / Express. Provides a SQLite Database that currently does NOT persist memory, where new information is erased atleast once every 24 horus. 
+                This is meant to keep a working demo of the project that remains uncluttered, as well as allow visitors a safe way to try it out temporarily.
+
+              </p>
+          </div>
+        </div>
+        <div class='section app-demo animated fadeIn'>
+          <i class="fas fa-laptop section-icon" style='color: lightgreen'></i>
+          <div class='section-text'>
+              <h4 class='section-title'>Live Demo</h4>
+              <p>
+                Interested in this project? Try out the live demo! The user-facing application is available on Github Pages, while the API is deployed to Heroku.
+              </p>
+              <a mdbBtn type="button" style='background: lightgreen; color: #28292f; font-weight: bold;' mdbWavesEffect href='https://ialberttran.github.io/funkollection/' target="_blank">View Site</a>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class='individual-project funkollection' *ngIf='showWeather'>
+        <div class='section app-intro animated fadeIn'>
+          <i class="fas fa-bolt section-icon weather-icon"></i>
+          <div class='section-text'>
+            <h4 class='section-title'>Weather App</h4>
+            <p>
+              Weather App is a small 10-day forecast application. Search a specific, city, zip code, etc to get various types of information of that area!
+            </p>
+          </div>
+          
+        </div>
+        <div class='section app-tech animated fadeIn'>
+          <i class="fas fa-code section-icon" style='color: #e91e63'></i>
+          <div class='section-text'>
+              <h4 class='section-title'>Technology</h4>
+              <p>
+                  Initially created from pure HTML, CSS, and Javascript, integrating Yahoo's old weather api. Since the API's retirement, the application has been updated to a Node.js project, implementing Yahoo's similar, but newer, API.
+
+              </p>
+          </div>
+        </div>
+        <div class='section app-demo animated fadeIn'>
+          <i class="fas fa-laptop section-icon" style='color: lightgreen'></i>
+          <div class='section-text'>
+              <h4 class='section-title'>Live Demo</h4>
+              <p>
+                Interested in this project? Try out the live demo! The user-facing application is available on Heroku!
+              </p>
+              <a mdbBtn type="button" style='background: lightgreen; color: #28292f; font-weight: bold;' mdbWavesEffect href='https://att-weather-app.herokuapp.com/' target="_blank">View Site</a>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class='individual-project funkollection' *ngIf='showCheckers'>
+        <div class='section app-intro animated fadeIn'>
+          <i class="fas fa-chess-king section-icon checkers-icon"></i>
+          <div class='section-text'>
+            <h4 class='section-title'>Checkers</h4>
+            <p>
+              Checkers is a simple web application that allows two real users to play classic checkers. It keeps track of each and every move, showing a history list where users can jump to a
+              a specific point in time of the game, where they can even continue from there!
+            </p>
+          </div>
+          
+        </div>
+        <div class='section app-tech animated fadeIn'>
+          <i class="fas fa-code section-icon" style='color: #e91e63'></i>
+          <div class='section-text'>
+              <h4 class='section-title'>Technology</h4>
+              <p>
+                Developed solely using the React framework and Javascript for move logic. Mobile responsive implementation for play on the go as well!
+
+              </p>
+          </div>
+        </div>
+        <div class='section app-demo animated fadeIn'>
+          <i class="fas fa-laptop section-icon" style='color: lightgreen'></i>
+          <div class='section-text'>
+              <h4 class='section-title'>Live Demo</h4>
+              <p>
+                Interested in this project? Try out the live demo! This application is available on Github Pages!
+              </p>
+              <a mdbBtn type="button" style='background: lightgreen; color: #28292f; font-weight: bold;' mdbWavesEffect href='https://ialberttran.github.io/checkers/' target="_blank">View Site</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

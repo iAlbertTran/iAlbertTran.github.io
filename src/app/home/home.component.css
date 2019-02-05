@@ -1,0 +1,220 @@
+.content{
+
+    height: 100%;
+    width: 100%;
+    background: 
+    linear-gradient(
+        rgba(0, 0, 0, 0.4), 
+        rgba(0, 0, 0, 0.4)
+      ),
+      url(../../assets/cover-bg.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.content *{
+    color: #ECEBE4;
+    
+}
+
+.content .border-element{
+    background: #c32148 ;
+    transition-duration: 1s;
+}
+
+.content .basic-info{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+
+    transition-property: transform, height;
+    transition-duration: 1s;
+    
+    text-align: end;
+
+}
+
+.content .nav-buttons{
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.content .name{
+    animation-delay: 0.5s;
+
+    font-size: 28px;
+
+    margin: 0 0 20px 0;
+
+    color: #c32148;
+}
+
+.content .description{
+    animation-delay: 1s;
+
+    font-size: 16px;
+}
+
+
+.nav-buttons .nav-button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    margin-bottom: 20px;
+    
+}
+
+.nav-buttons .nav-button-container h3{
+
+    font-size: 24px;
+
+    transition-property: color;
+    transition-duration: 0.5s;
+}
+
+.nav-buttons .bottom-border-element{
+    width: 0;
+
+    transition-property: width;
+    transition-duration: 0.5s;
+}
+
+.nav-button-container:hover{
+    cursor: pointer;
+}
+
+.nav-button-container:hover .bottom-border-element{
+    width: 50%;
+}
+
+.content .about{ animation-delay: 2.75s; }
+.content .portfolio{ animation-delay: 3.25s; }
+.content .connect{ animation-delay: 3.75s; }
+
+.content .nav-button-container:hover .about{ color: #ea5645}
+.content .nav-button-container:hover .portfolio{ color: #71aef2}
+.content .nav-button-container:hover .connect{ color: rgb(35, 245, 173)}
+
+
+
+.about-border{
+    border-bottom: 3px solid #ea5645;
+}
+
+.portfolio-border{
+    border-bottom: 3px solid #71aef2;
+}
+
+.connect-border{
+    border-bottom: 3px solid rgb(35, 245, 173);;
+}
+
+@media only screen and (min-width: 768px){
+    .content .border-element{
+        width: 2.5px;
+        height: 0;
+    
+        transition-property: height;
+    
+        margin: 0 30px;
+    }
+
+
+    .content .resize-separator{
+        height: 250px;
+    }
+
+    
+}
+
+@media only screen and (max-width: 767px){
+    .content{
+        flex-direction: column;
+    }
+
+    .content .basic-info .name, .content .basic-info .description{
+        width: 100%;
+        text-align: center;
+    }
+
+    .content .border-element{
+        width: 0px;
+        height: 3px;
+
+        transition-property: width;
+
+        margin: 10px 0;
+    }
+
+    .content .nav-buttons{
+        flex-direction: row;
+        height: auto;
+
+        margin: 0;
+        padding: 10px;
+
+        width: 100%;
+
+        justify-content: space-around;
+
+    }
+
+    .content .nav-buttons h3{
+        margin: 0 20px;
+    }
+
+    .content .about{ animation-delay: 3s;}
+    .content .portfolio{ animation-delay: 3.5s;}
+    .content .connect{ animation-delay: 4s; }
+
+
+    .content .resize-separator{
+        width: 250px;
+    }
+}
+
+@media only screen and (max-width: 480px){
+    .content .basic-info .description{
+        font-size: 12px;
+
+    }
+
+    .content .nav-buttons h3{
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 350px){
+
+    .content .basic-info .name{
+        font-size: 18px;
+    }
+    .content .basic-info .description{
+        font-size: 10px;
+
+    }
+
+    .content .nav-buttons h3{
+        font-size: 14px;
+    }
+}

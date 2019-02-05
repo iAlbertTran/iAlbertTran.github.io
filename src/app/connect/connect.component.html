@@ -1,0 +1,104 @@
+<div class='content'>
+    <h1 class='component-header animated fadeIn pastel-green'>Connect</h1>
+    <div class='content-body'>
+        <div class='connect-section'>
+            <p>Here is a web version of my resume. Connect with me using any of the following methods! : </p>
+            <div class='social-buttons'>
+                <a type="button" class='socialButton animated flipInY' [ngClass]='social.name ? social.name : null' mdbBtn mdbWavesEffect *ngFor='let social of socialmedia' href='{{social.link}}' target="_blank"><i class='{{social.icon}}'></i> {{social.name}}</a>
+            </div>
+        </div>
+        <div class='resume-section animated fadeIn delay-1s'>
+            <h2 class='name-heading'>Albert Tracy Tran</h2>
+            <div class='skills-section section'>
+                <h3 class='section-header'>Skills <span class='proficiency-note'>(Descending order by proficiency)</span></h3>
+                <h4 class='secondary-headers'>Programming Languages</h4>
+                <ul>
+                    <li>Javascript, Java, C#</li>
+                </ul>
+                <h4 class='secondary-headers'>Technologies</h4>
+                <ul>
+                    <li>HTML, CSS, Angular, Node.js / Express, Bash, Git, ASP.NET, SQL</li>
+                </ul>
+            </div>
+            <div class='experience-section section'>
+                <h3 class='section-header'>Experience</h3>
+                <h4 class='secondary-headers'>
+                    Redwhale
+                    <ul>
+                        <li>
+                            Cupertino,CA
+                        </li>
+                        <li>March 2018 - December 2018</li>
+                    </ul>
+                </h4>
+                <h5 class='secondary-headers'>Software Engineer Intern</h5>
+                <ul>
+                    <li>Took ownership of multiple existing applications, providing business to business services in updating and improving overall functionality.</li>
+                    <li>Maintained and developed components for web apps using ASP.NET MVC for both front-end and back-end communication with a SQL Server database.</li>
+                    <li>Created and improved API calls written in ASP.NET C# that are used by various web and mobile applications, including securely storing and querying sensitive information from respective SQL Server databases.</li>
+                    <li>Translated Photoshop / Balsamiq mockups into fully functioning UI / UX prototypes using Angular and ASP.NET for web applications, as well as Swift / Xcode and Java / Android Studio for mobile apps.</li>
+                    <li>Periodic updates and additions to applications regarding bug fixes, performance, and achieving goals sets forth by clients.</li>
+                </ul>
+            </div>
+            <div class='projects-section section'>
+                <h3 class='section-header'>Projects</h3>
+                <h4 class='secondary-headers'>
+                    Funkollection
+                    <ul>
+                        <li>
+                            <a href='https://ialberttran.github.io/funkollection/' target='_blank'>ialberttran.github.io/funkollection/</a>
+                        </li>
+                        <li>In Progress</li>
+                    </ul>
+                </h4>
+                <ul>
+                    <li>A single-page web application aimed to allow users to keep track of their Pop! Vinyl’s by accessing a database of figures and adding them to their personal collection.</li>
+                    <li>Implemented the front-end using Angular that communicates with a REST API through a Node.js / Express server back-end with a SQLite DB.</li>
+                    <li>Implemented account registration / login with authentication, image / information upload, dashboard display of individual figures, and in-depth information page.</li>
+                    <li>Integrated eBay’s Finding API for eBay listings on a specific figure that presents to the user a table of the top 25 listings, allowing the ability to go to eBay for purchase.</li>
+                    <li>Future goals: Implement a collection list for individual users and ability to search and display any and all figures available in the database. Introduce a method of aggregating sales history of a specific Pop! Vinyl in order to calculate an approximate trending value on individual figures.</li>
+                </ul>
+                <h4 class='secondary-headers'>
+                    Photobooth
+                </h4>
+                <ul>
+                    <li>Single-page web app that allows a user to upload images to a server and displayed with auto-generated labels by integrating Google’s Cloud Vision API.</li>
+                    <li>Front-end implemented using pure HTML/CSS and JavaScript for functionality.</li>
+                    <li>Back-end utilizes Node.js / Express to create a REST API that works with a SQLite database which stores images and related information.</li>
+                </ul>
+                <h4 class='secondary-headers'>
+                    Personal Webpage
+                    <ul>
+                        <li>
+                            <a href='https://ialberttran.github.io/' target='_blank'>ialberttran.github.io/</a>
+                        </li>
+                    </ul>
+                </h4>
+                <ul>
+                    <li>A single-page application serving as a portfolio for present and future projects.</li>
+                    <li>Implemented a dynamic responsive design for both mobile / desktop display.</li>
+                    <li>Recently updated to an Angular project for component-based rendering and organization.</li>
+                    <li>Integrates both custom and 3rd party styling and animations.</li>
+                </ul>
+            </div>
+            <div class='education-section section'>
+                <h3 class='section-header'>Education</h3>
+                <h4 class='secondary-headers'>
+                    University of California, Davis
+                    <ul>
+                        <li>
+                            Davis, CA
+                        </li>
+                        <li>Sept 2013 - Dec 2018</li>
+                    </ul>
+                </h4>
+                <ul>
+                    <li>Bachelor's of Science in Computer Science</li>
+                </ul>
+            </div>
+        </div>
+
+        <p class='last-updated'><i>* last updated February 4, 2019.</i></p>
+    </div>
+    
+</div>

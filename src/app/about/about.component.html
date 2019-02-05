@@ -1,0 +1,36 @@
+<div class='content'>
+  <h1 class='component-header animated fadeIn pastel-red'>About</h1>
+  <div class='top-info'>
+    <div class='information animated slideInRight'>
+        <p>
+          <img class='animated fadeIn delay-1s' src='../../assets/me.png'/>
+          Hello, thank you for taking the time to visit. 
+          I am a 23 year old Software Engineer looking for a full-time opportunity that allows for personal growth and to contribute meaningfully.
+          This personal website is meant for you to explore what I am capable of and how I may be an asset to your company. As a software engineer, I always have you, the end user in mind.
+          I hope you enjoy your time here.
+          <br/> 
+          While I currently work with Angular and Node.js to build web applications, I am confident in my abiltiy to pick up any particular tech stack.
+          I am mostly looking for roles in web and mobile development. However, I am open to learning about different things.
+          <br/>
+          I have a wide range of personal interests, including UI / UX design and implementation, 
+          artificial intelligence, security, and many more. I plan to touch on each and everyone one of them to gain a better understanding of the direction
+          software development may be heading. Ultimately, I aim to develop modern software solutions to every day problems that are constructed elegantly and efficiently.
+          Let's have a conversation to find out how we can best fit one another. Please, don't hesitate to contact me!
+        </p>
+    </div>
+  </div>
+  <div class='skills'>
+    <button mdbBtn class='individual-skill animated fadeInUp faster' type="button" mdbWavesEffect *ngFor='let skill of skills'>
+        <div class='skill-icon'><i class='{{ skill.fontAwesomeIcon }} colored'></i></div>
+        <div class='skill-info'>
+          <div class='skill-name'>{{ skill.name }}</div>
+          <div class='skill-proficiency'>
+            <div class='proficiency-bar'>
+              <div class="inner-proficiency-bar" [ngClass]='loadProficiencyBar ? skill.proficiency : null '></div>
+            </div>
+            <div class='proficiency-text'> {{ skill.proficiency }} </div>
+          </div>
+        </div>
+    </button>
+  </div>
+</div>

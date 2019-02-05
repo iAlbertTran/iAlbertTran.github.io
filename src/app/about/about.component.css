@@ -1,0 +1,183 @@
+.content .top-info{
+    display: flex;
+
+}
+
+.content .information{
+    width: 100%;
+
+    color: #ecebe4;
+
+    text-align: justify;
+
+    margin: 40px 0;
+}
+
+.content .information p{
+    margin: 0;
+}
+
+.content .information img{
+
+    float: left;
+
+    padding-right: 15px;
+
+    width: 250px;
+}
+
+
+
+.skills{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    width: 100%;
+
+    margin-top: 20px;
+}
+
+.skills .individual-skill{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    background: #383943;
+    padding: 15px 10px;
+
+    margin: 5px;
+    width: calc(25% - 10px);
+}
+
+.skills .individual-skill .skill-icon{
+
+    width: 40px;
+    font-size: 35px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-right: 10px;
+
+    color: #eac435;
+
+    border-right: 1px solid #28292f;
+}
+
+.individual-skill .skill-info{
+    color: #ecebe4;
+    padding-left: 10px;
+}
+
+.individual-skill .skill-info .skill-name{
+    font-size: 14px;
+    text-align: left;
+}
+
+
+.individual-skill .skill-proficiency{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    font-size: 12px;
+}
+
+.individual-skill .proficiency-bar{
+    width: 100px;
+    height: 10px;
+
+    background: #28292f;
+
+    border-radius: 5px;
+
+    margin-right: 10px;
+}
+
+.individual-skill .proficiency-bar .inner-proficiency-bar{
+    height: 100%;
+    background: #ea5645;
+
+    width: 0;
+
+    transition-property: width;
+    transition-duration: 1s;
+
+    border-radius: 5px;
+}
+
+.individual-skill .proficiency-text{
+    font-size: 10px;
+    color: #eac435;
+}
+
+.individual-skill .proficiency-bar .Basic{
+    width: 50%;
+}
+
+.individual-skill .proficiency-bar .Intermediate{
+    width: 65%;
+}
+
+.individual-skill .proficiency-bar .Proficient{
+    width: 75%;
+}
+
+.individual-skill .proficiency-bar .Advanced{
+    width: 85%;
+}
+
+.individual-skill .proficiency-bar .Expert{
+    width: 95%;
+}
+
+
+
+@media only screen and (max-width: 1350px){
+    .skills .individual-skill{
+        width: calc(33.33%  - 10px);
+    }
+}
+
+@media only screen and (max-width: 1024px){
+    .skills .individual-skill{
+        width: calc(50%  - 10px);
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .content .top-info{
+        flex-direction: column;
+    }
+
+    .content .information{
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    .content .information img{
+        padding-bottom: 10px;
+    }
+
+    .skills{
+        margin-top: 0;
+    }
+}
+
+@media only screen and (max-width: 560px){
+    .skills .individual-skill{
+        width: 100%;
+        margin: 0 0 10px 0;
+    }
+}
+
+
+
+@media only screen and (max-width: 480px) {
+    .content .information img{
+        width: 100%;
+    }
+}

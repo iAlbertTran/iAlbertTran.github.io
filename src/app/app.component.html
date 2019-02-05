@@ -1,0 +1,66 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+
+<div class='nav-bar' [class.displayNav]='_helperService.currentComponent != "home"'
+[class.pastel-red-bg]='_helperService.currentComponent == "about"'
+[class.pastel-blue-bg]='_helperService.currentComponent == "portfolio"'
+[class.pastel-green-bg]='_helperService.currentComponent == "connect"'
+>
+    <div class='nav-link' routerLink='' (mouseenter)='moveCaratTo("home")' (mouseleave)='clearCarat()'>
+        <div><i class="fas fa-home"></i></div>
+        <p class='nav-link-text'>Home</p>
+    </div>
+    <div class='nav-link' routerLink='About' (mouseenter)='moveCaratTo("about")' (mouseleave)='clearCarat()'>
+        <div><i class="fas fa-address-card"></i></div>
+        <p class='nav-link-text'>About</p>
+    </div>
+    <div class='nav-link' routerLink='Portfolio' (mouseenter)='moveCaratTo("portfolio")' (mouseleave)='clearCarat()'>
+        <div><i class="fas fa-folder-open"></i></div>
+        <p class='nav-link-text'>Portfolio</p>
+    </div>
+    <div class='nav-link' routerLink='Connect' (mouseenter)='moveCaratTo("connect")' (mouseleave)='clearCarat()'>
+        <div><i class="fas fa-handshake"></i></div>
+        <p class='nav-link-text'>Connect</p>
+    </div>
+
+    <div class='indicator-carat' 
+        [class.move-to-home]='moveToHome' 
+        [class.move-to-about]='moveToAbout' 
+        [class.move-to-portfolio]='moveToPortfolio' 
+        [class.move-to-connect]='moveToConnect'
+        [class.stay-on-about]='_helperService.currentComponent == "about"'
+        [class.stay-on-portfolio]='_helperService.currentComponent == "portfolio"'
+        [class.stay-on-connect]='_helperService.currentComponent == "connect"'
+    ></div>
+</div>
+
+<button class="hamburger hamburger--slider" [class.is-active] ='openHamburgerMenu' (click)='openMenu()' type="button" [class.displayMobileNav]='_helperService.currentComponent != "home"'
+[class.pastel-red-bg]='_helperService.currentComponent == "about"'
+[class.pastel-blue-bg]='_helperService.currentComponent == "portfolio"'
+[class.pastel-green-bg]='_helperService.currentComponent == "connect"'
+>
+    <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+    </span>
+</button>
+
+<div class='mobile-nav' [class.expand-mobile-nav]='openHamburgerMenu'
+[class.pastel-red-bg-a]='_helperService.currentComponent == "about"'
+[class.pastel-blue-bg-a]='_helperService.currentComponent == "portfolio"'
+[class.pastel-green-bg-a]='_helperService.currentComponent == "connect"'
+>
+    <div class='nav-link' routerLink=''  (click)='closeNavDrawer()'>
+        <p class='nav-link-text'>Home</p>
+    </div>
+    <div class='nav-link' routerLink='About' (click)='closeNavDrawer()'>
+        <p class='nav-link-text'>About</p>
+    </div>
+    <div class='nav-link' routerLink='Portfolio' (click)='closeNavDrawer()'>
+        <p class='nav-link-text'>Portfolio</p>
+    </div>
+    <div class='nav-link' routerLink='Connect' (click)='closeNavDrawer()'>
+        <p class='nav-link-text'>Connect</p>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

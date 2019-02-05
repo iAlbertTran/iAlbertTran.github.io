@@ -1,0 +1,109 @@
+html, body{
+
+    font-family: Arial, sans-serif;
+
+    background: #28292f;
+
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.content{
+    padding: 40px 20px 20px 20px;
+
+    line-height: 1.5;
+    letter-spacing: 1px;
+    width: calc(100% - 200px);
+
+    margin-left: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.content::-webkit-scrollbar { 
+    display: none; 
+}
+
+.content .component-header{
+    font-size: 48px;
+}
+
+@media only screen and (max-width: 767px){
+    .content{
+        padding: 60px 5px 5px 5px;
+        width: 100%;
+    }
+
+    body .nav-bar{
+        display: none;
+    }
+
+    .hamburger{
+        display: flex;
+    }
+}
+
+
+.pastel-red-bg{
+    background: #ea5645;
+}
+
+.pastel-red-bg-a{
+    background: rgba(234,86,69,.95);
+}
+
+.pastel-red{
+    color: #ea5645;
+}
+
+.pastel-blue{
+    color:#71aef2;
+}
+
+.pastel-blue-bg{
+    background: #71aef2;
+}
+
+.pastel-blue-bg-a{
+    background: rgba(113,174,242,.95);
+}
+
+.pastel-green{
+    color: rgb(35, 245, 173);
+}
+.pastel-green-bg{
+    background: rgb(35, 245, 173);
+}
+.pastel-green-bg-a{
+    background: rgba(35, 245, 173, .95);
+}
+
+
+
+
+// for md boostrap custom css
+.carousel{
+    width: 100%;
+    max-width: 1200px;
+}
+
+
+.carousel:hover .carousel-control-prev, .carousel:hover .carousel-control-next{
+    background: rgba(0, 0, 0, 0.5);
+}

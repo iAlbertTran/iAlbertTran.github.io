@@ -1,0 +1,107 @@
+.unselected{
+    background: #383943;
+}
+
+.project-buttons{
+    margin: 40px 0;
+}
+
+.project-information{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.carousel-container{
+    width: 100%;
+    max-width: 750px;
+}
+
+.information{
+    width: 100%;
+    margin-top: 40px;
+}
+
+.information .individual-project{
+    display: flex;
+}
+
+.information .individual-project .section-title{
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 1.25rem;
+
+    height: 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.individual-project .section{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0 10px;
+
+    width: 33.33%;
+}
+
+.individual-project .section-icon{
+    font-size: 30px;
+    padding: 5px 20px 0 0;
+}
+
+.information p{
+    color: lightgrey;
+    text-align: justify;
+    font-size: 1rem;
+
+}
+
+.individual-project .app-tech{
+    animation-delay: 0.5s;
+}
+
+.individual-project .app-demo{
+    animation-delay: 1s;
+}
+
+.funkollection-icon{
+    color: #00bcd4
+}
+
+.weather-icon{
+    color: yellow
+}
+
+.checkers-icon{
+    color: #4c6ef5
+}
+
+@media only screen and (max-width: 767px){
+    .individual-project{
+        flex-direction: column;
+    }
+
+    .individual-project .section{
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+@media only screen and (max-width: 550px){
+    .project-buttons{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .project-buttons button{
+        width: 100%;
+    }
+}

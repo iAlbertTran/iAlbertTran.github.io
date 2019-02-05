@@ -1,0 +1,180 @@
+.nav-bar{
+    position: fixed;
+    color: #28292f;
+    z-index: 2;
+
+    width: 200px;
+    height: 100%;
+
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: 20px 0;
+
+    transition-property: background;
+    transition-duration: 0.5s;
+}
+
+.nav-bar .nav-link{
+
+    padding: 20px 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+}
+
+
+.nav-bar .nav-link i{
+    font-size: 25px;
+}
+
+.nav-bar .nav-link p{
+    margin: 0;
+    font-weight: 900;
+}
+
+.nav-bar .nav-link .nav-link-text{
+    text-transform: uppercase;
+    font-size: 18px;
+    margin: 5px 0;
+    line-height: 1;
+}
+
+
+.nav-bar .nav-link:hover{
+    cursor: pointer;
+}
+
+
+.nav-bar .indicator-carat{
+    -webkit-clip-path: polygon(100% 0, 0 57%, 100% 100%);
+    clip-path: polygon(100% 0, 0 57%, 100% 100%);
+
+    width: 25px;
+    height: 56px;
+
+    background: #28292f;
+
+    position: absolute;
+    right: -2px;
+
+    top: -56px;
+
+    transition-property: top;
+    transition-duration: 0.25s;
+}
+
+.nav-bar .stay-on-about{
+    top: 136px;
+}
+
+.nav-bar .stay-on-portfolio{
+    top: 232px;
+}
+
+.nav-bar .stay-on-connect{
+    top: 328px;
+}
+
+
+.nav-bar .move-to-home{
+    top: 40px;
+}
+
+.nav-bar .move-to-about{
+    top: 136px;
+}
+
+.nav-bar .move-to-portfolio{
+    top: 232px;
+}
+
+.nav-bar .move-to-connect{
+    top: 328px;
+}
+
+
+
+.hamburger{
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    color: #28292f;
+
+    position: fixed;
+    z-index: 3;
+
+    border-radius: 50%;
+
+    right: 0;
+
+    width: 70px;
+    height: 70px;
+
+    margin: 10px 10px 0 0px;
+}
+
+.hamburger.is-active:hover{
+    opacity: 1;
+}
+
+
+.hamburger .hamburger-inner, .hamburger .hamburger-inner::before, .hamburger .hamburger-inner::after{
+    background-color: #28292f;
+}
+
+.hamburger .hamburger-box{
+    margin-right: 10px;
+}
+
+
+.mobile-nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    z-index: 2;
+
+    width: 100%;
+    height: 100%;
+
+    transition-property: transform;
+    transition-duration: 0.5s;
+
+    overflow: hidden;
+
+    font-size: 24px;
+
+    color: #28292f;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    transform: translateX(-100%);
+}
+
+.expand-mobile-nav{
+    transform: translateX(0);
+
+
+}
+
+@media only screen and (min-width: 768px){
+    .displayNav{
+        display: flex;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .displayMobileNav{
+        display: flex;
+    }
+}
