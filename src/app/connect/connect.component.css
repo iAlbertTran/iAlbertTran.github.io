@@ -1,0 +1,186 @@
+.content .content-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.resume-section{
+    width: 100%;
+    max-width: 1100px;
+    color: #ffffff;
+
+    padding: 20px;
+
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+
+.resume-section .name-heading{
+    width: 100%;
+    text-align: center;
+
+    border-bottom: 3px solid #23f5ad;
+    margin: 15px 0;
+    padding-bottom: 10px;
+    color: #23f5ad;
+    font-weight: bold;
+
+    font-size: 36px;
+
+    text-transform: uppercase;
+
+}
+
+.resume-section .section{
+    padding: 5px 0;
+}
+
+.resume-section .section .section-header{
+    border-bottom: 3px solid #23f5ad;
+    padding: 5px 0;
+    color: #23f5ad;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.resume-section .section .secondary-headers{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px 0;
+    font-size: 16px;
+    width: 100%;
+}
+
+.resume-section .section .secondary-headers ul{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding-left: 15px;
+    margin-bottom: 0;
+}
+
+
+.resume-section .section .secondary-headers ul li{
+    margin: 0 15px;
+    font-size: 16px;
+}
+
+.resume-section .section li{
+    list-style-type: circle;
+    text-align: justify;
+
+    font-size: 14px;
+}
+
+.resume-section a, .resume-section a:active{
+    color: #ffffff;
+}
+
+.resume-section .proficiency-note{
+    font-size: 14px;
+    font-style: italic;
+}
+
+
+.connect-section{
+    width: 100%;
+    max-width: 1100px;
+    color: #eac435;
+
+}
+
+.connect-section .social-buttons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.socialButton{
+    opacity: 1;
+
+    width: 166px;
+}
+
+.socialButton:hover{
+    opacity: 0.75;
+    color: #ffffff;
+}
+
+
+.last-updated{
+    color: #eac435;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+
+.Facebook{
+    background: #3b5998;
+}
+
+.Twitter{
+    background: #55acee;
+}
+
+.LinkedIn{
+    background: #0082ca;
+}
+
+.Github{
+    background: #333;
+}
+
+.Slack{
+    background: #611f69;
+}
+
+.Gmail{
+    background: #dd4b39
+}
+
+
+@media only screen and (max-width: 480px){
+    .social-buttons{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .social-buttons a{
+        width: 100%
+    }
+}
+
+
+@media only screen and (max-width: 480px){
+
+    .resume-section{
+        padding: 5px;
+    }
+
+    .resume-section .name-heading{
+        font-size: 20px;
+    }
+
+    .resume-section .section .section-header{
+        font-size: 16px;
+    }
+
+    .resume-section .section .secondary-headers, .resume-section .section .secondary-headers ul li{
+        font-size: 12px;
+    }
+
+    .resume-section .section li{
+        font-size: 12px;
+    }
+
+    .resume-section .proficiency-note{
+        display: none;
+    }
+}
