@@ -4,10 +4,10 @@
     width: 100%;
     background: 
     linear-gradient(
-        rgba(0, 0, 0, 0.25), 
-        rgba(0, 0, 0, 0.25)
+        rgba(0, 0, 0, 0.4), 
+        rgba(0, 0, 0, 0.4)
       ),
-      url(../../assets/abstract-background-blur-949587.jpg) no-repeat center center fixed; 
+      url(../../assets/cover-bg.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -16,9 +16,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
-
-    padding-top: 7.5%;
+    align-items: center;
 }
 
 .content *{
@@ -36,8 +34,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    margin-top: 5%;
 
     position: relative;
 }
@@ -75,9 +71,6 @@
 }
 
 .content .nav-buttons{
-    height: 500px;
-
-    margin-top: 5%;
 
 
     display: flex;
@@ -106,9 +99,9 @@
 
 
 
-.content .about{ animation-delay: 5s;}
-.content .portfolio{ animation-delay: 5.5s;}
-.content .contact{ animation-delay: 6s; }
+.content .about{ animation-delay: 2s;}
+.content .portfolio{ animation-delay: 2.5s;}
+.content .connect{ animation-delay: 3s; }
 
 .nav-buttons .nav-button-container {
     display: flex;
@@ -146,23 +139,8 @@
 
 
 
-
-
-.rotate-neg90{
-    transform: rotate(-90deg);
-}
-
-.rotate-90{
-    transform: rotate(90deg);
-
-}
-
 .inner-container .increase-height{
     height: 500px;
-}
-
-.inner-container .increase-width{
-    width: 50%;
 }
 
 @media only screen and (max-width: 767px){
@@ -214,7 +192,7 @@
 
     .content .about{ animation-delay: 3s;}
     .content .portfolio{ animation-delay: 3.5s;}
-    .content .contact{ animation-delay: 4s; }
+    .content .connect{ animation-delay: 4s; }
 }
 
 @media only screen and (max-width: 480px){

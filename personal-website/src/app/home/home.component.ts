@@ -8,9 +8,7 @@ import { HelperService } from '../service/helper.service';
 })
 export class HomeComponent implements OnInit {
 
-  startRotateAnimation = false;
   increaseHeight = false;
-  increaseWidth = false;
 
   constructor(private _helperService: HelperService) { }
 
@@ -19,14 +17,8 @@ export class HomeComponent implements OnInit {
     this._helperService.setCurrentComponent('home');
 
     setTimeout(() => { 
-      this.increaseWidth = true;
-    }, 2000);
-
-    setTimeout(() => { 
       this.increaseHeight = true; 
-    }, 3000);
-    
-    setTimeout(() => { this.startRotateAnimation = true; }, 4000);
+    }, 3000)
 
   }
 
