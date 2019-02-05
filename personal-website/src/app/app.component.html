@@ -4,7 +4,7 @@
 <div class='nav-bar' [class.displayNav]='_helperService.currentComponent != "home"'
 [class.pastel-red-bg]='_helperService.currentComponent == "about"'
 [class.pastel-blue-bg]='_helperService.currentComponent == "portfolio"'
-[class.pastel-green-bg]='_helperService.currentComponent == "contact"'
+[class.pastel-green-bg]='_helperService.currentComponent == "connect"'
 >
     <div class='nav-link' routerLink='' (mouseenter)='moveCaratTo("home")' (mouseleave)='clearCarat()'>
         <div><i class="fas fa-home"></i></div>
@@ -18,7 +18,7 @@
         <div><i class="fas fa-folder-open"></i></div>
         <p class='nav-link-text'>Portfolio</p>
     </div>
-    <div class='nav-link' routerLink='Contact' (mouseenter)='moveCaratTo("contact")' (mouseleave)='clearCarat()'>
+    <div class='nav-link' routerLink='Connect' (mouseenter)='moveCaratTo("connect")' (mouseleave)='clearCarat()'>
         <div><i class="fas fa-handshake"></i></div>
         <p class='nav-link-text'>Connect</p>
     </div>
@@ -27,17 +27,17 @@
         [class.move-to-home]='moveToHome' 
         [class.move-to-about]='moveToAbout' 
         [class.move-to-portfolio]='moveToPortfolio' 
-        [class.move-to-contact]='moveToContact'
+        [class.move-to-connect]='moveToConnect'
         [class.stay-on-about]='_helperService.currentComponent == "about"'
         [class.stay-on-portfolio]='_helperService.currentComponent == "portfolio"'
-        [class.stay-on-contact]='_helperService.currentComponent == "contact"'
+        [class.stay-on-connect]='_helperService.currentComponent == "connect"'
     ></div>
 </div>
 
 <button class="hamburger hamburger--slider" [class.is-active] ='openHamburgerMenu' (click)='openMenu()' type="button" [class.displayMobileNav]='_helperService.currentComponent != "home"'
 [class.pastel-red-bg]='_helperService.currentComponent == "about"'
 [class.pastel-blue-bg]='_helperService.currentComponent == "portfolio"'
-[class.pastel-green-bg]='_helperService.currentComponent == "contact"'
+[class.pastel-green-bg]='_helperService.currentComponent == "connect"'
 >
     <span class="hamburger-box">
         <span class="hamburger-inner"></span>
@@ -47,7 +47,7 @@
 <div class='mobile-nav' [class.expand-mobile-nav]='openHamburgerMenu'
 [class.pastel-red-bg-a]='_helperService.currentComponent == "about"'
 [class.pastel-blue-bg-a]='_helperService.currentComponent == "portfolio"'
-[class.pastel-green-bg-a]='_helperService.currentComponent == "contact"'
+[class.pastel-green-bg-a]='_helperService.currentComponent == "connect"'
 >
     <div class='nav-link' routerLink=''  (click)='closeNavDrawer()'>
         <p class='nav-link-text'>Home</p>
@@ -58,8 +58,8 @@
     <div class='nav-link' routerLink='Portfolio' (click)='closeNavDrawer()'>
         <p class='nav-link-text'>Portfolio</p>
     </div>
-    <div class='nav-link' routerLink='Contact' (click)='closeNavDrawer()'>
-        <p class='nav-link-text'>Contact</p>
+    <div class='nav-link' routerLink='Connect' (click)='closeNavDrawer()'>
+        <p class='nav-link-text'>Connect</p>
     </div>
 </div>
 

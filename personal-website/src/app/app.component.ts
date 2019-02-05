@@ -12,7 +12,7 @@ export class AppComponent implements OnInit{
   moveToHome = false;
   moveToAbout = false;
   moveToPortfolio = false;
-  moveToContact = false;
+  moveToConnect = false;
   constructor(private _helperService: HelperService){}
 
   ngOnInit(){
@@ -40,8 +40,8 @@ export class AppComponent implements OnInit{
       case 'portfolio':
         this.moveToPortfolio = true;
         break;
-      case 'contact':
-        this.moveToContact = true;
+      case 'connect':
+        this.moveToConnect = true;
         break;
     }
   }
@@ -50,6 +50,6 @@ export class AppComponent implements OnInit{
     this.moveToHome = false;
     this.moveToAbout = false;
     this.moveToPortfolio = false;
-    this.moveToContact = false;
+    this.moveToConnect = false;
   }
 }

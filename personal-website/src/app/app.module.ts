@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ProjectsComponent } from './projects/projects.component';
-import { ContactComponent } from './contact/contact.component';
+import { ConnectComponent } from './connect/connect.component';
 import { HelperService } from './service/helper.service';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
@@ -20,7 +20,7 @@ const appRoutes: Routes = [
   },
   { path: '', component: HomeComponent },
   { path: 'About', component: AboutComponent },
-  { path: 'Contact', component: ContactComponent},
+  { path: 'Connect', component: ConnectComponent},
   { path: 'Portfolio', component: ProjectsComponent}
   //{ path: '**', component: PageNotFoundComponent }
 ];
@@ -31,7 +31,7 @@ const appRoutes: Routes = [
     HomeComponent,
     AboutComponent,
     ProjectsComponent,
-    ContactComponent
+    ConnectComponent
   ],
   imports: [
     MDBBootstrapModule.forRoot(),
